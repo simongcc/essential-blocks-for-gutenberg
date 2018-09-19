@@ -27,8 +27,8 @@ defined('ABSPATH') || exit;
  */
 
 $ugb = new Ultimate_Gutenberg();
-define( 'UGB', $ugb->plugin_name);
-define( 'UGB_VERSION', $ugb->version);
+define( 'UGB', $ugb->plugin_name );
+define( 'UGB_VERSION', $ugb->version );
 define( 'UGB_PLUGIN_URL', $ugb->ugb_plugin_url());
 define( 'UGB_PLUGIN_DIR', $ugb->ugb_plugin_path() );
 define( 'UGB_PLUGIN_DIR_URL', $ugb->ugb_plugin_dir_url());
@@ -48,8 +48,8 @@ class Ultimate_Gutenberg{
 	private $plugin_url;
 	private $plugin_slug;
 	public $plugin_dir_url;
+	public $plugin_name = 'Ultimate Gutenberg';
 
-	/* Instance */
 	private static $instance;
 
 	/* Initialize */
@@ -58,6 +58,7 @@ class Ultimate_Gutenberg{
 			self::$instance = new Ultimate_Gutenberg();
 		}
 	}
+
 
 
 	/* Construction Function */
