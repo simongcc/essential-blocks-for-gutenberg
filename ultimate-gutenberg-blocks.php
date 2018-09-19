@@ -1,4 +1,5 @@
 <?php
+//namespace Ultimate_Gutenberg\Gutenberg_Blocks;
 /**
  * @package     Ultimate_Gutenberg\Gutenberg_Blocks
  * @author      Liton Arefin (@Litonice13)
@@ -43,12 +44,12 @@ define( 'UGB_DIR', dirname( __FILE__ ) );
 class Ultimate_Gutenberg{
 
 	/* Variables */
-	public $version = "1.0.0";
+	public  $version = "1.0.0";
 	private $plugin_path;
 	private $plugin_url;
 	private $plugin_slug;
-	public $plugin_dir_url;
-	public $plugin_name = 'Ultimate Gutenberg';
+	public  $plugin_dir_url;
+	public  $plugin_name = 'Ultimate Gutenberg';
 
 	private static $instance;
 
@@ -73,9 +74,9 @@ class Ultimate_Gutenberg{
 		// $this->ugb_define_public_hooks();
 
 		// Prefix using "ugb" - Ultimate Gutenberg Shortname
-		add_action( 'init', array( $this, 'ugb_register_blocks' ) );
-		add_action( 'init', array( $this, 'ugb_block_assets' ) );
-		add_action( 'init', array( $this, 'ugb_editor_assets' ) );
+//		add_action( 'init', array( $this, 'ugb_register_blocks' ) );
+//		add_action( 'init', array( $this, 'ugb_block_assets' ) );
+//		add_action( 'init', array( $this, 'ugb_editor_assets' ) );
 		add_action( 'plugins_loaded', array( $this, 'ugb_load_dynamic_blocks' ) );
 		add_action( 'plugins_loaded', array( $this, 'ugb_load_textdomain' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'ugb_localization' ) );
@@ -99,9 +100,12 @@ class Ultimate_Gutenberg{
 
 	/* Files Includes related with Ultimate Gutenberg Plugin */
 	public function ugb_include_files(){
-		
+
+		// Scripts and Styles
+		require_once $this->ugb_plugin_path() . '/lib/enqueue-scripts.php';
+
 		if ( is_admin() ) {
-			// Notices
+			// Notices Libraries
 			require_once $this->ugb_plugin_path() . '/lib/admin-notices/dismiss-notices.php';
 			require_once $this->ugb_plugin_path() . '/inc/class-admin-notices.php';
 			// require_once UGB_DIR . '/inc/get-feedback.php';
@@ -114,13 +118,10 @@ class Ultimate_Gutenberg{
 	public function ugb_define_admin_hooks(){
 		
 		// Admin Notices
-		// $ugb_admin_notices = new Ultimate_Gutenberg_Admin_Notices();
 		add_action( 'admin_init', array( 'PAnD', 'init' ) );
-		// add_action( 'admin_notices', array($this, 'display_admin_notice'), 10 );
 		add_action( 'admin_notices', 'ugb_admin_notice_active', 10 );
-		// add_action( 'admin_notices', $ugb_admin_notices, 'ugb_admin_notice_after_2_weeks', 10 );
-		// add_action( 'admin_notices', $ugb_admin_notices, 'ugb_admin_notice_after_1_month', 10 );
-
+		add_action( 'admin_notices', 'ugb_admin_notice_after_2_weeks', 10 );
+		add_action( 'admin_notices', 'ugb_admin_notice_after_1_month', 10 );
 
 
 	}
@@ -166,6 +167,28 @@ class Ultimate_Gutenberg{
 
 	/* Register Blocks */
 	public function ugb_register_blocks(){
+
+		// Check if the Function doesn't exists
+		if ( ! function_exists( 'register_block_type' ) ) {
+			return;
+		}
+
+		// Check If Ultimate Gutenberg Pro
+		if ( $this->ugb_pro() ) {
+			return;
+		}
+
+		// Shortcut for the slug.
+		$ugb_slug = $this->plugin_slug;
+
+
+		register_block_type(
+			$ugb_slug . '/alert', array(
+				'editor_script' => $ugb_slug . '-editor',
+				'editor_style'  => $ugb_slug . '-editor',
+				'style'         => $ugb_slug . '-frontend',
+			)
+		);
 
 	}
 
