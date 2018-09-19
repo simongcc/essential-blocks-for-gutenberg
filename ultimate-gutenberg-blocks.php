@@ -42,10 +42,12 @@ define( 'UGB_DIR', dirname( __FILE__ ) );
 
 class Ultimate_Gutenberg{
 
+	/* Variables */
 	public $version = "1.0.0";
 	private $plugin_path;
 	private $plugin_url;
 	private $plugin_slug;
+	public $plugin_dir_url;
 
 	/* Instance */
 	private static $instance;
@@ -123,7 +125,7 @@ class Ultimate_Gutenberg{
 			require_once UGB_DIR . '/inc/class-admin-notices.php';
 			require_once UGB_DIR . '/inc/get-feedback.php';
 		}
-		
+
 	}
 
 	/* Register Blocks */
