@@ -244,7 +244,7 @@ class Ultimate_Gutenberg{
 			esc_html__( 'UGB', UGB_TD ),
 			'manage_options',
 			'ugb-widgets',
-			'ugb_widgets_welcome_screen_content',
+			array( $this, 'ugb_welcome_screen_content'),
 			$icon_svg,
 			110
 		);
@@ -256,7 +256,7 @@ class Ultimate_Gutenberg{
 			esc_html__( 'Settings', UGB_TD ),
 			'manage_options',
 			'ugb-widgets-settings',
-			'ugb_widgets_settings_screen_content'
+			array($this, 'ugb_setting_screen_content')
 		);
 
 		add_settings_section(
@@ -269,6 +269,17 @@ class Ultimate_Gutenberg{
 		register_setting( 'organic-widgets-settings', 'ugb_settings', array( 'sanitize_callback' => 'ugb_settings_sanitize_callback' ) );
 
 	}
+
+
+	public function ugb_welcome_screen_content() {
+		include_once plugin_dir_path( __FILE__ ) . '/inc/welcome.php';
+	}
+
+	public function ugb_setting_screen_content() {
+		include_once plugin_dir_path( __FILE__ ) . '/inc/settings.php';
+	}
+
+
 
 
 }

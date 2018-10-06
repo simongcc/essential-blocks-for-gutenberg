@@ -15,17 +15,17 @@
 		// Enqueue the bundled block JS file
 		wp_enqueue_script(
 			'gutenberg-blocks-blocks-js',
-			_get_plugin_url() . $block_path,
+			UGB_PLUGIN_URL . $block_path,
 			[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
-			filemtime( _get_plugin_directory() . $block_path )
+			filemtime( UGB_PLUGIN_DIR . $block_path )
 		);
 
 		// Enqueue optional editor only styles
 		wp_enqueue_style(
 			'jsforwp-blocks-editor-css',
-			_get_plugin_url() . $style_path,
+			UGB_PLUGIN_URL . $style_path,
 			[ 'wp-blocks' ],
-			filemtime( _get_plugin_directory() . $style_path )
+			filemtime( UGB_PLUGIN_DIR . $style_path )
 		);
 	}
 
@@ -37,9 +37,9 @@
 		$style_path = '/assets/css/blocks.style.css';
 		wp_enqueue_style(
 			'jsforwp-blocks',
-			_get_plugin_url() . $style_path,
+			UGB_PLUGIN_URL . $style_path,
 			[ 'wp-blocks' ],
-			filemtime( _get_plugin_directory() . $style_path )
+			filemtime( UGB_PLUGIN_DIR . $style_path )
 		);
 	}
 
@@ -59,6 +59,6 @@
 			'jsforwp-blocks-frontend',
 			_get_plugin_url() . $block_path,
 			[],
-			filemtime( _get_plugin_directory() . $block_path )
+			filemtime( UGB_PLUGIN_DIR . $block_path )
 		);
 	}
