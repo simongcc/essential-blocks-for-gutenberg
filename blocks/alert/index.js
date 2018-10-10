@@ -46,22 +46,24 @@ export default registerBlockType(
             __('Alert/Notification', 'ugb'),
             __('Content', 'ugb')
         ],
+
         attributes:{
             content:{
                 type: 'array',
                 source: 'rich-text',
                 selector: 'p',
-                default: __('This is Alert for Promo, Subcriptions Notification', 'ugb')
+                default: __('This is Alert for Promo, Subscriptions Notification', 'ugb')
             },
             blockAlignment: {
                 type: 'string',
             },
             textColor: {
                 type: 'string',
+                default: '#155724'
             },
             color: {
                 type: 'string',
-                default: '#000000'
+                default: '#155724'
             },
             dismissible: {
                 type: 'boolean',
@@ -116,12 +118,14 @@ export default registerBlockType(
                                 label={ __( 'Notification Type' ) }
                                 value={ alertType }
                                 options={ [
-                                    { value: 'success', label: "Success" },
-                                    { value: 'warning', label: "Warning" },
-                                    { value: 'danger', label: "Danger" },
-                                    { value: 'info', label: "Info" },
-                                    { value: 'light', label: "Light" },
-                                    { value: 'dark', label: "Dark" }
+                                    { value: 'success', label: __('Success','ugb') },
+                                    { value: 'warning', label: __('Warning','ugb') },
+                                    { value: 'danger', label: __('Danger','ugb') },
+                                    { value: 'info', label: __('Info','ugb') },
+                                    { value: 'primary', label: __('Primary','ugb') },
+                                    { value: 'secondary', label: __('Secondary','ugb') },
+                                    { value: 'light', label: __('Light','ugb') },
+                                    { value: 'dark', label: __('Dark','ugb') }
                                 ] }
                                 onChange={ ( newSize ) => { setAttributes( { alertType: newSize } ) } }
                             />
