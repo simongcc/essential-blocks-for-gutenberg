@@ -51,6 +51,9 @@
 		// Show Admin Notice After 2 Weeks
 		function ugb_admin_notice_after_2_weeks(){
 				$install_date = get_option( 'ugb_install_date' );
+			// $install_date = date( '2018-02-12 12:00:00' ); // Testing date.
+			// $install_date = ''; // Testing date.
+
 				$display_date = date( 'Y-m-d h:i:s' );
 				$datetime1 = new DateTime( $install_date );
 				$datetime2 = new DateTime( $display_date );

@@ -83,6 +83,10 @@ class Ultimate_Gutenberg{
 
 		add_action( 'admin_menu', array( $this, 'ugb_welcome_screen' ));
 
+		// Add Ultimate Gutenberg Block Category
+		// Add custom block category
+		add_filter( 'block_categories', array($this, 'ugb_block_category'), 10, 2 );
+
 
 	}
 
@@ -97,6 +101,18 @@ class Ultimate_Gutenberg{
 		}
 	}
 
+
+	public function ugb_block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			array(
+				array(
+					'slug' => 'gutenberg-blocks',
+					'title' => __( 'Ultimate Gutenberg', 'ugb' ),
+				),
+			)
+		);
+	}
 
 	/* Files Includes related with Ultimate Gutenberg Plugin */
 	public function ugb_include_files(){
@@ -242,7 +258,7 @@ class Ultimate_Gutenberg{
 		add_menu_page(
 			esc_html__( 'UGB', UGB_TD ),
 			esc_html__( 'UGB', UGB_TD ),
-			'manage_options',
+			'edit_posts',
 			'ugb-widgets',
 			array( $this, 'ugb_welcome_screen_content'),
 			$icon_svg,
