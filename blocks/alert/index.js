@@ -33,6 +33,8 @@ import {
 * Register Alert Block
  */
 
+
+
 export default registerBlockType(
     'gutenberg-blocks/alert',
     {
@@ -61,9 +63,9 @@ export default registerBlockType(
                 type: 'string',
                 default: '#155724'
             },
-            color: {
+            bgColor: {
                 type: 'string',
-                default: '#155724'
+                default: '#d4edda'
             },
             dismissible: {
                 type: 'boolean',
@@ -84,7 +86,7 @@ export default registerBlockType(
         },
         edit: props =>{
 
-            const alertClass = [
+            const alertType = [
                 { value: 'success', label: "Success" },
                 { value: 'warning', label: "Warning" },
                 { value: 'danger', label: "Danger" },
@@ -97,8 +99,8 @@ export default registerBlockType(
                 attributes: {
                     content,
                     textColor,
-                    color,
-                    alertType,
+                    bgColor,
+                    alertClass,
                     dismissible
                 },
                 editable, isSelected, setState, setAttributes, className
@@ -116,43 +118,20 @@ export default registerBlockType(
                             />
                             <SelectControl
                                 label={ __( 'Notification Type' ) }
-                                value={ alertType }
-                                options={ [
-                                    { value: 'success', label: __('Success','ugb') },
-                                    { value: 'warning', label: __('Warning','ugb') },
-                                    { value: 'danger', label: __('Danger','ugb') },
-                                    { value: 'info', label: __('Info','ugb') },
-                                    { value: 'primary', label: __('Primary','ugb') },
-                                    { value: 'secondary', label: __('Secondary','ugb') },
-                                    { value: 'light', label: __('Light','ugb') },
-                                    { value: 'dark', label: __('Dark','ugb') }
-                                ] }
-                                onChange={ ( newSize ) => { setAttributes( { alertType: newSize } ) } }
+                                value={ alertClass }
+                                options={ alertType.map( ({ value, label }) => ( {
+                                    value: value,
+                                    label: label,
+                                } ) ) }
+                                onChange={ ( newSize ) => { setAttributes( { alertClass: newSize } ) } }
                             />
                         </PanelBody>
-                        <PanelColorSettings
-                            title={ __( 'Color Settings' ) }
-                            colorSettings={ [
-                                {
-                                    value: color,
-                                    onChange: ( colorValue ) => setAttributes( { color: colorValue } ),
-                                    label: __( 'Background Color' ),
-                                },
-                                {
-                                    value: textColor,
-                                    onChange: ( colorValue ) => setAttributes( { textColor: colorValue } ),
-                                    label: __( 'Text Color' ),
-                                },
-                            ] }
-                        >
-                        </PanelColorSettings>
                     </InspectorControls>
 
                     <div
-                        className={`ugb-alert
-                        type=${alertClass} dismissible-${dismissible}` }>
+                        className={`ugb-alert ${alertClass} dismissible-${dismissible}` }>
                         { dismissible && (
-                            <span key='button' className={ 'close-button' }>
+                            <span key='button' className={ 'alert-close' }>
                                 { icons.close }
                             </span>
                         )}
@@ -161,9 +140,9 @@ export default registerBlockType(
                             placeholder={ content.default }
                             value={content}
                             onChange={(content)=> setAttributes({content})}
-                            className={`wp-ugb-alert-${alertClass}`}
+                            className={`${alertClass}`}
                             style={{
-                                backgroundColor: color,
+                                backgroundColor: bgColor,
                                 color: textColor
                             }}
                         />
@@ -173,6 +152,36 @@ export default registerBlockType(
 
         },
         save: props => {
+            const{
+                    content,
+                    textColor,
+                    bgColor,
+                    alertClass,
+                    dismissible
+            } = props.attributes;
+
+            const buttonStyle = {
+                backgroundColor: bgColor,
+                color: textColor,
+            }
+
+            return(
+                <div
+                    className={`ugb-alert ${alertClass} dismissible-${dismissible}` }>
+                    { dismissible && (
+                        <span key='button' className={ 'alert-close' }>
+                                { icons.close }
+                            </span>
+                    )}
+                    <RichText.Content
+                        tagName="p"
+                        value={ content }
+                        className={`${alertClass}`}
+                        style={ buttonStyle }
+                    />
+                </div>
+            )
+
 
         },
 
