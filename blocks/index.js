@@ -5,3 +5,5 @@ import './i18n.js';
  */
 
 import './alert';
+import './blockquote';
+// import './call-to-action';
