@@ -3,12 +3,9 @@
 */
 
 import icons from '../../utils/icons';
-import classnames from 'classnames';
 import './style.scss';
 import './editor.scss';
-// import attributes from './attributes';
 
-// import './edit';
 /*
 * Alert Block Libraries
  */
@@ -17,15 +14,14 @@ import {
     __,
     registerBlockType,
     SelectControl,
-    PanelColorSettings,
-    Dashicon,
     ToggleControl,
     InspectorControls,
     RichText,
     PanelBody,
     Fragment,
-    ColorPalette,
-    BlockControls
+    BlockControls,
+    AlignmentToolbar,
+    BlockAlignmentToolbar
 
 } from '../../utils/wp-import'
 
@@ -56,9 +52,6 @@ export default registerBlockType(
                 selector: 'p',
                 default: __('This is Alert for Promo, Subscriptions Notification', 'ugb')
             },
-            blockAlignment: {
-                type: 'string',
-            },
             textColor: {
                 type: 'string',
                 default: '#155724'
@@ -74,7 +67,14 @@ export default registerBlockType(
             alertClass: {
                 type: 'string',
                 default: 'success',
-            }
+            },
+            textAlignment: {
+                type: 'string',
+            },
+            blockAlignment: {
+                type: 'string',
+                default: 'center',
+            },
         },
         getEditWrapperProps( { blockAlignment } ){
           if( 'left' === blockAlignment ||
@@ -101,13 +101,25 @@ export default registerBlockType(
                     textColor,
                     bgColor,
                     alertClass,
-                    dismissible
+                    dismissible,
+                    textAlignment,
+                    blockAlignment,
                 },
                 editable, isSelected, setState, setAttributes, className
             } = props;
 
             return (
                 <Fragment>
+                    <BlockControls>
+                        <BlockAlignmentToolbar
+                            value={ blockAlignment }
+                            onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
+                        />
+                        <AlignmentToolbar
+                            value={ textAlignment }
+                            onChange={ textAlignment => setAttributes( { textAlignment } ) }
+                        />
+                    </BlockControls>
 
                     <InspectorControls>
                         <PanelBody>
@@ -143,7 +155,8 @@ export default registerBlockType(
                             className={`${alertClass}`}
                             style={{
                                 backgroundColor: bgColor,
-                                color: textColor
+                                color: textColor,
+                                textAlign: textAlignment
                             }}
                         />
                     </div>
@@ -157,17 +170,20 @@ export default registerBlockType(
                     textColor,
                     bgColor,
                     alertClass,
-                    dismissible
+                    dismissible,
+                    blockAlignment,
+                    textAlignment,
             } = props.attributes;
 
             const buttonStyle = {
                 backgroundColor: bgColor,
                 color: textColor,
+                textAlign: textAlignment
             }
 
             return(
                 <div
-                    className={`ugb-alert ${alertClass} dismissible-${dismissible}` }>
+                    className={`ugb-alert ${alertClass} dismissible-${dismissible} align${blockAlignment}` }>
                     { dismissible && (
                         <span key='button' className={ 'alert-close' }>
                                 { icons.close }
