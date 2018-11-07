@@ -52,3 +52,31 @@
   color: #1b1e21 !important;
   background-color: #d6d8d9 !important;
   border-color: #c6c8ca !important; }
+@charset "UTF-8";
+.ugb-blockquotes {
+  border: 0 !important;
+  padding: 10px;
+  margin-left: 90px;
+  margin-right: 10px;
+  font-style: italic;
+  text-align: inherit;
+  background: transparent;
+  position: relative;
+  overflow: visible;
+  --quote-color: rgba(129, 141, 165, 0.32); }
+  .ugb-blockquotes p {
+    margin: 0; }
+  .ugb-blockquotes:after, .ugb-blockquotes:before, .ugb-blockquotes p:after, .ugb-blockquotes p:before {
+    display: none; }
+  .ugb-blockquotes:before {
+    content: "❛❛";
+    display: block;
+    position: absolute;
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    font-style: normal;
+    font-size: 100px;
+    line-height: 1em;
+    left: -35px;
+    top: -15px;
+    opacity: 1;
+    color: var(--quote-color); }

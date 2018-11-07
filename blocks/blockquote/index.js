@@ -3,8 +3,9 @@
 */
 
 import icons from '../../utils/icons';
-import './style.scss';
 import './editor.scss';
+import './style.scss';
+
 
 /*
 * Blockquote Block Libraries
@@ -50,7 +51,7 @@ export default registerBlockType(
                 type: 'array',
                 source: 'rich-text',
                 selector: 'p',
-                default: __('I learned that courage was not the absence of fear', 'ugb')
+                default: __('I learned that courage was not the absence of fear, but the triumph over it. The braveman is not he who does not feel afraid, but he who conquers that fear. - Nelson Mandela', 'ugb')
             },
             textColor: {
                 type: 'string',
@@ -86,7 +87,7 @@ export default registerBlockType(
                     textAlignment,
                     blockAlignment,
                 },
-                isSelected, setAttributes, className
+                editable, isSelected, setState, setAttributes, className
             } = props;
 
             return (
@@ -124,16 +125,21 @@ export default registerBlockType(
                     </InspectorControls>
 
                     <blockquote
-                        className="ugb-blockqoute"
+                        className={'ugb-blockqoutes'}
+                        style={ {
+                            '--quote-color': bgColor
+                        } }
                     >
                         <RichText
-                            className='ugb-blockquote-text'
-                            value={ content }
-                            onChange={ ( nextValue ) => setAttributes( { content: nextValue } ) }
+                            className='ugb-blockquotes-text'
+                            value={content}
+                            onChange={(content)=> setAttributes({content})}
                             isSelected={ isSelected }
-                            style={ {
+                            style={{
+                                // backgroundColor: bgColor,
                                 color: textColor,
-                            } }
+                                // textAlign: textAlignment
+                            }}
                         />
                     </blockquote>
                 </Fragment>
@@ -150,11 +156,15 @@ export default registerBlockType(
             } = props.attributes;
 
             return(
-                <blockquote className='ugb-alert'>
+                <blockquote
+                    className={`ugb-blockquotes align${blockAlignment}`}
+                    style={ { '--quote-color': bgColor } }
+                >
                     <RichText.Content
                         tagName="p"
                         value={ content }
-                        style={ { textColor } }
+                        className='ugb-blockquote-text'
+                        style={ { color: textColor } }
                     />
                 </blockquote>
             )
