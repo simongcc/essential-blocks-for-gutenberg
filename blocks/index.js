@@ -7,4 +7,4 @@ import './i18n.js';
 import './alert';
 import './blockquote';
 import './card';
-// import './call-to-action';
+import './call-to-action';

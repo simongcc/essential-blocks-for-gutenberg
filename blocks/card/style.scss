@@ -1,0 +1,48 @@
+//@import '../../assets/scss/common';
+$gray: #cccccc;
+$off-white: #f1f1f1;
+
+.wp-block-gutenberg-blocks-card.card{
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  -webkit-box-shadow: 0 5px 5px 0 rgba(18,63,82,0.035), 0 0 0 1px rgba(176,181,193,0.2);
+  -moz-box-shadow: 0 5px 5px 0 rgba(18,63,82,0.035), 0 0 0 1px rgba(176,181,193,0.2);
+  box-shadow: 0 5px 5px 0 rgba(18,63,82,0.035), 0 0 0 1px rgba(176,181,193,0.2);
+  background-color: #fff;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  padding: 60px 35px;
+
+  .container {
+    border: 1px solid $gray;
+    padding: 1rem;
+  }
+
+  .button-container {
+    text-align: center;
+    padding: 22% 0;
+    background: $off-white;
+    border: 1px solid $gray;
+    border-radius: 2px;
+    margin: 0 0 1.2rem 0;
+  }
+
+  .card_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .card_content{
+
+  }
+
+  .card_image {
+    height: 15.7rem;
+    width: 100%;
+    object-fit: cover;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+}

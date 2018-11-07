@@ -3,6 +3,7 @@
 */
 
 import icons from '../../utils/icons';
+import classnames from 'classnames';
 import './style.scss';
 import './editor.scss';
 
@@ -50,12 +51,14 @@ export default registerBlockType(
         attributes:{
             title:{
                 source: 'rich-text',
-                selector: '.card_title'
+                selector: '.card_title',
+                default: __( 'Card Title Here','ugb' ),
             },
             body: {
               type: 'array',
               source: 'children',
-              selector: '.card_body'
+              selector: '.card_body',
+              default: __( 'Card Content here...','ugb' ),
             },
             imageID: {
                 type: 'number',
@@ -117,82 +120,80 @@ export default registerBlockType(
                 className,
                 'ugb-card',
             ], {
-                'has-image': mediaURL,
-            } )
+                'has-image': imageUrl,
+            })
 
             return (
                 
                   <Fragment>
-                        <BlockControls>
-                            
-                            <AlignmentToolbar
-                                value={ textAlignment }
-                                onChange={ textAlignment => setAttributes( { textAlignment } ) }
-                            />
-                        </BlockControls>
-                        
 
                         <div className={ mainClasses }>
-                            
-                            { ! imageID ? (
 
-                                <MediaUpload
-                                    onSelect={ onSelectImage }
-                                    type="image"
-                                    value={ imageID }
-                                    render = { ( { open } ) => (
-                                        <Button 
-                                            className= { "button button-large" }
-                                            onClick={ open }
+                            <div className={ 'wp-block-ugb-card-image' }>
+                                { ! imageID ? (
+
+                                    <div className="button-container">
+                                        <MediaUpload
+                                            onSelect={ onSelectImage }
+                                            type="image"
+                                            value={ imageID }
+                                            render = { ( { open } ) => (
+                                                <Button
+                                                    className= { "button button-large" }
+                                                    onClick={ open }
+                                                >
+                                                    { icons.upload }
+                                                    { __('Upload Image', 'ugb')}
+                                                </Button>
+                                        )}
                                         >
-                                            { icons.upload }
-                                            { __('Upload Image', 'ugb')}
-                                        </Button>
-                                )}
-                                >
-                                </MediaUpload>
-                            
-
-                            ) : (
-                                <p class="image-wrapper">
-                                    <img
-                                        src={ imageUrl }
-                                        alt={ imageAlt }
-                                    />
-
-                                    { isSelected ? (
-
-                                        <Button
-                                            className="remove-image"
-                                            onClick={ onRemoveImage }
-                                        >
-                                            { icons.remove }
-                                        </Button>
-
-                                    ) : null }
-
-                                </p>
-                            )
-                        }
-                        
-                    
-                
+                                        </MediaUpload>
+                                    </div>
 
 
-                        <RichText
-                          onChange={ content => setAttributes({ title: content }) }
-                          value={ title }
-                          placeholder="Your card title"
-                          className="heading"
-                        />
-                        <RichText
-                          onChange={ content => setAttributes({ body: content }) }
-                          value={ body }
-                          multiline="p"
-                          placeholder="Your card text"
-                          formattingControls={ ['bold', 'italic', 'underline'] }
-                          isSelected={ isSelected }
-                        />
+                                ) : (
+                                    <p class="image-wrapper">
+                                        <img
+                                            src={ imageUrl }
+                                            alt={ imageAlt }
+                                        />
+
+                                        { isSelected ? (
+
+                                            <Button
+                                                className="remove-image"
+                                                onClick={ onRemoveImage }
+                                            >
+                                                { icons.remove }
+                                            </Button>
+
+                                        ) : null }
+
+                                    </p>
+                                )
+                            }
+
+                        </div>
+
+                        <div className={ 'wp-block-ugb-card-content' }>
+
+                            <RichText
+                              onChange={ content => setAttributes({ title: content }) }
+                              value={ title }
+                              placeholder="Your card title"
+                              className="heading"
+                            />
+
+                            <RichText
+                              onChange={ content => setAttributes({ body: content }) }
+                              value={ body }
+                              multiline="p"
+                              placeholder="Your card text"
+                              formattingControls={ ['bold', 'italic', 'underline'] }
+                              isSelected={ isSelected }
+                              className="card_body"
+                            />
+                        </div>
                     </div>
                 
                 </Fragment>
@@ -202,7 +203,44 @@ export default registerBlockType(
         },
         save: props => {
 
+            const { title, body, imageUrl, imageAlt } = props.attributes;
 
+
+            const cardImage = (imageUrl, imageAlt) => {
+                if(!imageUrl) return null;
+
+                if(imageAlt) {
+                    return (
+                        <img
+                            className="card_image"
+                            src={ imageUrl }
+                            alt={ imageAlt }
+                        />
+                    );
+                }
+
+                // No alt set, so let's hide it from screen readers
+                return (
+                    <img
+                        className="card_image"
+                        src={ imageUrl }
+                        alt=""
+                        aria-hidden="true"
+                    />
+                );
+            };
+
+            return (
+                <div className="card">
+                    { cardImage( imageUrl, imageAlt) }
+                    <div className="card_content">
+                        <h3 className="card_title">{ title }</h3>
+                        <div className="card_body">
+                            { body }
+                        </div>
+                    </div>
+                </div>
+            );
 
         },
 
