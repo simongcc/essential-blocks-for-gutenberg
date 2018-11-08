@@ -1,7 +1,7 @@
-.ugb-blockquotes {
+.ugb-blockqoutes {
   border: 0 !important;
   padding: 10px;
-  margin-left: 90px;
+  margin-left: 32px;
   margin-right: 10px;
   font-style: italic;
   text-align: inherit;
@@ -12,7 +12,7 @@
   p {
     margin: 0;
   }
-  &, p {
+  p {
     &:after, &:before {
       display: none;
     }
@@ -21,7 +21,6 @@
     content: "❛❛";
     display: block;
     position: absolute;
-    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
     font-style: normal;
     font-size: 100px;
     line-height: 1em;

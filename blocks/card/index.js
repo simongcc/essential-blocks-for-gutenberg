@@ -8,7 +8,7 @@ import './style.scss';
 import './editor.scss';
 
 /*
-* Card Block Libraries
+ * Card Block Libraries
  */
 
 import {
