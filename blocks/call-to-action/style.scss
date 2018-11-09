@@ -1,0 +1,38 @@
+.alice-green-bg {
+  background-color: #e4f1f9;
+}
+.green-gradient {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(63, 198, 168, 0.9)), to(rgba(118, 61, 234, 0.9)));
+  background-image: linear-gradient(to right, rgba(63, 198, 168, 0.9) 0%, rgba(118, 61, 234, 0.9) 100%);
+}
+.green-gradient .action-content h1, .green-gradient .action-content h2, .green-gradient .action-content h3, .green-gradient .action-content h4, .green-gradient .action-content h5, .green-gradient .action-content h6 {
+  color: #fff;
+}
+
+.action-content div[class*="col-lg-8"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cta-content {
+  display: inline-block;
+  margin: 95px 0;
+  width: 100%;
+}
+
+.col-lg-8 {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+.text-right {
+  text-align: right!important;
+}
+.col-lg-4 {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}

@@ -5,9 +5,9 @@
  * @author      Liton Arefin (@Litonice13)
  * @license     GPL-3.0
  *
- * Plugin Name: Ultimate Gutenberg Blocks
+ * Plugin Name: Ultimate Blocks for Gutenberg
  * Plugin URI:  https://jeweltheme.com/
- * Description: Ultimate Gutenberg Blocks helps to make your Website more Comfortable
+ * Description: Ultimate Blocks for Gutenberg helps to make your Website more Comfortable
  * Version:     1.0.0
  * Author:      Liton Arefin
  * Author URI:  https://jeweltheme.com
@@ -338,7 +338,7 @@ class Ultimate_Gutenberg{
 		// Notify User that versions are too old, and deactivate plugin.
 		$version = 'PHP' == $flag ? $php : $wp;
 		deactivate_plugins( basename( __FILE__ ) );
-		wp_die( '<p>The <strong>Ultimate Gutenberg Blocks</strong> plugin requires' . $flag . '  version ' . $version . ' or greater.</p>', 'Plugin Activation Error', array( 'response' => 200, 'back_link' => true ) );
+		wp_die( '<p>The <strong>Ultimate Blocks for Gutenberg</strong> plugin requires' . $flag . '  version ' . $version . ' or greater.</p>', 'Plugin Activation Error', array( 'response' => 200, 'back_link' => true ) );
 	}
 
 	/**

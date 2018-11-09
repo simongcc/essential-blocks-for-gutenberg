@@ -16,13 +16,15 @@ import './editor.scss';
 import {
     __,
     Fragment,
+    URLInput,
+    IconButton,
+    Tooltip,
+    TextControl,
     Toolbar,
     BlockControls,
     AlignmentToolbar,
     BlockAlignmentToolbar,
-    Dashicon,
     registerBlockType,
-    MediaUpload,
     RichText,
     Button
 
@@ -41,31 +43,22 @@ export default registerBlockType(
         ],
 
         attributes:{
-            title:{
-                source: 'rich-text',
-                selector: '.card_title',
-                default: __( 'Card Title Here','ugb' ),
+            message: {
+                type: 'html',
+                selector: 'p',
+                default: __( 'Purchase Osaka now and get lifetime support','ugb' ),
             },
-            body: {
-                type: 'array',
-                source: 'children',
-                selector: '.card_body',
-                default: __( 'Card Content here...','ugb' ),
+            buttonText:{
+                type: 'string',
+                source: 'text',
+                selector: 'a',
+                default: __( 'Purchase now $45','ugb' ),
             },
-            imageID: {
-                type: 'number',
-            },
-            imageAlt: {
+            buttonUrl:{
                 type: 'string',
                 source: 'attribute',
-                attribute: 'alt',
-                selector: 'img',
-            },
-            imageUrl: {
-                type: 'string',
-                source: 'attribute',
-                attribute: 'src',
-                selector: 'img',
+                attribute: 'href',
+                selector: 'a',
             },
             textAlignment: {
                 type: 'string',
@@ -76,14 +69,127 @@ export default registerBlockType(
             },
         },
 
+        getEditWrapperProps( { blockAlignment } ){
+            if( 'left' === blockAlignment ||
+                'right' === blockAlignment ||
+                'full' === blockAlignment
+            ){
+                return { 'data-align': blockAlignment };
+            }
+        },
+
         edit: props =>{
+            const{
+                attributes: {
+                    message,
+                    buttonText,
+                    buttonUrl,
+                    textAlignment,
+                    blockAlignment
+                },
+                isSelected, setAttributes, className
+            } = props;
+
             return(
-                <h1>Liton Arefin</h1>
+                <Fragment>
+                    <BlockControls>
+                        <BlockAlignmentToolbar
+                            value={ blockAlignment }
+                            onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
+                        />
+                        <AlignmentToolbar
+                            value={ textAlignment }
+                            onChange={ textAlignment => setAttributes( { textAlignment } ) }
+                        />
+                    </BlockControls>
+
+                    <section className="section-content alice-green-bg">
+                        <div className="container">
+                            <div className="cta-content">
+                                <div className="action-content">
+                                    <div className="row">
+                                        <div className="col-lg-8">
+                                            <RichText
+                                                tagName="h3"
+                                                onChange={ message => setAttributes({ message }) }
+                                                value={ message }
+                                            />
+                                        </div>
+                                        <div className="col-lg-4 text-right">
+                                            { isSelected ? (
+                                                <div>
+                                                    <TextControl
+                                                        id="cta-link"
+                                                        label={ __('Button Text','ugb') }
+                                                        value={ buttonText }
+                                                        onChange={ buttonText => setAttributes({ buttonText }) } />
+                                                    <p>{ __('Link URL', 'ugb' ) }</p>
+                                                    <form
+                                                        onSubmit={ event => event.preventDefault() }
+                                                    >
+                                                        <Tooltip text="Button Link">
+                                                            { icons.urlicon }
+                                                        </Tooltip>
+                                                        <URLInput
+                                                            className="cta-url"
+                                                            value = { buttonUrl }
+                                                            onChange={ buttonUrl => setAttributes({ buttonUrl                                                    }) } />
+                                                        <IconButton
+                                                            icon="editor-break"
+                                                            label={ __('Apply', 'ugb') }
+                                                            type="submit"
+                                                        />
+                                                    </form>
+                                                </div>
+
+                                            ) : (
+                                                <p>
+                                                    <a href={ buttonUrl } className="btn">
+                                                        { buttonText || __('Edit URL', 'ugb') }
+                                                    </a>
+                                                </p>
+                                            )}
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </Fragment>
             )
 
         },
         save: props => {
 
+            const {
+                message,
+                buttonText,
+                buttonUrl,
+                blockAlignment,
+                textAlignment,
+            } = props.attributes;
+
+            return(
+                <section className={ `section-content alice-green-bg align${blockAlignment}`}>
+                    <div className="container">
+                        <div className="content">
+                            <div className="action-content">
+                                <div className="row">
+                                    <div className="col-lg-8">
+                                        <h3>{ message }</h3>
+                                    </div>
+                                    <div className="col-lg-4 text-right">
+                                        <a href={ buttonUrl } className="btn">
+                                            { buttonText }
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )
         }
 
 
