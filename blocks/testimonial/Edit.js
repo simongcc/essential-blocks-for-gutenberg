@@ -81,24 +81,6 @@ export default class Edit extends Component {
     render() {
         const items = this.state.newItem.slice();
 
-        // const {
-        //     attributes,
-        //     setAttributes,
-        // } = this.props;
-
-        const{
-            attributes: {
-                title,
-                body,
-                imageID,
-                imageAlt,
-                imageUrl,
-                textAlignment,
-                blockAlignment
-            },
-            isSelected, setAttributes, className
-        } = this.props;
-
 
         return (
             <Fragment>
@@ -111,17 +93,15 @@ export default class Edit extends Component {
                         value={ textAlignment }
                         onChange={ textAlignment => setAttributes( { textAlignment } ) }
                     />
+            
+                    <AddItem handleAddNewItem={this.handleAddNewItem} handleInputNewItem={this.handleInputNewItem} item={this.state.item} >
+                    {
+                        items.map((item) =>{
+                            return <ListItem key={item.id} item={item} handleItemDelete={this.handleItemDelete} />
+                        })
+                    }
+                    </AddItem>
                 </BlockControls>
-                
-                    <div className="testimonial_container">
-                        <AddItem handleAddNewItem={this.handleAddNewItem} handleInputNewItem={this.handleInputNewItem} item={this.state.item} />
-                        {
-                            items.map((item) =>{
-                                return <ListItem key={item.id} item={item} handleItemDelete={this.handleItemDelete} />
-                            })
-                        }
-                    </div>
-                
             </Fragment>
         )
     }
