@@ -1,7 +1,7 @@
-=== Ultimate Blocks for Gutenberg ===
+=== Essential Blocks for Gutenberg ===
 Contributors: litonice13, jwthemeltd
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
-Tags: gutenberg, gutenberg blocks, essential guten blocks, essential blocks
+Tags: essential blocks, gutenberg blocks, essential guten blocks, 
 Requires at least: 4.0
 Tested up to: 4.9.8
 Stable tag: 1.0.0
@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.3
 
-Ultimate Blocks for Gutenberg is a Blocks Plugin for Gutenberg Editor. Gutenberg Blocks made easy !!!
+The Ultimate Blocks for Gutenberg is a Blocks Plugin for Gutenberg Editor. Gutenberg Blocks made easy !!!
 
 == Description ==
 Gutenberg is not just an Editor. Gutenberg will be game changer for WordPress.

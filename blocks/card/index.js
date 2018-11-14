@@ -37,14 +37,14 @@ import {
 export default registerBlockType(
     'gutenberg-blocks/card',
     {
-        title : __('Cards', 'ugb'),
+        title : __('Card', 'ugb'),
         description: __('Ultimate Gutenberg Cards Block', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
             src: icons.swap
         },
         keywords: [
-            __('Cards', 'ugb'),
+            __('Card', 'ugb'),
             __('Content', 'ugb')
         ],
 

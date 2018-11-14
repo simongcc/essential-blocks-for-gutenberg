@@ -5,10 +5,10 @@
  * @author      Liton Arefin (@Litonice13)
  * @license     GPL-3.0
  *
- * Plugin Name: Ultimate Blocks for Gutenberg
+ * Plugin Name: Essential Blocks for Gutenberg
  * Plugin URI:  https://jeweltheme.com/
- * Description: Ultimate Blocks for Gutenberg helps to make your Website more Comfortable
- * Version:     1.0.0
+ * Description: Essential Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
+ * Version:     1.0.2
  * Author:      Liton Arefin
  * Author URI:  https://jeweltheme.com
  * Text Domain: ugb
@@ -44,7 +44,7 @@ define( 'UGB_DIR', dirname( __FILE__ ) );
 class Ultimate_Gutenberg{
 
 	/* Variables */
-	public  $version = "1.0.0";
+	public  $version = "1.0.2";
 	private $plugin_path;
 	private $plugin_url;
 	private $plugin_slug;
@@ -108,7 +108,7 @@ class Ultimate_Gutenberg{
 			array(
 				array(
 					'slug' => 'gutenberg-blocks',
-					'title' => __( 'Ultimate Gutenberg', 'ugb' ),
+					'title' => __( 'Essential Blocks', 'ugb' ),
 				),
 			)
 		);

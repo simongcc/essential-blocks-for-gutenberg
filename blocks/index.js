@@ -8,3 +8,4 @@ import './alert';
 import './blockquote';
 import './card';
 import './call-to-action';
+import './testimonial';

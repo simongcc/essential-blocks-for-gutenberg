@@ -41,6 +41,7 @@ export const {
 
 export const {
     Fragment,
+    Component
 } = wp.element
 
 export const {
@@ -55,4 +56,4 @@ export const {
     addFilter,
 } = wp.hooks
 
-// export const isPro = ugb.isPro
+// export const isPro = egb.isPro
