@@ -34,7 +34,7 @@ import {
 */
 
 export default registerBlockType(
-    'essential-gutenberg-blocks/testimonial',
+    'gutenberg-blocks/testimonial',
     {
         title : __('Testimonial', 'ugb'),
         description: __('Essential Gutenberg Testimonial Block', 'ugb'),
@@ -49,15 +49,17 @@ export default registerBlockType(
 
         attributes:{
             title:{
-                source: 'rich-text',
-                selector: '.add-new__input'
+                type: 'html',
+                selector: '.add-new__input',
+                default: __( 'Card Title Here','ugb' ),
             },
             id:{
                 type: 'number'
             },            
             content: {
-                source: 'rich-text',
-                selector: '.add-new__body'
+                type: 'html',
+                selector: '.card_body',
+                default: __( 'Card Content Here','ugb' ),
             },
             newItem: {
                 type: 'array',
@@ -68,7 +70,7 @@ export default registerBlockType(
             // body: {
             //     type: 'array',
             //     source: 'children',
-            //     selector: '.testimonial_body',
+            //     selector: '.card_body',
             //     default: __( 'Card Content here...','ugb' ),
             // },
             imageID: {
@@ -155,7 +157,7 @@ export default registerBlockType(
                         imageUrl,
                      };
                 itemArray.push( copyItem );
-
+                
                 setAttributes({
                     title:'',
                     content:'',
@@ -166,6 +168,8 @@ export default registerBlockType(
                 });
             }
 
+
+
             const mainClasses = classnames( [
                 className,
                 'ugb-testimonial',
@@ -173,20 +177,23 @@ export default registerBlockType(
                 'has-image': imageUrl,
             })
 
+
             return (
 
                 <Fragment>
                         <div className={ mainClasses }>
 
-                            <div className={ 'wp-block-gutenberg-blocks-testimonial' }></div>
+                            <div 
+                                className={ 'wp-block-gutenberg-blocks-testimonial' }>
 
                                 <RichText
-                                    tagName='p'
-                                    className={ 'add-new__input' }
-                                    onChange={ title => setAttributes({ title: title }) }
+                                    tagName="h2"
                                     value={ title }
-                                    placeholder={ __( 'Add New Title', 'ugb' ) }
-                                />
+                                    placeholder={ title.default }
+                                    onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
+                                    className={`section-title`}
+                                    keepPlaceholderOnFocus
+                                />   
                                 
                                 { ! imageID ? (
 
@@ -230,20 +237,21 @@ export default registerBlockType(
                                         )
                                     }
 
-
                                 <RichText
-                                    onChange={ content => setAttributes({ content: content }) }
+                                    placeholder={ content.default }
                                     value={ content }
-                                    placeholder="Your card text"
-                                    className="testimonial_body"
-                                />
+                                    className="card_body"
+                                    onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
+                                    keepPlaceholderOnFocus
+                                />                                
+                            </div>
 
-                                <Button 
-                                    id="add-new__btn" 
-                                    className="button button-primary" 
-                                    onClick={ handleAddNewItem }>
-                                    Add New
-                                </Button>
+                            <button 
+                                id="add-new__btn" 
+                                className="button button-primary" 
+                                onClick={ handleAddNewItem }>
+                                Add New
+                            </button>
                             
                             
                             { newItem.map( item => {
@@ -269,21 +277,16 @@ export default registerBlockType(
         
         save: props => {
 
-            const { 
-                title,
-                content,
-                imageAlt,
-                imageUrl 
-            } = props.attributes;
+            const { title, content, imageUrl, imageAlt } = props.attributes;
 
 
-            const cardImage = (imageUrl, imageAlt) => {
+            const testimonialImage = (imageUrl, imageAlt) => {
                 if(!imageUrl) return null;
 
                 if(imageAlt) {
                     return (
                         <img
-                            className="testimonial_image"
+                            className="card_image"
                             src={ imageUrl }
                             alt={ imageAlt }
                         />
@@ -293,7 +296,7 @@ export default registerBlockType(
                 // No alt set, so let's hide it from screen readers
                 return (
                     <img
-                        className="testimonial_image"
+                        className="card_image"
                         src={ imageUrl }
                         alt=""
                         aria-hidden="true"
@@ -302,13 +305,19 @@ export default registerBlockType(
             };
 
             return (
-                <div className="testimonial_content">
-                    { cardImage( imageUrl, imageAlt) }
-                    <div className="testimonial_content">
-                        <h3 className="testimonial_title">{ title }</h3>
-                        <div className="testimonial_body">
-                            { content }
-                        </div>
+                <div className="card">
+                    { testimonialImage( imageUrl, imageAlt) }
+                    <div className="card_content">
+                        <RichText.Content
+                            tagName="h3"
+                            value={ title }
+                            className={`card_title`}
+                        />
+                        <RichText.Content
+                            tagName="p"
+                            value={ content }
+                            className={`card_body`}
+                        />
                     </div>
                 </div>
             );

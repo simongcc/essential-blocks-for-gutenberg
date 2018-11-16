@@ -46,9 +46,8 @@ export default registerBlockType(
         ],
 
         attributes:{
-            content:{
-                type: 'array',
-                source: 'rich-text',
+            message:{
+                type: 'html',
                 selector: 'p',
                 default: __('This is Alert for Promo, Subscriptions Notification', 'ugb')
             },
@@ -97,7 +96,7 @@ export default registerBlockType(
 
             const{
                 attributes: {
-                    content,
+                    message,
                     textColor,
                     bgColor,
                     alertClass,
@@ -147,18 +146,21 @@ export default registerBlockType(
                                 { icons.close }
                             </span>
                         )}
+                        
+
                         <RichText
-                            tagName="p"
-                            placeholder={ content.default }
-                            value={content}
-                            onChange={(content)=> setAttributes({content})}
-                            className={`${alertClass}`}
+                            tagName={ 'p' }
+                            value={ message }
+                            onChange={ ( nextMessage ) => setAttributes( { message: nextMessage } ) }
                             style={{
                                 backgroundColor: bgColor,
                                 color: textColor,
                                 textAlign: textAlignment
                             }}
-                        />
+                            className={`${alertClass}`}
+                            placeholder={ message.default }
+                            keepPlaceholderOnFocus
+                        />                        
                     </div>
                 </Fragment>
             )
@@ -166,13 +168,13 @@ export default registerBlockType(
         },
         save: props => {
             const{
-                    content,
-                    textColor,
-                    bgColor,
-                    alertClass,
-                    dismissible,
-                    blockAlignment,
-                    textAlignment,
+                message,
+                textColor,
+                bgColor,
+                alertClass,
+                dismissible,
+                blockAlignment,
+                textAlignment,
             } = props.attributes;
 
             const buttonStyle = {
@@ -189,12 +191,7 @@ export default registerBlockType(
                                 { icons.close }
                             </span>
                     )}
-                    <RichText.Content
-                        tagName="p"
-                        value={ content }
-                        className={`${alertClass}`}
-                        style={ buttonStyle }
-                    />
+                    { message }
                 </div>
             )
 

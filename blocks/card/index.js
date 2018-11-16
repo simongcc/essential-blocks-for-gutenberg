@@ -50,13 +50,13 @@ export default registerBlockType(
 
         attributes:{
             title:{
-                source: 'rich-text',
+                source: 'html',
                 selector: '.card_title',
                 default: __( 'Card Title Here','ugb' ),
             },
             body: {
-              type: 'array',
-              source: 'children',
+              type: 'html',
+            //   source: 'children',
               selector: '.card_body',
               default: __( 'Card Content here...','ugb' ),
             },
@@ -178,21 +178,22 @@ export default registerBlockType(
                         <div className={ 'wp-block-ugb-card-content' }>
 
                             <RichText
-                              onChange={ content => setAttributes({ title: content }) }
-                              value={ title }
-                              placeholder="Your card title"
-                              className="heading"
+                                tagName={ 'h4' }
+                                value={ title }
+                                className={ 'ugb-card-heading' }
+                                onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
+                                placeholder={ title.default }
+                                keepPlaceholderOnFocus
                             />
-
                             <RichText
-                              onChange={ content => setAttributes({ body: content }) }
-                              value={ body }
-                              multiline="p"
-                              placeholder="Your card text"
-                              formattingControls={ ['bold', 'italic', 'underline'] }
-                              isSelected={ isSelected }
-                              className="card_body"
+                                placeholder={ body.default }
+                                value={ body }
+                                placeholder={ body.default }
+                                onChange={(body)=> setAttributes({body})}
+                                className={`card_body`}
+                                keepPlaceholderOnFocus
                             />
+                            
                         </div>
                     </div>
                 
@@ -234,10 +235,21 @@ export default registerBlockType(
                 <div className="card">
                     { cardImage( imageUrl, imageAlt) }
                     <div className="card_content">
-                        <h3 className="card_title">{ title }</h3>
-                        <div className="card_body">
-                            { body }
-                        </div>
+                        
+                        <RichText.Content
+                            tagName="h3"
+                            value={ title }
+                            onChange={( title )=> setAttributes({ title })}
+                            className={`card_title`}
+                        />
+
+                        <RichText.Content
+                            tagName="p"
+                            value={ body }
+                            className={`card_body`}
+                            onChange={( body )=> setAttributes({ body })}
+                        />
+
                     </div>
                 </div>
             );
