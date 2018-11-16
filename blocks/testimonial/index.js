@@ -67,12 +67,6 @@ export default registerBlockType(
                 default: []
             },
 
-            // body: {
-            //     type: 'array',
-            //     source: 'children',
-            //     selector: '.card_body',
-            //     default: __( 'Card Content here...','ugb' ),
-            // },
             imageID: {
                 type: 'number',
             },
