@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import './style.scss';
 import './editor.scss';
 
+
 /*
 * Image & Content Libraries
  */
@@ -166,7 +167,7 @@ export default registerBlockType(
                         
                     
  
-                        <div className={`item tools-item` }>
+                        <div className={`item tools-item ${imgAlignmentClass}` }>
                             
                             { ! imageID ? (
 
@@ -288,7 +289,7 @@ export default registerBlockType(
             return(
 
                 <div 
-                    className={`egb-image-content item tools-item align${blockAlignment}` }>
+                    className={`egb-image-content item tools-item ${imgAlignmentClass} align${blockAlignment}` }>
                     <div className="item-thumb">
                         { cardImage( imageUrl, imageAlt) }
                     </div>

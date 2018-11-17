@@ -191,7 +191,16 @@ export default registerBlockType(
                                 { icons.close }
                             </span>
                     )}
-                    { message }
+                    <RichText.Content
+                        tagName="p"
+                        value={ message }
+                        className={`${alertClass}`}
+                        style={{
+                            backgroundColor: bgColor,
+                            color: textColor,
+                            textAlign: textAlignment
+                        }}
+                    />
                 </div>
             )
 

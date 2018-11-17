@@ -50,16 +50,21 @@ export default registerBlockType(
         attributes:{
             title:{
                 type: 'html',
-                selector: '.add-new__input',
-                default: __( 'Card Title Here','ugb' ),
+                selector: 'h6',
+                default: __( 'Jordan Ramos','ugb' ),
+            },
+            designation:{
+                type: 'html',
+                selector: 'span',
+                default: __( 'King of the North, GoT','ugb' ),
             },
             id:{
                 type: 'number'
             },            
             content: {
                 type: 'html',
-                selector: '.card_body',
-                default: __( 'Card Content Here','ugb' ),
+                selector: '.details',
+                default: __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium','ugb' ),
             },
             newItem: {
                 type: 'array',
@@ -97,6 +102,7 @@ export default registerBlockType(
             const{
                 attributes: {
                     title,
+                    designation,
                     content,
                     newItem,
                     imageID,
@@ -124,6 +130,15 @@ export default registerBlockType(
                 })
             }
 
+            const onRemoveListImage = (imageID) =>{
+                setAttributes({
+                    imageID: null,
+                    imageUrl: null,
+                    imageAlt: null
+                })
+            }            
+            
+
             const handleInputNewItem = (e) => {
                 let itemEl = e.currentTarget,
                     name = itemEl.getAttribute('name'),
@@ -145,6 +160,7 @@ export default registerBlockType(
                     copyItem = { 
                         id: uuid(),
                         title,
+                        designation,
                         content,
                         imageID,
                         imageAlt,
@@ -154,6 +170,7 @@ export default registerBlockType(
                 
                 setAttributes({
                     title:'',
+                    designation:'',
                     content:'',
                     imageID: '',
                     imageAlt:'',
@@ -172,6 +189,30 @@ export default registerBlockType(
             })
 
 
+            const testimonialListImage = (imageUrl, imageAlt) => {
+                if(!imageUrl) return null;
+
+                if(imageAlt) {
+                    return (
+                        <img
+                            className="card_image"
+                            src={ imageUrl }
+                            alt={ imageAlt }
+                        />
+                    );
+                }
+
+                // No alt set, so let's hide it from screen readers
+                return (
+                    <img
+                        className="card_image"
+                        src={ imageUrl }
+                        alt=""
+                        aria-hidden="true"
+                    />
+                );
+            };
+
             return (
 
                 <Fragment>
@@ -179,15 +220,33 @@ export default registerBlockType(
 
                             <div 
                                 className={ 'wp-block-gutenberg-blocks-testimonial' }>
+                                
+                                <RichText
+                                    tagName="div"
+                                    placeholder={ content.default }
+                                    value={ content }
+                                    placeholder={ __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium','ugb' ) }
+                                    className="details"
+                                    onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
+                                    keepPlaceholderOnFocus
+                                /> 
 
                                 <RichText
-                                    tagName="h2"
+                                    tagName="h6"
                                     value={ title }
-                                    placeholder={ title.default }
+                                    placeholder={ __( 'Jordan Ramos','ugb' ) }
                                     onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                    className={`section-title`}
+                                    className={`name`}
                                     keepPlaceholderOnFocus
                                 />   
+                                
+                                <RichText
+                                    tagName="span"
+                                    value={ designation }
+                                    placeholder={ __( 'King of the North, GoT','ugb' ) }
+                                    onChange={ ( nextDesignation ) => setAttributes( { designation: nextDesignation } ) }
+                                    keepPlaceholderOnFocus
+                                />
                                 
                                 { ! imageID ? (
 
@@ -231,13 +290,7 @@ export default registerBlockType(
                                         )
                                     }
 
-                                <RichText
-                                    placeholder={ content.default }
-                                    value={ content }
-                                    className="card_body"
-                                    onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
-                                    keepPlaceholderOnFocus
-                                />                                
+                              
                             </div>
 
                             <button 
@@ -249,11 +302,72 @@ export default registerBlockType(
                             
                             
                             { newItem.map( item => {
+                                // console.log(item);
                                 return (
                                     <div className="testimonial_list">
-                                        <h4>{item.title}</h4>
-                                        <p>Content: {item.content}</p>
-                                        <p>Image: {item.image}</p>
+                                        <RichText
+                                            tagName="p"
+                                            value={ item.content }
+                                            className="details"
+                                        />
+                                        <RichText
+                                            tagName="h6"
+                                            value={ item.title }
+                                            className="name"
+                                        />
+                                        <RichText
+                                            tagName="span"
+                                            value={ item.designation }
+                                        />
+                                        
+                                        <p>Image: 
+                                        {/* { testimonialListImage( item.imageUrl, item.imageAlt) } */}
+
+
+                                        { ! item.imageID ? (
+
+                                            <div className="button-container">
+                                                <MediaUpload
+                                                    onSelect={ onSelectImage }
+                                                    type="image"
+                                                    value={ item.imageID }
+                                                    render = { ( { open } ) => (
+                                                        <Button
+                                                            className= { "button button-large" }
+                                                            onClick={ open }
+                                                        >
+                                                            { icons.upload }
+                                                            { __('Upload Image', 'ugb')}
+                                                        </Button>
+                                                )}
+                                                >
+                                                </MediaUpload>
+                                            </div>
+
+                                            ) : (
+                                                    <p class="image-wrapper">
+                                                        <img
+                                                            src={ item.imageUrl }
+                                                            alt={ item.imageAlt }
+                                                        />
+
+                                                        { isSelected ? (
+
+                                                            <Button
+                                                                className="remove-image"
+                                                                onClick={ onRemoveImage }
+                                                            >
+                                                                { icons.remove }
+                                                            </Button>
+
+                                                        ) : null }
+
+                                                    </p>
+                                                )
+                                            }
+
+                                        </p>
+                                        
                                         <button onClick={() => handleItemDelete(item.id)}>delete</button>
                                     </div>
                                 )
@@ -271,7 +385,7 @@ export default registerBlockType(
         
         save: props => {
 
-            const { title, content, imageUrl, imageAlt } = props.attributes;
+            const { title, designation, content, imageUrl, imageAlt } = props.attributes;
 
 
             const testimonialImage = (imageUrl, imageAlt) => {
@@ -306,6 +420,10 @@ export default registerBlockType(
                             tagName="h3"
                             value={ title }
                             className={`card_title`}
+                        />
+                        <RichText.Content
+                            value={ designation }
+                            className={`designation`}
                         />
                         <RichText.Content
                             tagName="p"

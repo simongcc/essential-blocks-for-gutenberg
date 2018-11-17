@@ -36,11 +36,18 @@
       float: left;
       height: initial !important;
       position: absolute;
-      top: -15px;
-      right: -15px;
       width: initial !important;
       svg {
         fill: red;
       }
     }
+  }
+  button#add-new__btn {
+    height: 80px !important;
+    width: 80px !important;
+  }
+  .ugb-testimonial .testimonial_list {
+    flex: 0 0 100%;
+    margin: 0 !important;
+    padding: 15px;
   }

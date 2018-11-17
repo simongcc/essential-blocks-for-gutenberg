@@ -1,14 +1,59 @@
-.alice-green-bg {
+.section-content.alice-green-bg {
   background-color: #e4f1f9;
+  &.alignfull {
+    .container {
+      margin: 0 auto;
+      max-width: 1265px;
+      width: 100%;
+    }
+  }
+  &.alignwide {
+    .action-content {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
 }
-.green-gradient {
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(63, 198, 168, 0.9)), to(rgba(118, 61, 234, 0.9)));
-  background-image: linear-gradient(to right, rgba(63, 198, 168, 0.9) 0%, rgba(118, 61, 234, 0.9) 100%);
+.action-content {
+  background-color: #e4f1f9;
+  padding: 95px 0;
+  
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
+    color: #333;
+    font-weight: 300 !important;
+    line-height: 1;
+    margin: 0 !important;
+  }
+  .row {
+    display: flex;
+  }
+  .btn {
+    background: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 54px !important;
+    padding: 0 21.43px;
+    text-decoration: none !important;
+    text-transform: uppercase;
+  }
+  button {
+    float: right;
+  }
 }
-.green-gradient .action-content h1, .green-gradient .action-content h2, .green-gradient .action-content h3, .green-gradient .action-content h4, .green-gradient .action-content h5, .green-gradient .action-content h6 {
-  color: #fff;
+.alice-green-bg .cta-content {
+  margin: 0 !important;
 }
-
 .action-content div[class*="col-lg-8"] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,12 +62,6 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.cta-content {
-  display: inline-block;
-  margin: 95px 0;
-  width: 100%;
-}
-
 .col-lg-8 {
   -ms-flex: 0 0 66.666667%;
   flex: 0 0 66.666667%;

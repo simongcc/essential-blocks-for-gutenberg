@@ -49,8 +49,7 @@ export default registerBlockType(
                 default: __( 'Purchase Osaka now and get lifetime support','ugb' ),
             },
             buttonText:{
-                type: 'string',
-                source: 'text',
+                type: 'html',
                 selector: 'a',
                 default: __( 'Purchase now $45','ugb' ),
             },
@@ -118,18 +117,17 @@ export default registerBlockType(
                                         <div className="col-lg-4 text-right">
                                             { isSelected ? (
                                                 <div>
-                                                    <TextControl
-                                                        id="cta-link"
-                                                        label={ __('Button Text','ugb') }
+
+                                                    <RichText
+                                                        tagName="a"
                                                         value={ buttonText }
-                                                        onChange={ buttonText => setAttributes({ buttonText }) } />
-                                                    <p>{ __('Link URL', 'ugb' ) }</p>
+                                                        onChange={ buttonText => setAttributes({ buttonText }) } 
+                                                        className="btn"
+                                                    />
                                                     <form
                                                         onSubmit={ event => event.preventDefault() }
                                                     >
-                                                        <Tooltip text="Button Link">
-                                                            { icons.urlicon }
-                                                        </Tooltip>
+
                                                         <URLInput
                                                             className="cta-url"
                                                             value = { buttonUrl }
