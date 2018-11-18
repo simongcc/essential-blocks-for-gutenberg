@@ -217,3 +217,45 @@
     padding-left: 0;
     -webkit-transform: translate(-100%, 0%);
     transform: translate(-100%, 0%); }
+.egb-testimonial {
+  background: #fff;
+  text-align: center; }
+  .egb-testimonial p {
+    color: #808080;
+    font-style: italic;
+    max-height: 100%;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-radius: 10px; }
+    .egb-testimonial p:before {
+      content: '"'; }
+    .egb-testimonial p:after {
+      content: '"'; }
+  .egb-testimonial img {
+    max-height: 100%;
+    border-radius: 10px;
+    height: 15.7rem;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+  .egb-testimonial .name {
+    color: #343434;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 1.5rem 0 0; }
+  .egb-testimonial span {
+    color: #999;
+    font-size: 14px; }
+  .egb-testimonial .avatar {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 1em auto 0;
+    position: relative; }
+    .egb-testimonial .avatar img {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%; }

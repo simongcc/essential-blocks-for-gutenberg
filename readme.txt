@@ -42,38 +42,22 @@ We've two ways to give Supports for Ultimate Blocks for Gutenberg Plugin - Plugi
 == Changelog ==
 
 = 1.0.0 =
-* Date: [30.June.2018](https://jeweltheme.com/shop/ultimate-amp/)
+* Date: [09.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
 * Initial Release
 
 = 1.0.1 =
-* Date: [05.July.2018](https://jeweltheme.com/shop/ultimate-amp/)
-* Added Logo Size( Width and Height Slider ) on WP Ultimate AMP Plugin Options
-* Set Ultimate AMP Logo on Redux Plugin Options
+* Date: [12.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Fixed Block Style issues
 
-= 1.0.21
-* Date: [07.July.2018](https://jeweltheme.com/shop/ultimate-amp/)
-* Welcome Page Added on WordPress Ultimate AMP Plugin
-* Fixed Template issues - 
-* Compatibility Check with existing Plugins on wp.org Repo - AMP for WordPress, AMP for WP, Better AMP, AMP Supremacy, WP AMP.
-* For no conflict with other Plugins - If existing Plugin activated then with Activating WP Ultimate AMP exiting Plugin will Deactivated. 
-* While Active on Ultimate AMP Plugin - for no conflict issue other Plugins can't be Installed. It's safe for not site breaking.
+= 1.0.2
+* Date: [18.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Welcome Page Added on WordPress Essential Blocks for Gutenberg Plugin
+* Fixed: Admin Notice Issue, Date issue fixed, Plugin Name and Link issue fixed. Wrong Link on Rating issue fixed
+* Fixed: Alert Block, Blockquotes Block Styling issue fixed.
+* Added: New Blocks - Call to Action Block, Card Block, Image and Content Block, Testimonial Block, Title and Sub Title BLocks were added. 
+* Added: Welcome Page added
 
-= 1.0.21
-* Date: [15.July.2018](https://jeweltheme.com/shop/ultimate-amp/)
-* Category Page Template issue resolved
-* Ultimate AMP Search(Posts,Pages) on Website Issue resolved
-* Static Homepage not found issue resolved
-* Set Homepage Blog Posts Issue resolved
-* Set Blog Page issue Resolved
-* Tested: fresh Installation, Permalink issue fixed.
-* Canonical URL, Site Title, Comment URL Issue resolved
-* Template Structure re-factored, organized on a good way
-* Ultimate AMP Options: Activation Logo not display issue resolved
-* Ultimate AMP Options: Added Templates Section - Posts and Pages in Sub-section
-* Given Support of Ajax Comment on AMP Version
-* Redirect to Desktop Version with Link on Posts, Blog, Homepage, Pages, Archive issue resolved
-* Activation/Deactivation bug fixed
 
 == Upgrade Notice ==
-= 1.2.0
-* Fixed Major issues related with Template and Activation/Deactivation issues.
+= 1.0.0
+* Initial Release of WordPress "Essential Blocks for Gutenberg" plugin.

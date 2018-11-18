@@ -162,50 +162,6 @@
 .col-lg-4 {
   flex: 0 0 33.333333%;
   max-width: 33.333333%; }
-.wp-block-gutenberg-blocks-testimonial.egb-testimonial {
-  background: #f2f2f2f2; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image {
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 15.7rem;
-    width: 100%;
-    border-radius: 10px; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image p {
-      max-height: 100%;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      border-radius: 10px; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image img {
-      max-height: 100%;
-      border-radius: 10px;
-      height: 15.7rem;
-      width: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .testimonial_image {
-    height: 200px; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image {
-    color: red;
-    float: left;
-    height: initial !important;
-    position: absolute;
-    width: initial !important; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image svg {
-      fill: red; }
-
-button#add-new__btn {
-  height: 80px !important;
-  width: 80px !important; }
-
-.ugb-testimonial .testimonial_list {
-  flex: 0 0 100%;
-  margin: 0 !important;
-  padding: 15px; }
 .egb-title-subtitle {
   margin: 0 auto 5.625em;
   text-align: center; }
@@ -291,3 +247,54 @@ button#add-new__btn {
   height: 120px !important;
   width: 120px !important;
   margin: 33px auto 0 !important; }
+.wp-block-gutenberg-blocks-testimonial.egb-testimonial {
+  background: #fff;
+  text-align: center; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 15.7rem;
+    width: 100%;
+    border-radius: 10px; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image p {
+      max-height: 100%;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      border-radius: 10px; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image img {
+      max-height: 100%;
+      border-radius: 10px;
+      height: 15.7rem;
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .name,
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial span {
+    font-style: normal; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .testimonial_image {
+    height: 200px; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .image-wrapper {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: 1em auto 0;
+    position: relative; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .image-wrapper img {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image {
+    color: red;
+    float: left;
+    height: initial !important;
+    margin: 0 !important;
+    position: absolute;
+    top: 0;
+    width: initial !important; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image svg {
+      fill: red; }

@@ -8,6 +8,7 @@ import './alert';
 import './blockquote';
 import './card';
 import './call-to-action';
-import './testimonial';
 import './title-subtitle';
 import './image-content';
+import './testimonial';
+// import './testimonial-slider';

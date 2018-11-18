@@ -30,7 +30,7 @@
 			<div data-dismissible="notice-ugb-activated-forever" class="notice updated is-dismissible">
 
 				<h2 style="margin-bottom: 0px;">
-					<?php printf( __( 'Thanks for using <a href="%1$s" target="_blank">Ultimate Gutenberg Blocks</a>! If you like the plugin, could you please take a moment to give us a <a href="%2$s" target="_blank"><strong>5-star rating</strong></a>?', UGB_TD ), 'https://jeweltheme.com/', 'https://wordpress.org/support/plugin/gutenberg-blocks/reviews/#new-post' ); ?>		
+					<?php printf( __( 'Thanks for using <a href="%1$s" target="_blank">Ultimate Gutenberg Blocks</a>! If you like the plugin, could you please take a moment to give us a <a href="%2$s" target="_blank"><strong>5-star rating</strong></a>?', UGB_TD ), 'https://jeweltheme.com/', 'https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg/reviews/#new-post' ); ?>		
 				</h2>
 
 				<p>
@@ -69,7 +69,7 @@
 					<div data-dismissible="notice-ugb-weeks-forever" class="notice updated is-dismissible">
 
 						<h2 style="margin-bottom: 0px;">
-							<?php printf( __( 'Sweet! You\'ve been using <a href="%1$s" target="_blank">Ultimate Gutenberg</a> for a couple weeks! Could you please take a moment to give us a <a href="%2$s" target="_blank"><strong>5-star rating</strong></a>?', UGB_TD ), 'https://jeweltheme.com/', 'https://wordpress.org/support/plugin/gutenberg-blocks/reviews/#new-post' ); ?>
+							<?php printf( __( 'Sweet! You\'ve been using <a href="%1$s" target="_blank">Essential Blocks for Gutenberg</a> for a couple weeks! Could you please take a moment to give us a <a href="%2$s" target="_blank"><strong>5-star rating</strong></a>?', UGB_TD ), 'https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/', 'https://wordpress.org/support/plugin/gutenberg-blocks/reviews/#new-post' ); ?>
 						</h2>
 
 						<p>
@@ -77,7 +77,7 @@
 						</p>
 
 						<p>
-							<?php printf( __( '<button class="button button-primary" href="%1$s" target="_blank">Leave 5-Star Rating!</button>', UGB_TD ), 'https://wordpress.org/support/plugin/gutenberg-blocks/reviews/#new-post' ); ?>
+							<?php printf( __( '<a class="button button-primary" href="%1$s" target="_blank">Leave 5-Star Rating!</a>', UGB_TD ), 'https://wordpress.org/support/plugin/gutenberg-blocks/reviews/#new-post' ); ?>
 						</p>
 
 					</div>
