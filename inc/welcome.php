@@ -74,26 +74,253 @@
 					<h1 class="black textcenter main_heading">
 						<?php _e( 'Welcome to Essential Blocks for Guteneberg.', 'EGB' ); ?>
 					</h1>				
+					
 					<h3 class="black textcenter sub-heading">The Ultimate Builder for WordPress!</h3>
+					
 					<div class="parent">
+
 						<div class="left_column">
-						<div class="left_block">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-							</p>
-								<ul>
-									<li><strong><?php _e( 'Step #1:', 'EGB' ); ?></strong> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'EGB' ); ?></li>
-									<li><strong><?php _e( 'Step #2:', 'EGB' ); ?></strong> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'EGB' ); ?></li>
-									<li><strong><?php _e( 'Step #3:', 'EGB' ); ?></strong> <?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'EGB' ); ?></li>
+							<div class="left_block">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+								<br>
+								<h3>Essential Block Demos </h3>
+								<ul class="egb_demos">
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/alert-notification/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Alert/Accordion', 'EGB' ); ?>
+											</strong>
+										</a>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/blockquote/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Blockquotes', 'EGB' ); ?>
+											</strong>
+											<span class="ribbon hot">Hot</span>
+										</a>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/call-to-action/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Call to Action', 'EGB' ); ?>
+											</strong>
+										</a>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/cards/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Cards', 'EGB' ); ?>
+											</strong>
+										</a>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/image-content/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Image & Content', 'EGB' ); ?>
+											</strong>
+										</a>
+										<span class="ribbon new">New</span>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/testimonial/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Testimonials', 'EGB' ); ?>
+											</strong>
+										</a>
+										<span class="ribbon trending">Trending</span>
+									</li>
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/essential-gutenberg/title-subtitle/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Heading & Sub Heading', 'EGB' ); ?>
+											</strong>
+										</a>
+										<span class="ribbon new">New</span>
+									</li>
+
+									<li>
+										<strong>
+											<?php _e( 'Hero Image', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+
+									<li>
+										<strong>
+											<?php _e( 'Blog Grid', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+
+									<li>
+										<strong>
+											<?php _e( 'Testimonial Slider', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+
+									<li>
+										<strong>
+											<?php _e( 'Logo Slider', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Author Box', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Accordion', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Teams', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Team Slider', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Number Block', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Animate Counter', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon pro">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'GDPR Conscent', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Related Posts', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Facebook Like Block', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Instagram Block', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Social Share', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Click to Tweet', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Google Maps(GMap)', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Maps Location', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									<li>
+										<strong>
+											<?php _e( 'Banner Ads', 'EGB' ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', 'EGB' ); ?>
+										</span>
+									</li>
+									
 								</ul>
-								</div>
+								
+							</div>
 						</div>
-						<?php // require( UGB_PLUGIN_DIR . '/inc/right-column.php' );?>
+
 						<div class="right_column">
 							<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/banner-image.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
 						</div>

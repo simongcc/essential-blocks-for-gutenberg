@@ -233,6 +233,58 @@ pre {
     margin-top: 10px !important;
 }
 
+/* Demo List Columns */
+.egb_demos{
+    height: 250px;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}
+.egb_demos li{
+    padding: 5px 0;
+}
+.egb_demos li a{
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+/* Ribbons */
+.ribbon{
+    color: #fff;
+    border-radius: 15px;
+    height: 50px;
+    width: 88px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.new{
+    background: #F70505;
+}
+.hot{
+    background: #F2DB05;
+    color: red;
+}
+.pro{
+    background: #007200;
+}
+.coming{
+    background: #B6BAC9;
+    font-size: 10px;
+    padding: 5px 4px;
+}
+.trending{
+    background: #2989d8;
+    font-size: 10px;
+    padding: 5px 4px;
+}
+.popular{
+    background: #05EFF7;
+    font-size: 10px;
+    padding: 5px 4px;
+}
+
 
 
 /* Column Width */
