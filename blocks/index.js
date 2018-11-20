@@ -12,3 +12,4 @@ import './title-subtitle';
 import './image-content';
 import './testimonial';
 // import './testimonial-slider';
+// import './pricing-table';

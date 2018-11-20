@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthe
 Tags: essential blocks, gutenberg blocks, essential guten blocks, 
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.3
@@ -40,22 +40,34 @@ We've two ways to give Supports for Ultimate Blocks for Gutenberg Plugin - Plugi
 
 
 == Changelog ==
+= 1.0.3
+* Date: [19.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Updated: Welcome Page Styled beautifully
+* Removed: Removed Settings Page, all the Settings were on Blocks. So, there's no need Settings Page. We'll think about in future
+* Fixed: Renamed Title & Sub Title to Heading & Sub Heading
+* Fixed: Heading & Sub Heading Section Text * Block Alignment issue fixed on Front end
+* Fixed: Menu Icon Fixed
+* Fixed: Menu Name changed from "UGB" to "Essential Blocks"
 
-= 1.0.0 =
-* Date: [09.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
-* Initial Release
+
+= 1.0.2
+* Date: [18.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Added: Welcome Page Added on WordPress Essential Blocks for Gutenberg Plugin
+* Fixed: Admin Notice Issue, Date issue fixed, Plugin Name and Link issue fixed. Wrong Link on Rating issue fixed
+* Fixed: Alert Block, Blockquotes Block Styling issue fixed.
+* Added: New Blocks - Call to Action Block, Card Block, Image and Content Block, Testimonial Block, Title and Sub Title Blocks were added. 
+* Added: Welcome Page added
 
 = 1.0.1 =
 * Date: [12.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
 * Fixed Block Style issues
 
-= 1.0.2
-* Date: [18.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
-* Welcome Page Added on WordPress Essential Blocks for Gutenberg Plugin
-* Fixed: Admin Notice Issue, Date issue fixed, Plugin Name and Link issue fixed. Wrong Link on Rating issue fixed
-* Fixed: Alert Block, Blockquotes Block Styling issue fixed.
-* Added: New Blocks - Call to Action Block, Card Block, Image and Content Block, Testimonial Block, Title and Sub Title BLocks were added. 
-* Added: Welcome Page added
+= 1.0.0 =
+* Date: [09.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Initial Release
+
+
+
 
 
 == Upgrade Notice ==

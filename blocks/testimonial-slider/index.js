@@ -44,7 +44,7 @@ export default registerBlockType(
         },
         keywords: [
             __('Testimonial Slider', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Testimonial Slider', 'ugb')
         ],
 
         attributes:{

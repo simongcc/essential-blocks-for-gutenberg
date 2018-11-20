@@ -42,7 +42,7 @@ export default registerBlockType(
         },
         keywords: [
             __('Alert/Notification', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Alert/Notification', 'ugb')
         ],
 
         attributes:{

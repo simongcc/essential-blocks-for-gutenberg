@@ -43,7 +43,7 @@ export default registerBlockType(
         },
         keywords: [
             __('Testimonial', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Testimonial', 'ugb')
         ],
 
         attributes:{

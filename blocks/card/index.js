@@ -45,7 +45,7 @@ export default registerBlockType(
         },
         keywords: [
             __('Card', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Card Profile', 'ugb')
         ],
 
         attributes:{

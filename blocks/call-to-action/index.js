@@ -39,7 +39,7 @@ export default registerBlockType(
         icon:'megaphone',
         keywords: [
             __('Call To Action', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Call To Action', 'ugb')
         ],
 
         attributes:{

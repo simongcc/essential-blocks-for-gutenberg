@@ -2,7 +2,7 @@
 //namespace Ultimate_Gutenberg\Gutenberg_Blocks;
 /**
  * @package     Ultimate_Gutenberg\Gutenberg_Blocks
- * @author      Liton Arefin (@Litonice13)
+ * @author      Liton Arefin (@Litonice11)
  * @license     GPL-3.0
  *
  * Plugin Name: Essential Blocks for Gutenberg
@@ -33,7 +33,7 @@ define( 'UGB_VERSION', $ugb->version );
 define( 'UGB_PLUGIN_URL', $ugb->ugb_plugin_url());
 define( 'UGB_PLUGIN_DIR', $ugb->ugb_plugin_path() );
 define( 'UGB_PLUGIN_DIR_URL', $ugb->ugb_plugin_dir_url());
-define( 'UGB_IMAGE_DIR', $ugb->ugb_plugin_dir_url().'/images');
+define( 'UGB_IMAGE_DIR', $ugb->ugb_plugin_dir_url().'/assets/images/');
 define( 'UGB_TD', $ugb->ugb_load_textdomain());  // Ultimate Gutenberg Text Domain
 define( 'UGB_FILE', __FILE__ );
 define( 'UGB_DIR', dirname( __FILE__ ) );
@@ -49,7 +49,7 @@ class Ultimate_Gutenberg{
 	private $plugin_url;
 	private $plugin_slug;
 	public  $plugin_dir_url;
-	public  $plugin_name = 'Ultimate Gutenberg';
+	public  $plugin_name = 'Essential Blocks for Gutenberg';
 
 	private static $instance;
 
@@ -81,7 +81,10 @@ class Ultimate_Gutenberg{
 		add_action( 'plugins_loaded', array( $this, 'ugb_load_textdomain' ) );
 		add_action( 'enqueue_block_editor_assets', array( $this, 'ugb_localization' ) );
 
-		add_action( 'admin_menu', array( $this, 'ugb_welcome_screen' ));
+		//Welcome Screen
+		add_action( 'admin_menu', array( $this, 'egb_welcome_page' ));
+		add_action( 'admin_enqueue_scripts', array( $this, 'egb_admin_enqueue_scripts' ));
+		add_action( 'admin_init', array( $this, 'egb_safe_welcome_redirect' ) );
 
 		// Add Ultimate Gutenberg Block Category
 		// Add custom block category
@@ -133,6 +136,7 @@ class Ultimate_Gutenberg{
 	// Define Admin Hooks
 	public function ugb_define_admin_hooks(){
 		
+
 		// Admin Notices
 		add_action( 'admin_init', array( 'PAnD', 'init' ) );
 		add_action( 'admin_notices', 'ugb_admin_notice_active', 10 );
@@ -142,7 +146,58 @@ class Ultimate_Gutenberg{
 
 	}
 
+	function egb_safe_welcome_redirect() {
 
+		// Bail if no activation redirect transient is present.
+		if ( ! get_transient( '_egb_welcome_redirect' ) ) {
+			return;
+		}
+	
+	  // Delete the redirect transient.
+	  delete_transient( '_egb_welcome_redirect' );
+	
+	  // Bail if activating from network or bulk sites.
+	  if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+		return;
+	  }
+	
+	  // Redirect to Welcome Page.
+	  wp_redirect( 
+			  esc_url( admin_url( 'admin.php?page=essential-blocks-for-gutenberg' ) ) 
+		);
+                die();
+	//   wp_safe_redirect( 
+	// 	  add_query_arg( 
+	// 			array( 
+	// 					'page' => 'essential-blocks-for-gutenberg' 
+	// 				), 
+	// 			admin_url( 'ultimate-gutenberg-blocks.php' )
+	// 			// admin_url( 'plugins.php' ) 
+	// 		)
+	// 	);
+	
+	}
+
+	// Admin Scripts
+	public function egb_admin_enqueue_scripts(){
+
+		// Welcome page styles.
+		wp_enqueue_style(
+			'egb_style',
+			UGB_PLUGIN_URL . '/assets/css/welcome.css',
+			array(),
+			UGB_VERSION,
+			'all'
+		);
+
+		wp_enqueue_script(
+			'egb_script',
+			UGB_PLUGIN_URL . '/assets/js/welcome-tabs.js',
+			array('jquery'),
+			UGB_VERSION,
+			'all'
+		);
+	}
 
 	// Define Public Hooks
 	public function ugb_define_public_hooks(){
@@ -240,63 +295,62 @@ class Ultimate_Gutenberg{
 
 
 
-	public function ugb_welcome_screen(){
+	public function egb_welcome_page(){
 
 		$icon_svg = 'data:image/svg+xml;base64,' . base64_encode(
-			'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="120 10 40 40" xml:space="preserve">
-			<g>
-				<path fill="#a0a5aa" d="M144.128,11.221c-7.733,0-13.455,1.824-17.002,5.421c-8.137,8.252-5.41,17.112-4.38,19.634
-					c0.906,2.217,2.021,3.613,2.875,4.35l2.957-2.609l-0.278-13.13l2.999,10.728l4.374-3.86l0.438-10.677l1.894,8.617l10.528-8.433
-					l-8.292,10.76l8.57,1.933l-10.595,0.444l-3.776,4.422l10.614,3.049l-12.974-0.278l-2.522,2.956c0.092,0.11,0.194,0.228,0.315,0.344
-					c1.9,1.938,5.897,3.889,10.54,3.889c3.257,0,8.112-0.991,12.775-5.72c8.079-8.19,4.882-25.648,3.841-30.338
-					C154.816,12.222,149.721,11.221,144.128,11.221L144.128,11.221L144.128,11.221z"/>
-			</g>
+			'<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+			width="35.994" height="35.994" viewBox="0 0 256 256">
+				<image id="Vector_Smart_Object" data-name="Vector Smart Object" width="257"
+				height="257" xlinkHref="data:img/png;base64,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"
+				/>
 			</svg>'
 		);
 
 		// Add Menu Item.
 		add_menu_page(
-			esc_html__( 'UGB', UGB_TD ),
-			esc_html__( 'UGB', UGB_TD ),
-			'edit_posts',
-			'ugb-widgets',
-			array( $this, 'ugb_welcome_screen_content'),
-			$icon_svg,
-			110
+			esc_html__( 'Essential Blocks for Gutenberg', UGB_TD ), // Page Title
+			esc_html__( 'Essential Blocks', UGB_TD ),	// Menu Title
+			'edit_posts',	// Capability
+			'essential-blocks-for-gutenberg', // Menu Slug
+			array( $this, 'egb_welcome_page_content'),	// Callback Function
+			// $icon_svg,	// Icon	
+			UGB_PLUGIN_URL . '/assets/images/egb-icon.png',
+			87	// Positon
 		);
 
 		// Add Settings Page.
-		add_submenu_page(
-			'ugb-widgets',
-			'UGB Settings',
-			esc_html__( 'Settings', UGB_TD ),
-			'manage_options',
-			'ugb-widgets-settings',
-			array($this, 'ugb_setting_screen_content')
-		);
+		// add_submenu_page(
+		// 	'essential-blocks-for-gutenberg',
+		// 	'EGB Settings',
+		// 	esc_html__( 'Settings', UGB_TD ),
+		// 	'manage_options',
+		// 	'essential-blocks-for-gutenberg-settings',
+		// 	array($this, 'ugb_setting_screen_content')
+		// );
 
-		add_settings_section(
-			'ugb_widgets_settings_section',
-			'UGB Settings',
-			'ugb_settings_callback',
-			'organic-widgets-settings'
-		);
+		// add_settings_section(
+		// 	'ugb_widgets_settings_section',
+		// 	'UGB Settings',
+		// 	'ugb_settings_callback',
+		// 	'egb-widgets-settings'
+		// );
 
-		register_setting( 'organic-widgets-settings', 'ugb_settings', array( 'sanitize_callback' => 'ugb_settings_sanitize_callback' ) );
+		register_setting( 'egb-widgets-settings', 'ugb_settings', 
+			array( 
+					'sanitize_callback' => 'ugb_settings_sanitize_callback' 
+				) 
+			);
 
 	}
 
 
-	public function ugb_welcome_screen_content() {
-		include_once plugin_dir_path( __FILE__ ) . '/inc/welcome.php';
+	public function egb_welcome_page_content() {
+		include_once UGB_PLUGIN_DIR . '/inc/welcome.php';
 	}
 
-	public function ugb_setting_screen_content() {
-		include_once plugin_dir_path( __FILE__ ) . '/inc/settings.php';
-	}
-
-
-
+	// public function ugb_setting_screen_content() {
+	// 	include_once UGB_PLUGIN_DIR . '/inc/settings.php';
+	// }
 
 }
 
@@ -310,11 +364,10 @@ class Ultimate_Gutenberg{
 // ugb_activate();
 
 
-
-
-	register_activation_hook( __FILE__, 'activate_ugb_plugin' );
-
 	function activate_ugb_plugin(){
+		
+		// Transient max age is 60 seconds.
+		set_transient( '_egb_welcome_redirect', true, 60 );
 
 		global $wp_version;
 		$wp  = '4.9.8';
@@ -340,6 +393,20 @@ class Ultimate_Gutenberg{
 		deactivate_plugins( basename( __FILE__ ) );
 		wp_die( '<p>The <strong>Ultimate Blocks for Gutenberg</strong> plugin requires' . $flag . '  version ' . $version . ' or greater.</p>', 'Plugin Activation Error', array( 'response' => 200, 'back_link' => true ) );
 	}
+
+	register_activation_hook( __FILE__, 'activate_ugb_plugin' );
+
+
+	/**
+	 * Deactivates welcome page
+	 * Deletes the welcome page transient.
+	 * @since 1.0.0
+	 */
+	function egb_welcome_deactivate() {
+		delete_transient( '_egb_welcome_redirect' );
+	}
+	register_deactivation_hook( __FILE__, 'egb_welcome_deactivate' );
+
 
 	/**
 	 * This function deactivates the premium plugin version upon activation.

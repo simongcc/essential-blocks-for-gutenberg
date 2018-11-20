@@ -1,5 +1,5 @@
 /*
-* Title/Sub Title Dependencies
+* Heading & Sub Heading Dependencies
 */
 
 import icons from '../../utils/icons';
@@ -7,7 +7,7 @@ import './style.scss';
 import './editor.scss';
 
 /*
-* Title/Sub Title Libraries
+* Heading & Sub Heading Libraries
  */
 
 import {
@@ -26,7 +26,7 @@ import {
 } from '../../utils/wp-import'
 
 /*
-* Register Title/Sub Title
+* Register Heading & Sub Heading
  */
 
 
@@ -34,15 +34,15 @@ import {
 export default registerBlockType(
     'essential-gutenberg-blocks/title-subtitle',
     {
-        title : __('Title & Sub Title', 'ugb'),
-        description: __('Ultimate Gutenberg Title & Sub Title', 'ugb'),
+        title : __('Heading & Sub Heading', 'ugb'),
+        description: __('Ultimate Gutenberg Heading & Sub Heading', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
             src: icons.alert
         },
         keywords: [
-            __('Title & Sub Title', 'ugb'),
-            __('Content', 'ugb')
+            __('Heading & Sub Heading', 'ugb'),
+            __('EBG Heading & Sub Heading', 'ugb')
         ],
 
         attributes:{
@@ -66,10 +66,11 @@ export default registerBlockType(
             },
             textAlignment: {
                 type: 'string',
+                default: 'center'
             },
             blockAlignment: {
                 type: 'string',
-                default: 'center',
+                default: 'center'
             },
         },
         getEditWrapperProps( { blockAlignment } ){
@@ -157,8 +158,7 @@ export default registerBlockType(
 
             return(
 
-                <div
-                    className={`egb-title-subtitle section-top text-center` }>
+                <div className={`egb-title-subtitle section-top align${blockAlignment}`}>
 
                         <RichText.Content
                             tagName="h2"
@@ -166,6 +166,9 @@ export default registerBlockType(
                             value={ title }
                             onChange={( title )=> setAttributes({ title })}
                             className={`section-title`}
+                            style={{
+                                textAlign: textAlignment
+                            }}
                         />
 
                         <RichText.Content
@@ -173,6 +176,9 @@ export default registerBlockType(
                             placeholder={ content.default }
                             value={ content }
                             onChange={( content )=> setAttributes({ content })}
+                            style={{
+                                textAlign: textAlignment
+                            }}                            
                         />
                 </div>
             )

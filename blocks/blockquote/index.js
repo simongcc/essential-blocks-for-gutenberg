@@ -43,7 +43,8 @@ export default registerBlockType(
             src: icons.leftquote
         },
         keywords: [
-            __('Blockquote Message', 'ugb')
+            __('Blockquote Message', 'ugb'),
+            __('EBG Blockquote Message', 'ugb')
         ],
 
         attributes:{

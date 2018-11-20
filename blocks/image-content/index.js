@@ -45,7 +45,7 @@ export default registerBlockType(
         },
         keywords: [
             __('Image & Content', 'ugb'),
-            __('Content', 'ugb')
+            __('EBG Image & Content', 'ugb')
         ],
 
         attributes:{
