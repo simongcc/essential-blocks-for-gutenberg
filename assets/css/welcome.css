@@ -275,7 +275,7 @@ pre {
     padding: 5px 4px;
 }
 .trending{
-    background: #2989d8;
+    background: #465cad;
     font-size: 10px;
     padding: 5px 4px;
 }
@@ -283,6 +283,47 @@ pre {
     background: #05EFF7;
     font-size: 10px;
     padding: 5px 4px;
+}
+
+/* Sidebar */
+
+.sidebar_title{
+    background: #274ad8;
+    padding: 20px 40px;
+    color: #fff;
+    text-align: center;
+    margin:0 !important;
+}
+.sidebar_title .dashicons{
+    padding: 5px;
+}
+.inner_content{
+    padding: 30px 40px;
+    border-bottom: solid 1px #e3e3e4;
+    margin: 0;
+    list-style: none;
+    background: #28c6ab;
+}
+.inner_content p{
+    color: #fff;
+}
+.inner_content .egb_button,
+.inner_content .egb_button:hover,
+.inner_content .egb_button:active
+.inner_content .egb_button:visited,
+.inner_content .egb_button:focus{
+    width: 100%;
+    text-align: center;
+    line-height: 46px;
+    height: 48px;
+    margin-top: 10px;
+    background: #b54bd8;
+    color: #fff;
+    font-size: 30px;
+    border-color: mediumaquamarine;
+    box-shadow: none;
+    transition: .3s ease;
+    text-shadow: 0 -1px 1px #4c35b9, 1px 0 1px #4c35b9, 0 1px 1px #4c35b9, -1px 0 1px #4c35b9;
 }
 
 

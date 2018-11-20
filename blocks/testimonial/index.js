@@ -39,7 +39,7 @@ export default registerBlockType(
         description: __('Essential Gutenberg Testimonial Block', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
-            src: icons.swap
+            src: icons.testimonial
         },
         keywords: [
             __('Testimonial', 'ugb'),

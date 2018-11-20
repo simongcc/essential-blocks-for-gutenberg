@@ -36,7 +36,9 @@ export default registerBlockType(
         title : __('Call To Action', 'ugb'),
         description: __('Ultimate Gutenberg Call To Action Block', 'ugb'),
         category: 'gutenberg-blocks',
-        icon:'megaphone',
+        icon: {
+            src: icons.calltoaction
+        },
         keywords: [
             __('Call To Action', 'ugb'),
             __('EBG Call To Action', 'ugb')

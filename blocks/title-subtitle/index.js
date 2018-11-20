@@ -38,7 +38,7 @@ export default registerBlockType(
         description: __('Ultimate Gutenberg Heading & Sub Heading', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
-            src: icons.alert
+            src: icons.title_subtitle
         },
         keywords: [
             __('Heading & Sub Heading', 'ugb'),

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthe
 Tags: essential blocks, gutenberg blocks, essential guten blocks, 
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.3
@@ -41,13 +41,17 @@ We've two ways to give Supports for Ultimate Blocks for Gutenberg Plugin - Plugi
 
 == Changelog ==
 = 1.0.3
-* Date: [19.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
-* Updated: Welcome Page Styled beautifully
+* Date: [20.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
+* Updated: Welcome Page Styled
+* Added: Welcome Page - Supported Free Themes Block
+* Added: Welcome Page - Demo links, Features Block, Documentation, Support, Changelogs
 * Removed: Removed Settings Page, all the Settings were on Blocks. So, there's no need Settings Page. We'll think about in future
-* Fixed: Renamed Title & Sub Title to Heading & Sub Heading
+* Fixed: Renamed Title & Sub Title to Heading & Sub Heading, fixed style issue on text align
 * Fixed: Heading & Sub Heading Section Text * Block Alignment issue fixed on Front end
 * Fixed: Menu Icon Fixed
 * Fixed: Menu Name changed from "UGB" to "Essential Blocks"
+* Update: Block Keywords modified can be found now anything search like "EGB", "Alert", "Card" etc. Any text matching will show Search panel 
+
 
 
 = 1.0.2

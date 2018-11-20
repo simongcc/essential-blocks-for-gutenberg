@@ -41,7 +41,7 @@ export default registerBlockType(
         description: __('Ultimate Gutenberg Image & Content', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
-            src: icons.alert
+            src: icons.image_content
         },
         keywords: [
             __('Image & Content', 'ugb'),

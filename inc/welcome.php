@@ -11,12 +11,14 @@
 
 			<header class="header">
 				<h1 class="plugin_name">
-					<?php printf( __( '%s <small>v %s</small>', 'EGB' ), UGB, UGB_VERSION ); ?>
+					<?php printf( __( '%s <small>v %s</small>', UGB_TD ), UGB, UGB_VERSION ); ?>
 				</h1>
 				<div class="about-text">
-					<?php printf( __( "Ultimate Gutenberg Blocks Builder for WordPress.", 'EGB' ), UGB_VERSION ); ?>
+					<?php printf( __( "Ultimate Gutenberg Blocks Builder for WordPress.", UGB_TD ), UGB_VERSION ); ?>
 				</div>
-				<div class="wp-badge welcome__logo"></div>
+				<a href="https://wordpress.org/plugins/ultimate-blocks-for-gutenberg">
+					<div class="wp-badge welcome__logo"></div>
+				</a>
 			</header>
 
 			<div class="waveWrapper waveAnimation">
@@ -39,27 +41,27 @@
 			<ul class="wp-tab-bar egb_navbar">
 				<li class="wp-tab-active">
 					<a href="#how-to">
-						<?php _e( 'How to Use', 'EGB' ); ?>
+						<?php _e( 'How to Use', UGB_TD ); ?>
 					</a>
 				</li>
 				<li>
 					<a href="#docs">
-						<?php _e( 'Docs', 'EGB' ); ?>
+						<?php _e( 'Docs', UGB_TD ); ?>
 					</a>
 				</li>
 				<li>
 					<a href="#support">
-						<?php _e( 'Support', 'EGB' ); ?>
+						<?php _e( 'Support', UGB_TD ); ?>
 					</a>
 				</li>
 				<li>
 					<a href="#free-themes">
-						<?php _e( 'Free Themes', 'EGB' ); ?>
+						<?php _e( 'Free Themes', UGB_TD ); ?>
 					</a>
 				</li>				
 				<li>
 					<a href="#changelogs">
-						<?php _e( 'Changelogs', 'EGB' ); ?>
+						<?php _e( 'Changelogs', UGB_TD ); ?>
 					</a>
 				</li>
 			</ul>
@@ -72,32 +74,34 @@
 
 				<div class="wp-tab-panel" id="how-to">
 					<h1 class="black textcenter main_heading">
-						<?php _e( 'Welcome to Essential Blocks for Guteneberg.', 'EGB' ); ?>
+						<?php _e( 'Welcome to Essential Blocks for Guteneberg.', UGB_TD ); ?>
 					</h1>				
 					
-					<h3 class="black textcenter sub-heading">The Ultimate Builder for WordPress!</h3>
+					<h3 class="black textcenter sub-heading">
+						<?php _e( 'The Ultimate Gutenberg Blocks Builder for WordPress!', 'EGB' ); ?>
+					</h3>
 					
 					<div class="parent">
 
 						<div class="left_column">
 							<div class="left_block">
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								<?php _e( 'Gutenberg provides some basic block like Paragraph, Heading, Image, Gallery, List, Cover, File. These all are the default block. 
+											But building more blocks give you full control to design your web pages. 
+											Visually you can see everything, what you are doing now. 
+											Within this Essential Gutenberg plugin, we have packed most necessary blocks. 
+											We are working on its Development every day and trying to cover all blocks so that you don\'t need to worry on webpage designing.', UGB_TD ); ?>
+
 								</p>
 								<br>
-								<h3>Essential Block Demos </h3>
+								<h3><?php _e( 'Essential Block Demos:', UGB_TD ); ?></h3>
 								<ul class="egb_demos">
 									<li>
 										<a 
 											href="https://plugins.jeweltheme.com/essential-gutenberg/alert-notification/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Alert/Accordion', 'EGB' ); ?>
+												<?php _e( 'Alert/Accordion', UGB_TD ); ?>
 											</strong>
 										</a>
 									</li>
@@ -106,9 +110,11 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/blockquote/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Blockquotes', 'EGB' ); ?>
+												<?php _e( 'Blockquotes', UGB_TD ); ?>
 											</strong>
-											<span class="ribbon hot">Hot</span>
+											<span class="ribbon hot">
+												<?php _e( 'Hot', UGB_TD ); ?>
+											</span>
 										</a>
 									</li>
 									<li>
@@ -116,7 +122,7 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/call-to-action/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Call to Action', 'EGB' ); ?>
+												<?php _e( 'Call to Action', UGB_TD ); ?>
 											</strong>
 										</a>
 									</li>
@@ -125,7 +131,7 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/cards/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Cards', 'EGB' ); ?>
+												<?php _e( 'Cards', UGB_TD ); ?>
 											</strong>
 										</a>
 									</li>
@@ -134,17 +140,19 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/image-content/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Image & Content', 'EGB' ); ?>
+												<?php _e( 'Image & Content', UGB_TD ); ?>
 											</strong>
 										</a>
-										<span class="ribbon new">New</span>
+										<span class="ribbon new">
+											<?php _e( 'New', UGB_TD ); ?>
+										</span>
 									</li>
 									<li>
 										<a 
 											href="https://plugins.jeweltheme.com/essential-gutenberg/testimonial/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Testimonials', 'EGB' ); ?>
+												<?php _e( 'Testimonials', UGB_TD ); ?>
 											</strong>
 										</a>
 										<span class="ribbon trending">Trending</span>
@@ -154,165 +162,167 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/title-subtitle/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Heading & Sub Heading', 'EGB' ); ?>
+												<?php _e( 'Heading & Sub Heading', UGB_TD ); ?>
 											</strong>
 										</a>
-										<span class="ribbon new">New</span>
-									</li>
-
-									<li>
-										<strong>
-											<?php _e( 'Hero Image', 'EGB' ); ?>
-										</strong>
-										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+										<span class="ribbon new">
+											<?php _e( 'New', UGB_TD ); ?>
 										</span>
 									</li>
 
 									<li>
 										<strong>
-											<?php _e( 'Blog Grid', 'EGB' ); ?>
+											<?php _e( 'Hero Image', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 
 									<li>
 										<strong>
-											<?php _e( 'Testimonial Slider', 'EGB' ); ?>
+											<?php _e( 'Blog Grid', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 
 									<li>
 										<strong>
-											<?php _e( 'Logo Slider', 'EGB' ); ?>
+											<?php _e( 'Testimonial Slider', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
+										</span>
+									</li>
+
+									<li>
+										<strong>
+											<?php _e( 'Logo Slider', UGB_TD ); ?>
+										</strong>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Author Box', 'EGB' ); ?>
+											<?php _e( 'Author Box', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Accordion', 'EGB' ); ?>
+											<?php _e( 'Accordion', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Teams', 'EGB' ); ?>
+											<?php _e( 'Teams', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Team Slider', 'EGB' ); ?>
+											<?php _e( 'Team Slider', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Number Block', 'EGB' ); ?>
+											<?php _e( 'Number Block', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Animate Counter', 'EGB' ); ?>
+											<?php _e( 'Animate Counter', UGB_TD ); ?>
 										</strong>
-										<span class="ribbon pro">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+										<span class="ribbon coming">
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'GDPR Conscent', 'EGB' ); ?>
+											<?php _e( 'GDPR Conscent', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Related Posts', 'EGB' ); ?>
+											<?php _e( 'Related Posts', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Facebook Like Block', 'EGB' ); ?>
+											<?php _e( 'Facebook Like Block', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Instagram Block', 'EGB' ); ?>
+											<?php _e( 'Instagram Block', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Social Share', 'EGB' ); ?>
+											<?php _e( 'Social Share', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Click to Tweet', 'EGB' ); ?>
+											<?php _e( 'Click to Tweet', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Google Maps(GMap)', 'EGB' ); ?>
+											<?php _e( 'Google Maps(GMap)', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Maps Location', 'EGB' ); ?>
+											<?php _e( 'Maps Location', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Banner Ads', 'EGB' ); ?>
+											<?php _e( 'Banner Ads', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
-											<?php _e( 'Upcoming', 'EGB' ); ?>
+											<?php _e( 'Upcoming', UGB_TD ); ?>
 										</span>
 									</li>
 									
@@ -326,44 +336,39 @@
 						</div>
 					</div>
 
-					<div class="egb_features">
-						<div class="egb_feature one-col">
-							<div class="feature_content">
-												
-																	
-								<div class="right_block">
-									
-								</div>
-							</div>
-						</div>
-					</div>	
 
 
 					<div class="egb_features">
-						<h2>Essential Blocks for Gutenberg</h3>
+						<h2>
+							<?php _e( 'Essential Blocks for Gutenberg', UGB_TD ); ?>
+						</h3>
 						<p class="textcenter">
-							Listed Blocks are available not on Essential Blocks for Gutenberg Plugin. Blocks are being added daily ...
+							<?php _e( 'Listed Blocks are available not on Essential Blocks for Gutenberg Plugin. Blocks are being added daily ...', UGB_TD ); ?>
 						</p>
 						<div class="egb_feature three-col">
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/alert.svg';?>"/>
-									<h3><?php _e( 'Alert/Notification Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3>
+										<?php _e( 'Alert/Notification Block', UGB_TD ); ?>
+									</h3>
+									<p>
+										<?php _e( 'Need to highlight anything special for your audience? Why not use Alert/ Notification block? There are different type of alert like - success, warning, danger, info, light and dark etc.', UGB_TD ); ?>
+									</p>
 								</div>
 							</div>
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/call-to-action.svg';?>" />
-									<h3><?php _e( 'Call to Action Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3><?php _e( 'Call to Action Block', UGB_TD ); ?></h3>
+									<p><?php _e( 'Attractive Highlighted Section for Customers. In the marketing section call to action (CTA) is a button which designed to provoke an immediate response. It helps to increase lead in your niche or strategy.', UGB_TD ); ?></p>
 								</div>
 							</div>
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/cards.svg';?>" />
-									<h3><?php _e( 'Cards Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3><?php _e( 'Cards Block', UGB_TD ); ?></h3>
+									<p><?php _e( 'In the web world "card" used to height a special part of any webpage with image and content. By default, we have arranged the Card block, by keeping the image at the top and then content.', UGB_TD ); ?></p>
 								</div>								
 							</div>
 						</div>
@@ -373,22 +378,22 @@
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/image.svg';?>"/>
-									<h3><?php _e( 'Image & Content Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3><?php _e( 'Image & Content Block', UGB_TD ); ?></h3>
+									<p><?php _e( 'Keeping both image and content in the same row is mandatory sometimes. There are two variations of alignment in this block. One is for the left image and another for right image.', UGB_TD ); ?></p>
 								</div>
 							</div>
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/quote.svg';?>" />
-									<h3><?php _e( 'Blockquote Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3><?php _e( 'Blockquote Block', UGB_TD ); ?></h3>
+									<p><?php _e( 'Highlighting any Quote or sentence with a name can be done from this block. It has different color variation. You can select the color for the Quote icon or for the text too. LTR and RTL makes unique difference.', UGB_TD ); ?></p>
 								</div>
 							</div>
 							<div class="col">
 								<div class="feature_content">
 									<img src="<?php echo UGB_PLUGIN_URL .'/assets/images/feature/testimonial.svg';?>" />
-									<h3><?php _e( 'Testimonial Block', 'EGB' ); ?></h3>
-									<p><?php _e( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis, at posuere turpis adipiscing. Quisque sit amet dui dui.', 'EGB' ); ?></p>
+									<h3><?php _e( 'Testimonial Block', UGB_TD ); ?></h3>
+									<p><?php _e( 'It\'s a single testimonial block. Use this block to arrange client or user feedback in web pages. We recommend using Photo, Name, Designation, and Content for a better look.', UGB_TD ); ?></p>
 								</div>								
 							</div>
 						</div>
@@ -401,9 +406,11 @@
 				<div class="wp-tab-panel" id="docs" style="display: none;">
 					<div class="egb_features">
 						<div class="egb_feature">
-							<h2>Documentation</h3>
+							<h2>
+								<?php echo esc_html__('Documentation', UGB_TD);?>
+							</h3>
 							<p>
-								This is Documentation Section for Essential Blocks for Gutenberg.
+								<?php echo esc_html__('This is Documentation Section for Essential Blocks for Gutenberg.', UGB_TD);?>
 							</p>
 						</div>
 					</div>
@@ -413,11 +420,50 @@
 				<div class="wp-tab-panel" id="support" style="display: none;">
 					<div class="egb_features">
 						<div class="egb_feature">
-							<h2>Are you Looking for Support?</h3>
+							<h2>
+								<?php echo esc_html__('Need Help?', UGB_TD);?>
+							</h3>
+							
 							<p>
-								We've Dedicated Support Forum for <a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">Essential Blocks for Gutenberg</a>. We're contributing for giving back to WordPress Community.
-								As this is a Free WordPress Plugin, support maybe delayed because <a href="https://jeweltheme.com" target="_blank">Jewel Theme</a> provides Priority Support for Premium Customers.
+								<?php _e( 'Do you Stuck on something? Get help from the community on WordPress Support Forum or Facebook Community. In case of emergency, initiate a live chat at "Jewel Theme".', UGB_TD ); ?>
+								We've Dedicated Support Forum for <strong>Essential Blocks for Gutenberg</strong>. We're contributing for giving back to WordPress Community.
+								As this is a Free WordPress Plugin, support maybe delayed because <strong>Jewel Theme</strong> provides Priority Support for Premium Customers.
 							</p>
+
+							<h4>
+								<?php echo esc_html__('Get Support from your suitable Network:', UGB_TD);?>
+							</h4>
+							<ul>
+								<li>
+									<h4>
+										<a href="https://www.facebook.com/groups/jeweltheme/" target="_blank">
+											<?php echo esc_html__('Facebook Group', UGB_TD);?>
+										</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="https://www.facebook.com/jwthemeltd/" target="_blank">
+											<?php echo esc_html__('Facebook Fan Page', UGB_TD);?>
+										</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" >
+											<?php echo esc_html__('Jewel Theme Support Forum', UGB_TD);?>
+										</a>
+									</h4>
+								</li>
+								<li>
+									<h4>
+										<a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">
+											<?php echo esc_html__('WordPress Support Forum ( Essential Blocks )', UGB_TD);?>
+										</a>
+									</h4>
+								</li>
+							</ul>
+								
 						</div>
 					</div>
 				</div>

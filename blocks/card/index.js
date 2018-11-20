@@ -41,7 +41,7 @@ export default registerBlockType(
         description: __('Ultimate Gutenberg Cards Block', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
-            src: icons.swap
+            src: icons.card
         },
         keywords: [
             __('Card', 'ugb'),

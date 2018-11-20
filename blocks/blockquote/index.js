@@ -40,7 +40,7 @@ export default registerBlockType(
         description: __('Ultimate Gutenberg Blockquote Block', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
-            src: icons.leftquote
+            src: icons.blockquotes
         },
         keywords: [
             __('Blockquote Message', 'ugb'),
