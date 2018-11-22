@@ -189,6 +189,13 @@ class Ultimate_Gutenberg{
 			UGB_VERSION,
 			'all'
 		);
+		wp_enqueue_style(
+			'egb_jquery_ui',
+			'//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css',
+			array(),
+			UGB_VERSION,
+			'all'
+		);
 
 		wp_enqueue_script(
 			'egb_script',
@@ -197,6 +204,9 @@ class Ultimate_Gutenberg{
 			UGB_VERSION,
 			'all'
 		);
+		
+		//Accordion
+		wp_enqueue_script( 'jquery-ui-accordion' );
 	}
 
 	// Define Public Hooks

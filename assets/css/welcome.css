@@ -229,6 +229,10 @@ pre {
 .right_column .tab-banner {
     margin: -140px 0 0;
 }
+#support .right_column .tab-banner,
+#docs .right_column .tab-banner {
+    margin: -70px 0 0;
+}
 .wp-tab-panel .sub-heading {
     margin-top: 10px !important;
 }
@@ -319,11 +323,13 @@ pre {
     margin-top: 10px;
     background: #b54bd8;
     color: #fff;
-    font-size: 30px;
-    border-color: mediumaquamarine;
+    font-size: 24px;
+    font-weight: 700;
+    border: 1px solid mediumaquamarine;
     box-shadow: none;
     transition: .3s ease;
-    text-shadow: 0 -1px 1px #4c35b9, 1px 0 1px #4c35b9, 0 1px 1px #4c35b9, -1px 0 1px #4c35b9;
+    text-shadow: none !important;
+    text-transform: uppercase;
 }
 
 
@@ -334,23 +340,23 @@ pre {
     flex-wrap: wrap;
 }
 .egb_contents .parent .left_column {
-    flex: 0 0 75%;
-    max-width: 75%;
+    flex: 0 0 60%;
+    max-width: 60%;
 }
 .egb_contents .parent .left_column pre {
     padding-right: 45px;
 }
 .egb_contents .parent .right_column {
-    flex: 0 0 25%;
-    max-width: 25%;
-}
-.egb_contents #how-to .parent .left_column {
-    flex: 0 0 60%;
-    max-width: 60%;
-}
-.egb_contents #how-to .parent .right_column {
     flex: 0 0 40%;
     max-width: 40%;
+}
+.egb_contents #changelogs .parent .left_column {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.egb_contents #changelogs .parent .right_column {
+    flex: 0 0 25%;
+    max-width: 25%;
 }
 .egb_features{
     margin-bottom: 70px;
@@ -478,3 +484,44 @@ pre {
     background: rgba(255,255,255,.65);
 }
 
+
+
+/* Accordion */
+.ui-accordion-content-active {
+    height: auto !important;
+}
+.ui-accordion .ui-accordion-header:focus {
+    outline: 0 !important;
+}
+.ui-accordion .ui-accordion-header {
+    background-color: #2351db;
+    background-image: none;
+    color: #fff;
+    padding: 8px 45px 8px 15px;
+    position: relative;
+}
+.ui-accordion-header-active {
+    background-color: #fff;
+    color: #2351db;
+}
+.ui-accordion-header .ui-icon {
+    background-image: none !important;
+    position: relative;
+}
+.ui-accordion-header:before {
+    content: "\f343";
+    width: 40px;
+    height: 40px;
+    font-family: dashicons;
+    font-size: 18px;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -20px;
+    line-height: 40px;
+    text-align: center;
+}
+.ui-accordion-header-active:before {
+    content: "\f347";
+}

@@ -10,13 +10,13 @@
                         <?php echo esc_html__('Free Theme Download', UGB_TD);?>
                     </h3>
                     <div class="inner_content">
-                        <a class="egb_theme_link" href="<?php echo esc_url( 'https://wordpress.org/themes/videostories/' ); ?>" target="_blank">
-                            <img src="<?php echo esc_url( UGB_IMAGE_DIR . 'themes/videostories.png' ); ?>" alt="Essential Blocks Theme">
+                        <a class="egb_theme_link" href="<?php echo esc_url( 'https://wordpress.org/themes/polmo-lite/' ); ?>" target="_blank">
+                            <img src="<?php echo esc_url( UGB_IMAGE_DIR . 'themes/polmo-lite.png' ); ?>" alt="Essential Blocks Theme">
                         </a>
                         <p>
-                            <?php echo esc_html__('Download FREE "Essential Blocks" WordPress Theme now to get started with Essential Blocks for Gutenberg Plugin.', UGB_TD);?>
+                            <?php echo esc_html__('Download FREE "Polmo Lite" WordPress Theme now to get started with "Essential Blocks for Gutenberg" Plugin.', UGB_TD);?>
                         </p>
-                        <a class="button button-primary egb_button" href="<?php echo esc_url( 'https://wordpress.org/themes/videostories/' ); ?>" target="_blank">
+                        <a class="button button-primary egb_button" href="<?php echo esc_url( 'https://wordpress.org/themes/polmo-lite/' ); ?>" target="_blank">
                             <?php _e( 'Download' ); ?>
                         </a>
                     </div>

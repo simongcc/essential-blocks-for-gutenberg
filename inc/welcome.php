@@ -408,10 +408,129 @@
 						<div class="egb_feature">
 							<h2>
 								<?php echo esc_html__('Documentation', UGB_TD);?>
-							</h3>
+							</h2>
 							<p>
 								<?php echo esc_html__('This is Documentation Section for Essential Blocks for Gutenberg.', UGB_TD);?>
 							</p>
+
+							<div class="parent">
+
+								<div class="left_column">
+									<div class="left_block">
+										<p>
+										<?php _e( 'Essential Blocks plugin Developed and Maintained by Jewel Theme. 
+												We Create different type of WordPress Theme in various niches. 
+												We have Developed this plugin for those users who wants to Design their web pages perfectly. 
+												Gutenberg a new editor which comes with some built-in blocks. 
+												But default blocks are not enough to craft a landing page. 
+												We are working on its update and arranging tons of new blocks for you. 
+												Check the following upcoming blocks. You will get an update soon.', UGB_TD ); ?>
+
+										</p>
+										<br>
+
+										<h4>
+											<?php echo esc_html__('Installation Video:', UGB_TD);?>
+										</h4>
+										<div class='embed-container'>
+											<iframe src='https://www.youtube.com/embed/mu-heAQgUOk' frameborder='0' allowfullscreen></iframe>
+										</div>
+
+										<h3>
+											<?php _e( 'Frequently Asked Questions:', UGB_TD ); ?>
+										</h3>
+										<br>
+
+										
+										<div id="accordion">
+
+											<h3>
+												<?php echo esc_html__('Can I use "Essential Blocks for Gutenberg" Plugin without Gutenberg Plugin ?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<?php echo esc_html__('No, you cannot use Essential Gutenberg Plugin without "Gutenberg" Plugin. Because "Essential Blocks for Gutenberg" Plugin has Dependency with Gutenberg Plugin.', UGB_TD);?>
+												</p>
+											</div>
+
+											<h3>
+												<?php echo esc_html__('I\'m Using WordPress v5.0. Do I need to Install "Gutenberg" Plugin?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<?php echo esc_html__('No, since Gutnberg is on core with WordPress v5.0. You don\'t need to Install "Gutenberg" Plugin.', UGB_TD);?>
+												</p>
+											</div>
+
+											<h3>
+												<?php echo esc_html__('How to Install this Plugin ?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<div class='embed-container'>
+														<iframe src='https://www.youtube.com/embed/mu-heAQgUOk' frameborder='0' allowfullscreen></iframe>
+													</div>
+													<br>
+													<?php echo esc_html__('Installation Process has been discussed on "Installation" Section. Video Tutorial will help you about Installation Process.', UGB_TD);?>
+												</p>
+											</div>
+											
+											<h3>
+												<?php echo esc_html__('How to Configure this Plugin ?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<?php echo esc_html__('Basically, there\'s no Configuration required for using "Essential Blocks for Gutenberg" Plugin.', UGB_TD);?>
+												</p>
+											</div>
+
+											<h3>
+												<?php echo esc_html__('How to add Essential Blocks?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<?php echo esc_html__('Navigate to any post or page which you want to edit. Then click on the plus button. Scroll down or search for "Essential Block". Click on that option and you will see some blocks. Just add what block you like and edit the content.', UGB_TD);?>	
+												</p>
+											</div>
+											
+
+											<h3>
+												<?php echo esc_html__('"Essential Gutenberg Plugin" Installed but Not Working !', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													<?php echo esc_html__('First, deactive Other "Gutenberg Blocks" plugin and try again. In most cases, it\'ll be conflicting issue. Try Activate/Deactivate "Essential Blocks for Gutenberg" Plugin. If nothing works then post on our Support Form(Link Mentioned above).', UGB_TD);?>
+												</p>
+											</div>
+											
+											<h3>
+												<?php echo esc_html__('How can I get faster Support?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+													We've two ways to give Supports for "Essential Blocks for Gutenberg" Plugin - <a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">Plugin Support Forum</a> or <a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">Our Website Support</a>. Since, this is a Free Plugin, Support reply may delay for answer but we're Dedicated on our Website <a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">Support Forum</a>.
+												</p>
+											</div>
+											
+											<h3>
+												<?php echo esc_html__('I need Custom Blocks, can you Customize or Create for me?', UGB_TD);?>
+											</h3>
+											<div>
+												<p>
+												We don't provide Customization Support for Free Products. But, If you need to Create one we do Offer Customization Service. 
+<a href="https://jeweltheme.com/order-service/" target="_blank">Order Service</a>
+												</p>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+								<div class="right_column">
+									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/docs.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -423,46 +542,64 @@
 							<h2>
 								<?php echo esc_html__('Need Help?', UGB_TD);?>
 							</h3>
-							
-							<p>
-								<?php _e( 'Do you Stuck on something? Get help from the community on WordPress Support Forum or Facebook Community. In case of emergency, initiate a live chat at "Jewel Theme".', UGB_TD ); ?>
-								We've Dedicated Support Forum for <strong>Essential Blocks for Gutenberg</strong>. We're contributing for giving back to WordPress Community.
-								As this is a Free WordPress Plugin, support maybe delayed because <strong>Jewel Theme</strong> provides Priority Support for Premium Customers.
-							</p>
 
-							<h4>
-								<?php echo esc_html__('Get Support from your suitable Network:', UGB_TD);?>
-							</h4>
-							<ul>
-								<li>
-									<h4>
-										<a href="https://www.facebook.com/groups/jeweltheme/" target="_blank">
-											<?php echo esc_html__('Facebook Group', UGB_TD);?>
-										</a>
-									</h4>
-								</li>
-								<li>
-									<h4>
-										<a href="https://www.facebook.com/jwthemeltd/" target="_blank">
-											<?php echo esc_html__('Facebook Fan Page', UGB_TD);?>
-										</a>
-									</h4>
-								</li>
-								<li>
-									<h4>
-										<a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" >
-											<?php echo esc_html__('Jewel Theme Support Forum', UGB_TD);?>
-										</a>
-									</h4>
-								</li>
-								<li>
-									<h4>
-										<a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">
-											<?php echo esc_html__('WordPress Support Forum ( Essential Blocks )', UGB_TD);?>
-										</a>
-									</h4>
-								</li>
-							</ul>
+							<div class="parent">
+
+								<div class="left_column">
+									<div class="left_block">
+										<p>
+											<?php _e( 'Do you Stuck on something? Get help from the community on WordPress Support Forum or Facebook Community. In case of emergency, initiate a live chat at "Jewel Theme".', UGB_TD ); ?>
+											We've Dedicated Support Forum for <strong>Essential Blocks for Gutenberg</strong>. We're contributing for giving back to WordPress Community.
+											As this is a Free WordPress Plugin, support maybe delayed because <strong>Jewel Theme</strong> provides Priority Support for Premium Customers.
+										</p>
+
+										<h4>
+											<?php echo esc_html__('Get Support from your suitable Network:', UGB_TD);?>
+										</h4>
+										<ul>
+											<li>
+												<h4>
+													<a href="https://www.facebook.com/groups/jeweltheme/" target="_blank">
+														<?php echo esc_html__('Facebook Group', UGB_TD);?>
+													</a>
+												</h4>
+											</li>
+											<li>
+												<h4>
+													<a href="https://www.facebook.com/jwthemeltd/" target="_blank">
+														<?php echo esc_html__('Facebook Fan Page', UGB_TD);?>
+													</a>
+												</h4>
+											</li>
+											<li>
+												<h4>
+													<a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">
+														<?php echo esc_html__('Jewel Theme Support Forum', UGB_TD);?>
+													</a>
+												</h4>
+											</li>
+											<li>
+												<h4>
+													<a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">
+														<?php echo esc_html__('WordPress Support Forum ( Essential Blocks )', UGB_TD);?>
+													</a>
+												</h4>
+											</li>
+											<li>
+												<h4>
+													<a href="https://www.youtube.com/channel/UCAPfTXvzbNebKsB322Iz6HQ" target="_blank">
+														<?php echo esc_html__('Youtub Channel', UGB_TD);?>
+													</a>
+												</h4>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="right_column">
+									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/support.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
+								</div>
+							</div>
 								
 						</div>
 					</div>
@@ -491,3 +628,10 @@
 	</div>
 </div>
 
+
+<script>
+	jQuery(document).ready(function(){
+		jQuery( "#accordion" ).accordion();
+	});
+	
+</script>
