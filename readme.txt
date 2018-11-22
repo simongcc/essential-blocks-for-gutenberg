@@ -1,7 +1,7 @@
 === Essential Blocks for Gutenberg ===
 Contributors: litonice13, jwthemeltd
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
-Tags: essential blocks, gutenberg blocks, essential guten blocks, 
+Tags: essential blocks, gutenberg blocks, essential guten blocks, ultimate guten blocks
 Requires at least: 4.0
 Tested up to: 4.9.8
 Stable tag: 1.0.2
