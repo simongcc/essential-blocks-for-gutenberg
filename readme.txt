@@ -63,7 +63,7 @@ Many more are coming soon(by Weekly Update)
 
 
 ### Are you Looking for Gutenberg Supported Theme?
-Check out [Polmo Lite](https://wordpress.org/themes/polmo-lite/), best Compatible Theme with Gutenberg and "Essential Addons for Gutenberg" Plugin. Some Core Features of Polmo Lite:
+Check out [Polmo Lite](https://wordpress.org/themes/polmo-lite/), best Compatible Theme with Gutenberg and "Essential Blocks for Gutenberg" Plugin. Some Core Features of Polmo Lite:
 - Modern and Clean Design
 - Anchor functionality for One Page sites
 - Parallax images in sections
@@ -103,7 +103,7 @@ The plugin does not allow messy code or extra asset which slow down your interne
 We have an excellent and friendly support team for your assistance. Put your question in the support forum or you can contact us directly via live chat and contact form.
 
 
-### LIKED ESSENTIAL ADDONS?
+### Liked Essential Blocks Plugins?
 Join our [Facebook Group](https://www.facebook.com/groups/jeweltheme/).
 Learn from our Tutorials on [Youtube Channel](https://www.youtube.com/channel/UCAPfTXvzbNebKsB322Iz6HQ).
 Or rate us on [WordPress Forum 🙂](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg/reviews/#new-post) 

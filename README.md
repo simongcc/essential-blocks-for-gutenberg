@@ -39,12 +39,12 @@ The plugin does not allow messy code or extra asset which slow down your interne
 We have an excellent and friendly support team for your assistance. Put your question in the support forum or you can contact us directly via live chat and contact form.
 
 
-### LIKED ESSENTIAL ADDONS?
-Join our [Facebook Group](https://www.facebook.com/groups/jeweltheme/).
-Learn from our Tutorials on [Youtube Channel](https://www.youtube.com/channel/UCAPfTXvzbNebKsB322Iz6HQ).
-Or rate us on [WordPress Forum 🙂](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg/reviews/#new-post) 
-Like on our [Facebook Fan Page](https://www.facebook.com/jwthemeltd)
-Get Faster Support from [Dedicated Support Forum](https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/)
+### Liked Essential Blocks Plugins?
+- Join our [Facebook Group](https://www.facebook.com/groups/jeweltheme/).
+- Learn from our Tutorials on [Youtube Channel](https://www.youtube.com/channel/UCAPfTXvzbNebKsB322Iz6HQ).
+- Or rate us on [WordPress Forum 🙂](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg/reviews/#new-post) 
+- Like on our [Facebook Fan Page](https://www.facebook.com/jwthemeltd)
+- Get Faster Support from [Dedicated Support Forum](https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/)
 
 ## How it works?
 
@@ -61,7 +61,7 @@ Get Faster Support from [Dedicated Support Forum](https://jeweltheme.com/support
 
 ### License
 
-GPL License Copyright (c) 2018 VuejsAdmin
+GPL License Copyright (c) 2018 Jewel Theme
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
