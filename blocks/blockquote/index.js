@@ -49,8 +49,7 @@ export default registerBlockType(
 
         attributes:{
             content:{
-                type: 'array',
-                source: 'rich-text',
+                type: 'html',
                 selector: 'p',
                 default: __('I learned that courage was not the absence of fear, but the triumph over it. The braveman is not he who does not feel afraid, but he who conquers that fear. - Nelson Mandela', 'ugb')
             },

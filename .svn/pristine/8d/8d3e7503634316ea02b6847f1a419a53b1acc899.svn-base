@@ -1,0 +1,32 @@
+/* WordPress Base Colors
+ Source: https://make.wordpress.org/design/handbook/design-guide/foundations/colors/
+*/
+
+//Blues
+$base_blue = "#0073AA";
+$medium_blue = "#00A0D2";
+
+// Grays
+$ultra_dark_gray = "#191E23";
+$dark_gray = "#23282D";
+$base_gray = "#32373C";
+$dark_sliver_gray = "#82878C";
+
+// Auxiliary Hues
+$accent_red = "#DC3232";
+$accent_orange = "#F56E28";
+$accent_yellow = "#FFB900";
+$accent_green = "#46B450";
+$accent_purple = "#826EB4";
+
+
+// Colors.
+$black: rgb(41, 41, 41);
+$white: #f4f4f4;
+$gray: #dedede;
+$green: #bada55;
+$red: orangered;
+
+// Colors
+//$gray: #cccccc;
+$off-white: #f1f1f1;

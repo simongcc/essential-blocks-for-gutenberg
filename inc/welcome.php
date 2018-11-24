@@ -101,7 +101,7 @@
 											href="https://plugins.jeweltheme.com/essential-gutenberg/alert-notification/"
 											target="_blank">
 											<strong>
-												<?php _e( 'Alert/Accordion', UGB_TD ); ?>
+												<?php _e( 'Alert/Notification', UGB_TD ); ?>
 											</strong>
 										</a>
 									</li>
