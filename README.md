@@ -48,7 +48,7 @@ We have an excellent and friendly support team for your assistance. Put your que
 
 ## How it works?
 
-<iframe width="900" height="450" src="https://www.youtube.com/embed/mu-heAQgUOk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Essential Blocks for Gutenberg](https://img.youtube.com/vi/mu-heAQgUOk/maxresdefault.jpg)](https://www.youtube.com/embed/mu-heAQgUOk "Essential Blocks for Gutenberg")
 
 ## Screenshots:
 
