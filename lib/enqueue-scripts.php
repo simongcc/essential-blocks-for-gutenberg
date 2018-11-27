@@ -16,7 +16,20 @@
 		wp_enqueue_script(
 			'gutenberg-blocks-js',
 			UGB_PLUGIN_URL . $block_path,
-			[ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components' ],
+			[ 
+				'wp-i18n', 
+				'wp-element', 
+				'wp-blocks', 
+				'wp-editor', 
+				'wp-components',
+				'react', 
+				'wp-api-fetch',
+				'wp-compose',
+				'wp-data',
+				'wp-edit-post',
+				'wp-plugins',
+
+			],
 			filemtime( UGB_PLUGIN_DIR . $block_path )
 		);
 

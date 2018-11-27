@@ -136,9 +136,9 @@ export default registerBlockType(
                             onChange={(content)=> setAttributes({content})}
                             isSelected={ isSelected }
                             style={{
-                                // backgroundColor: bgColor,
+                                backgroundColor: bgColor,
                                 color: textColor,
-                                // textAlign: textAlignment
+                                textAlign: textAlignment
                             }}
                         />
                     </blockquote>
@@ -164,7 +164,11 @@ export default registerBlockType(
                         tagName="p"
                         value={ content }
                         className='ugb-blockquote-text'
-                        style={ { color: textColor } }
+                        style={{
+                            backgroundColor: bgColor,
+                            color: textColor,
+                            textAlign: textAlignment
+                        }}
                     />
                 </blockquote>
             )

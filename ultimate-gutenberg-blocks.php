@@ -6,9 +6,9 @@
  * @license     GPL-3.0
  *
  * Plugin Name: Essential Blocks for Gutenberg
- * Plugin URI:  https://jeweltheme.com/
+ * Plugin URI:  https://jeweltheme.com/shop/essential-blocks-for-gutenberg/
  * Description: Essential Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
- * Version:     1.2.0
+ * Version:     1.2.3
  * Author:      Liton Arefin
  * Author URI:  https://jeweltheme.com
  * Text Domain: ugb
@@ -24,7 +24,7 @@ defined('ABSPATH') || exit;
 
 
 /*
- * Ultimate Gutenberg Constants
+ * Essential Blocks Constants
  */
 
 $ugb = new Ultimate_Gutenberg();
@@ -44,7 +44,7 @@ define( 'UGB_DIR', dirname( __FILE__ ) );
 class Ultimate_Gutenberg{
 
 	/* Variables */
-	public  $version = "1.0.2";
+	public  $version = "1.2.3";
 	private $plugin_path;
 	private $plugin_url;
 	private $plugin_slug;

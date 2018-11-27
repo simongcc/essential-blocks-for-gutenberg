@@ -1,5 +1,5 @@
 /*
-* Testimonial Block Dependencies
+* Testimonial Block Slider Dependencies
 */
 
 import icons from '../../utils/icons';
@@ -10,18 +10,18 @@ import './style.scss';
 import './editor.scss';
 
 /*
- * Testimonial Block Libraries
+ * Testimonial Block Slider Libraries
  */
 
 import {
     __,
     Fragment,
-    // Component,
-    // Toolbar,
+    Component,
+    Toolbar,
     registerBlockType,
-    // BlockControls,
-    // AlignmentToolbar,
-    // BlockAlignmentToolbar,
+    BlockControls,
+    AlignmentToolbar,
+    BlockAlignmentToolbar,
     MediaUpload,
     RichText,
     Button
@@ -30,62 +30,63 @@ import {
 
 
 /*
-* Register Testimonial Blocks
+* Register Testimonial Block Slider
 */
 
 export default registerBlockType(
     'gutenberg-blocks/testimonial-slider',
     {
         title : __('Testimonial Slider', 'ugb'),
-        description: __('Essential Gutenberg Testimonial Block', 'ugb'),
+        description: __('Essential Gutenberg Testimonial Block Slider', 'ugb'),
         category: 'gutenberg-blocks',
         icon:{
             src: icons.swap
         },
         keywords: [
             __('Testimonial Slider', 'ugb'),
-            __('EGB Testimonial Slider', 'ugb')
+            __('EBG Testimonial Slider', 'ugb')
         ],
 
         attributes:{
-            title:{
-                type: 'html',
-                selector: 'h6',
-                default: __( 'Jordan Ramos','ugb' ),
-            },
-            designation:{
-                type: 'html',
-                selector: 'span',
-                default: __( 'King of the North, GoT','ugb' ),
-            },
             id:{
-                type: 'number'
-            },            
-            body_content: {
-                type: 'html',
-                selector: '.details',
-                default: __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium','ugb' ),
+                source: "attribute",
+                selector:".carousel-item",
+                attribute: "id"
             },
-            newItem: {
-                type: 'array',
-                selector: 'children',
-                default: []
-            },
-
-            imageID: {
-                type: 'number',
-            },
-            imageAlt: {
-                type: 'string',
-                source: 'attribute',
-                attribute: 'alt',
-                selector: 'img',
-            },
-            imageUrl: {
-                type: 'string',
-                source: 'attribute',
-                attribute: 'src',
-                selector: 'img',
+            testimonials:{
+                source: "query",
+                detault: [],
+                selector: ".carousel-item",
+                query: {
+                    index:{
+                        source: "text",
+                        selector: "span.testimonial-index"
+                    },
+                    author:{
+                        source: "text",
+                        selector: ".name"
+                    },
+                    content:{
+                        source: "text",
+                        selector: ".details"
+                    },
+                    designation:{
+                        source: "text",
+                        selector: "span"
+                    },
+                    imageAlt: {
+                        type: 'string',
+                        source: 'attribute',
+                        attribute: 'alt',
+                        selector: 'img',
+                    },
+                    imageUrl: {
+                        type: 'string',
+                        source: 'attribute',
+                        attribute: 'src',
+                        selector: 'img',
+                    },
+                }
             },
             textAlignment: {
                 type: 'string',
@@ -93,7 +94,8 @@ export default registerBlockType(
             blockAlignment: {
                 type: 'string',
                 default: 'center',
-            },
+            }
+                        
         },
 
 
@@ -101,13 +103,8 @@ export default registerBlockType(
             
             const{
                 attributes: {
-                    title,
-                    designation,
-                    body_content,
-                    newItem,
-                    imageID,
-                    imageAlt,
-                    imageUrl,
+                    id,
+                    testimonials,
                     textAlignment,
                     blockAlignment
                 },
@@ -130,55 +127,6 @@ export default registerBlockType(
                 })
             }
 
-            const onRemoveListImage = (imageID) =>{
-                setAttributes({
-                    imageID: null,
-                    imageUrl: null,
-                    imageAlt: null
-                })
-            }            
-            
-
-            const handleInputNewItem = (e) => {
-                let itemEl = e.currentTarget,
-                    name = itemEl.getAttribute('name'),
-                    value = itemEl.value;
-                setAttributes({
-                    [name]: value
-                });
-            }
-
-            const handleItemDelete = (id) => {
-                let itemToKeep = newItem.filter((item) => item.id !== id)
-                setAttributes({
-                    newItem: itemToKeep
-                });
-            }
-        
-            const handleAddNewItem = () => {
-                let itemArray = newItem.slice(),
-                    copyItem = { 
-                        id: uuid(),
-                        title,
-                        designation,
-                        body_content,
-                        imageID,
-                        imageAlt,
-                        imageUrl,
-                     };
-                itemArray.push( copyItem );
-                
-                setAttributes({
-                    title:'',
-                    designation:'',
-                    body_content:'',
-                    imageID: '',
-                    imageAlt:'',
-                    imageUrl:'',
-                    newItem: itemArray
-                });
-            }
-
 
 
             const mainClasses = classnames( [
@@ -189,29 +137,76 @@ export default registerBlockType(
             })
 
 
-            const testimonialListImage = (imageUrl, imageAlt) => {
-                if(!imageUrl) return null;
 
-                if(imageAlt) {
-                    return (
-                        <img
-                            className="card_image"
-                            src={ imageUrl }
-                            alt={ imageAlt }
-                        />
-                    );
-                }
+            if (!id) {
+                const id = `testimonial${Math.floor(Math.random() * 100)}`;
+                //maybe needed props
+                setAttributes({
+                    id
+                });
+            }
 
-                // No alt set, so let's hide it from screen readers
-                return (
-                    <img
-                        className="card_image"
-                        src={ imageUrl }
-                        alt=""
-                        aria-hidden="true"
-                    />
-                );
-            };
+            const testimonialsList = testimonials
+                .sort((a,b) => a.index -b.index)
+                .map(testimonial =>{
+                    return(
+                        <div className="egb-testimonial-block">
+                            <p>
+                                <span>
+                                    Insert Testimonial { Number (testimonial.index) + 1} Here:
+                                </span>
+                                <span
+                                    className="remove-testimonial"
+                                    onClick={() => {
+                                        const newTestimonials = testimonials
+                                        .filter( item => item.index != testimonial.index )
+                                        .map( t =>{
+                                            if( t.index > testimonial.index ){
+                                                t.index -=1;
+                                            }
+                                            return t;
+                                        });
+                                        
+                                        //maybe needed props
+                                        setAttributes({
+                                            testimonials = newTestimonials
+                                        });
+
+                                    }}
+                                >
+                                    <i className="fa fa-times" />
+                                </span>
+                            </p>
+
+                            <div className="details">
+                                <RichText
+                                    tagName="p"
+                                    value={ item.content }
+                                    className="details"
+                                    style={{ height: 60 }}
+                                    placeholder={ __('Testimonial Content', 'ugb') }
+                                    value={ testimonial.content }
+                                    autofocus
+                                    onChange={ content => {
+                                        const newObject = Object.assign({}, testimonial, {
+                                            content: content
+                                        });
+                                        setAttributes({
+                                            testimonials: [
+                                                ...testimonials.filter(
+                                                    item => item.index != testimonial.index
+                                                ),
+                                                newObject
+                                            ]
+                                        })
+                                    } }
+                                />
+                                    
+                            </div>
+
+                        </div>
+                    )
+                })
 
             return (
 
@@ -223,11 +218,12 @@ export default registerBlockType(
                                 
                                 <RichText
                                     tagName="div"
-                                    placeholder={ body_content.default }
-                                    value={ body_content }
+                                    placeholder={ content.default }
+                                    value={ content }
+                                    placeholder={ __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium','ugb' ) }
                                     className="details"
-                                    onChange={ ( nextbodyContent ) => setAttributes( { body_content: nextbodyContent } ) }
-                                    
+                                    onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
+                                    keepPlaceholderOnFocus
                                 /> 
 
                                 <RichText
@@ -235,7 +231,7 @@ export default registerBlockType(
                                     value={ title }
                                     placeholder={ __( 'Jordan Ramos','ugb' ) }
                                     onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                    className={`name`}
+                                    className="name"
                                     keepPlaceholderOnFocus
                                 />   
                                 
@@ -244,7 +240,6 @@ export default registerBlockType(
                                     value={ designation }
                                     placeholder={ __( 'King of the North, GoT','ugb' ) }
                                     onChange={ ( nextDesignation ) => setAttributes( { designation: nextDesignation } ) }
-                                    className={`designation`}
                                     keepPlaceholderOnFocus
                                 />
                                 
@@ -289,35 +284,25 @@ export default registerBlockType(
                                             </p>
                                         )
                                     }
+
+                              
                             </div>
-
-
-                            <ul class="egb_testimonial_pagination">
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>2</li>
-                            </ul>
 
                             <button 
                                 id="add-new__btn" 
-                                className="add-new__btn" 
+                                className="button button-primary" 
                                 onClick={ handleAddNewItem }>
-                                { icons.plus }
+                                Add New
                             </button>
                             
                             
-                            
-                                {
-                                    newItem.map((i, index) => <li
-                                        key={i.id} 
-                                        onClick={e => index}
-                                        >{index}</li>
-                                        )
-                                }
+                            { newItem.map( item => {
+                                // console.log(item);
+                                return (
                                     <div className="testimonial_list">
                                         <RichText
                                             tagName="p"
-                                            value={ newItem.body_content }
+                                            value={ item.content }
                                             className="details"
                                         />
                                         <RichText
@@ -327,7 +312,7 @@ export default registerBlockType(
                                         />
                                         <RichText
                                             tagName="span"
-                                            value={ newItem.designation }
+                                            value={ item.designation }
                                         />
                                         
                                         <p>Image: 
@@ -378,10 +363,10 @@ export default registerBlockType(
 
                                         </p>
                                         
-                                        <button onClick={() => handleItemDelete(item.id)}>
-                                            { icons.minus }
-                                        </button>
+                                        <button onClick={() => handleItemDelete(item.id)}>delete</button>
                                     </div>
+                                )
+                            } )}
 
                         </div>
 
@@ -395,7 +380,7 @@ export default registerBlockType(
         
         save: props => {
 
-            const { title, designation, body_content, imageUrl, imageAlt } = props.attributes;
+            const { title, designation, content, imageUrl, imageAlt } = props.attributes;
 
 
             const testimonialImage = (imageUrl, imageAlt) => {
@@ -426,18 +411,18 @@ export default registerBlockType(
                 <div className="card">
                     { testimonialImage( imageUrl, imageAlt) }
                     <div className="card_content">
-                        <RichText
+                        <RichText.Content
                             tagName="h3"
                             value={ title }
                             className={`card_title`}
                         />
-                        <RichText
+                        <RichText.Content
                             value={ designation }
                             className={`designation`}
                         />
-                        <RichText
+                        <RichText.Content
                             tagName="p"
-                            value={ body_content }
+                            value={ content }
                             className={`card_body`}
                         />
                     </div>

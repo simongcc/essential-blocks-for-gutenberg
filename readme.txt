@@ -1,24 +1,25 @@
-=== Essential Blocks for Gutenberg ===
-Contributors: litonice13, jwthemeltd
+=== WordPress Gutenberg Blocks - Essential Blocks ===
+Contributors: litonice13, jwthemeltd, gutenberg18
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
-Tags: essential blocks, gutenberg blocks, essential guten blocks, ultimate guten blocks
+Tags: gutenberg, essential blocks for gutenberg, gutenberg blocks, card image text, translation block, blocks, gutenberg block, gutenberg blocks, guten blocks, essential blocks, gutenberg blocks, gutenberg widget, gutenberg addon, gutenberg addons, page builder, builder, gutenberg page builder, visual editor, gutenberg visual editor, wordpress page builder, esential guten blocks, essential guten blocks, ultimate guten blocks
 Requires at least: 4.0
-Tested up to: 4.9.8
-Stable tag: 1.0.2
+Tested up to: 5.0
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.3
 
-The Ultimate Blocks for Gutenberg is a Blocks Plugin for Gutenberg Editor. Gutenberg Blocks made easy !!!
+Essential blocks for gutenberg is a plugin that will make it easy for you to add blocks to your gutenberg empowered blog. 
 
 == Description ==
+[Gutenberg](https://wordpress.org/gutenberg/) is now a reality. It brings with it, block based WYSIWYG approach while creating content in WordPress. 
+Unlike the single MCE editor of the past, each bit of content in Gutenberg is a block. 
+A paragraph, image gallery, blockquote, testimonial – they are all blocks. Blocks gives you more control and our plugin is developed to offer you more choices. 
+Our plugin is made with that in mind- making it easy to add blocks for gutenberg empowered blogs.
 
-[Gutenberg](https://wordpress.org/gutenberg/) is now a reality. It brings with it, block based WYSIWYG approach while creating content in WordPress.  Unlike the single MCE editor of the past, each bit of content in Gutenberg is a block. So, whether you want to add a chunk a paragraph, image gallery, blockquote, testimonial – they are all blocks. Blocks gives you more control and our plugin is developed to offer you more choices. 
-Gutenberg is not just an Editor. Gutenberg will be game changer for WordPress.
+[Essential Gutenberg Demos](https://jeweltheme.com/shop/essential-blocks-for-gutenberg//)
+
 Essential Blocks for Gutenberg is Editor Blocks based on Gutenberg Editor Plugin.
-
-
-[Essential Gutenberg Demos](http://plugins.jeweltheme.com/essential-gutenberg/)
 
 = Installation Video Tutorial: =
 [youtube https://www.youtube.com/watch?v=mu-heAQgUOk]
@@ -160,6 +161,15 @@ We don't provide Customization Support for Free Products. But, If you need to Cr
 
 
 == Changelog ==
+= 1.2.3 =
+* Fixed: Fixed "InspectorControls", "BlockControls" with "wp.editor" bug
+* Added: Working on Testimonial Sliders
+* Upgrade: Version Bump
+
+
+= 1.2.2 =
+= 1.2.1 =
+= 1.2.0 =
 
 = 1.0.3 =
 * Date: [20.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)
@@ -200,8 +210,9 @@ We don't provide Customization Support for Free Products. But, If you need to Cr
 
 
 
-
-
 == Upgrade Notice ==
 = 1.0.0
 * Initial Release of WordPress "Essential Blocks for Gutenberg" plugin.
+
+
+== Donations ==
