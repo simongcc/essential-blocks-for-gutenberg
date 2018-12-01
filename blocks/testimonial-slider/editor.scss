@@ -74,9 +74,15 @@
   li {
     float: left;
     list-style: none;
-    padding: 15px;
+    padding: 9px;
+    margin: 0px 5px !important;
     line-height: 1;
     margin: 0;
+    height: 30px;
+    width: 40px;
+    background: red;
+    display: block;
+    cursor: pointer;
   }
 }
 .editor-rich-text {

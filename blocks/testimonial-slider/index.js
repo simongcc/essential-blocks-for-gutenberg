@@ -60,6 +60,9 @@ export default registerBlockType(
             },
             id:{
                 type: 'number'
+            },
+            selectedItem:{
+                type: 'number'
             },            
             body_content: {
                 type: 'html',
@@ -111,7 +114,7 @@ export default registerBlockType(
                     textAlignment,
                     blockAlignment
                 },
-                isSelected, setAttributes, className
+                isSelected, setState, setAttributes, className
             } = props;
 
             const onSelectImage = img =>{
@@ -153,6 +156,13 @@ export default registerBlockType(
                 setAttributes({
                     newItem: itemToKeep
                 });
+            }
+
+            const selectItem = (selectedItem) => {
+                // setAttributes({selectedItem})
+                const item = newItem[selectedItem]
+
+                setAttributes(item)
             }
         
             const handleAddNewItem = () => {
@@ -217,87 +227,91 @@ export default registerBlockType(
 
                 <Fragment>
                         <div className={ mainClasses }>
-
                             <div 
                                 className={ 'wp-block-gutenberg-blocks-testimonial' }>
-                                
-                                <RichText
-                                    tagName="div"
-                                    placeholder={ body_content.default }
-                                    value={ body_content }
-                                    className="details"
-                                    onChange={ ( nextbodyContent ) => setAttributes( { body_content: nextbodyContent } ) }
                                     
-                                /> 
+                                    <RichText
+                                        tagName="div"
+                                        placeholder={ __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', 'ugb' ) }
+                                        value={ body_content }
+                                        onChange={ ( nextbodyContent ) => setAttributes( { body_content: nextbodyContent } ) }
+                                        keepPlaceholderOnFocus
+                                    /> 
 
-                                <RichText
-                                    tagName="h6"
-                                    value={ title }
-                                    placeholder={ __( 'Jordan Ramos','ugb' ) }
-                                    onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                    className={`name`}
-                                    keepPlaceholderOnFocus
-                                />   
-                                
-                                <RichText
-                                    tagName="span"
-                                    value={ designation }
-                                    placeholder={ __( 'King of the North, GoT','ugb' ) }
-                                    onChange={ ( nextDesignation ) => setAttributes( { designation: nextDesignation } ) }
-                                    className={`designation`}
-                                    keepPlaceholderOnFocus
-                                />
-                                
-                                { ! imageID ? (
+                                    <RichText
+                                        tagName="h6"
+                                        value={ title }
+                                        placeholder={ __( 'Jordan Ramos','ugb' ) }
+                                        onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
+                                        keepPlaceholderOnFocus
+                                    />   
+                                    
+                                    <RichText
+                                        tagName="div"
+                                        value={ designation }
+                                        placeholder={ __( 'King of the North, GoT','ugb' ) }
+                                        onChange={ ( nextDesignation ) => setAttributes( { designation: nextDesignation } ) }
+                                        className={`designation`}
+                                        keepPlaceholderOnFocus
+                                    />
 
-                                    <div className="button-container">
-                                        <MediaUpload
-                                            onSelect={ onSelectImage }
-                                            type="image"
-                                            value={ imageID }
-                                            render = { ( { open } ) => (
-                                                <Button
-                                                    className= { "button button-large" }
-                                                    onClick={ open }
-                                                >
-                                                    { icons.upload }
-                                                    { __('Upload Image', 'ugb')}
-                                                </Button>
-                                        )}
-                                        >
-                                        </MediaUpload>
-                                    </div>
+                                    { ! imageID ? (
 
-                                    ) : (
-                                            <p class="image-wrapper">
-                                                <img
-                                                    src={ imageUrl }
-                                                    alt={ imageAlt }
-                                                />
-
-                                                { isSelected ? (
-
+                                        <div className="button-container">
+                                            <MediaUpload
+                                                onSelect={ onSelectImage }
+                                                type="image"
+                                                value={ imageID }
+                                                render = { ( { open } ) => (
                                                     <Button
-                                                        className="remove-image"
-                                                        onClick={ onRemoveImage }
+                                                        className= { "button button-large" }
+                                                        onClick={ open }
                                                     >
-                                                        { icons.remove }
+                                                        { icons.upload }
+                                                        { __('Upload Image', 'ugb')}
                                                     </Button>
+                                            )}
+                                            >
+                                            </MediaUpload>
+                                        </div>
 
-                                                ) : null }
+                                        ) : (
+                                                <p class="image-wrapper">
+                                                    <img
+                                                        src={ imageUrl }
+                                                        alt={ imageAlt }
+                                                    />
 
-                                            </p>
-                                        )
-                                    }
-                            </div>
+                                                    { isSelected ? (
 
+                                                        <Button
+                                                            className="remove-image"
+                                                            onClick={ onRemoveImage }
+                                                        >
+                                                            { icons.remove }
+                                                        </Button>
+
+                                                    ) : null }
+
+                                                </p>
+                                            )
+                                        }
+
+
+                                </div>
+                                
 
                             <ul class="egb_testimonial_pagination">
-                                    <li>1</li>
-                                    <li>2</li>
-                                    <li>2</li>
+                                {
+                                    newItem.map((i, index) => <li
+                                        key={i.id} 
+                                        onClick={e => selectItem(index)}
+                                        >{index + 1}</li>
+                                        
+                                    )
+                                }                                
                             </ul>
-
+                            
                             <button 
                                 id="add-new__btn" 
                                 className="add-new__btn" 
@@ -305,83 +319,7 @@ export default registerBlockType(
                                 { icons.plus }
                             </button>
                             
-                            
-                            
-                                {
-                                    newItem.map((i, index) => <li
-                                        key={i.id} 
-                                        onClick={e => index}
-                                        >{index}</li>
-                                        )
-                                }
-                                    <div className="testimonial_list">
-                                        <RichText
-                                            tagName="p"
-                                            value={ newItem.body_content }
-                                            className="details"
-                                        />
-                                        <RichText
-                                            tagName="h6"
-                                            value={ item.title }
-                                            className="name"
-                                        />
-                                        <RichText
-                                            tagName="span"
-                                            value={ newItem.designation }
-                                        />
-                                        
-                                        <p>Image: 
-                                        {/* { testimonialListImage( item.imageUrl, item.imageAlt) } */}
-
-
-                                        { ! item.imageID ? (
-
-                                            <div className="button-container">
-                                                <MediaUpload
-                                                    onSelect={ onSelectImage }
-                                                    type="image"
-                                                    value={ item.imageID }
-                                                    render = { ( { open } ) => (
-                                                        <Button
-                                                            className= { "button button-large" }
-                                                            onClick={ open }
-                                                        >
-                                                            { icons.upload }
-                                                            { __('Upload Image', 'ugb')}
-                                                        </Button>
-                                                )}
-                                                >
-                                                </MediaUpload>
-                                            </div>
-
-                                            ) : (
-                                                    <p class="image-wrapper">
-                                                        <img
-                                                            src={ item.imageUrl }
-                                                            alt={ item.imageAlt }
-                                                        />
-
-                                                        { isSelected ? (
-
-                                                            <Button
-                                                                className="remove-image"
-                                                                onClick={ onRemoveImage }
-                                                            >
-                                                                { icons.remove }
-                                                            </Button>
-
-                                                        ) : null }
-
-                                                    </p>
-                                                )
-                                            }
-
-                                        </p>
-                                        
-                                        <button onClick={() => handleItemDelete(item.id)}>
-                                            { icons.minus }
-                                        </button>
-                                    </div>
+                                
 
                         </div>
 
@@ -395,8 +333,16 @@ export default registerBlockType(
         
         save: props => {
 
-            const { title, designation, body_content, imageUrl, imageAlt } = props.attributes;
-
+            const { 
+                    title, 
+                    newItem,
+                    designation, 
+                    body_content, 
+                    imageUrl, 
+                    imageAlt 
+                } = props.attributes;
+            // console.log( newItem );
+            
 
             const testimonialImage = (imageUrl, imageAlt) => {
                 if(!imageUrl) return null;
@@ -422,27 +368,34 @@ export default registerBlockType(
                 );
             };
 
-            return (
-                <div className="card">
-                    { testimonialImage( imageUrl, imageAlt) }
-                    <div className="card_content">
-                        <RichText
-                            tagName="h3"
-                            value={ title }
-                            className={`card_title`}
-                        />
-                        <RichText
-                            value={ designation }
-                            className={`designation`}
-                        />
-                        <RichText
-                            tagName="p"
-                            value={ body_content }
-                            className={`card_body`}
-                        />
-                    </div>
+
+                
+            return (    
+                <div className="testimonial-slider">
+
+                    { newItem.map( item => { 
+                        return( 
+                            <div class="testimonial-item">
+                                { testimonialImage( item.imageUrl, item.imageAlt) }
+                                <RichText.Content
+                                    tagName="h3"
+                                    value={ item.title }
+                                />
+
+                                <RichText.Content
+                                    tagName="p"
+                                    value={ item.body_content }
+                                />
+                                <RichText.Content
+                                    value={ item.designation }
+                                />
+                            </div>
+                         )
+                    })}
+
                 </div>
             );
+            
 
         },
 

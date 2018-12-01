@@ -5,11 +5,12 @@ import './i18n.js';
  */
 
 import './alert';
-import './blockquote';
-import './card';
-import './call-to-action';
-import './title-subtitle';
-import './image-content';
-import './testimonial';
-// import './testimonial-slider';
+// import './blockquote';
+// import './card';
+// import './call-to-action';
+// import './title-subtitle';
+// import './image-content';
+// import './testimonial';
+// import './hero-image';
+import './testimonial-slider';
 // import './pricing-table';

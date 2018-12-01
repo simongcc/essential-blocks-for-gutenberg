@@ -6,6 +6,8 @@ export const { registerBlockType } = wp.blocks
 
 export const { __ } = wp.i18n
 
+export const { compose } = wp.compose;
+
 export const {
     RangeControl,
     SelectControl,
@@ -19,7 +21,9 @@ export const {
     PanelRow,
     RadioControl,
     Toolbar,
-    FormToggle
+    FormToggle,
+
+    withNotices,
 
 
 } = wp.components
@@ -32,6 +36,12 @@ export const {
     RichText,
     URLInput,
     MediaUpload,
+    
+    MediaPlaceholder,
+    withColors,
+    getColorClassName,
+    MediaUploadCheck,
+
 } = wp.editor.InspectorControls ? wp.editor : wp.blocks
 
 export const {

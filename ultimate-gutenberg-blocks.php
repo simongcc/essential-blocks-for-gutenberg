@@ -10,7 +10,7 @@
  * Description: Essential Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
  * Version:     1.2.3
  * Author:      Liton Arefin
- * Author URI:  https://jeweltheme.com
+ * Author URI:  https://jeweltheme.com/shop/essential-blocks-for-gutenberg/
  * Text Domain: ugb
  * Domain Path: /languages
  * License:     GPL-3.0
