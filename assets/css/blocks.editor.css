@@ -52,6 +52,69 @@
   color: #1b1e21 !important;
   background-color: #d6d8d9 !important;
   border-color: #c6c8ca !important; }
+.col-lg-6 {
+  width: 50%; }
+
+.banner-section {
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  max-width: 100%;
+  margin: 0 0 1.5em;
+  align-items: center;
+  padding: 16% 10%;
+  height: 15.7rem;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover; }
+  .banner-section .container, .banner-section .row {
+    align-items: center;
+    height: 100%; }
+  .banner-section .row {
+    display: flex; }
+  .banner-section .btn {
+    background: #8dc63f;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    color: #fff;
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 12px 21.43px;
+    text-transform: uppercase; }
+    .banner-section .btn:hover {
+      background: #8dc63f;
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25) inset !important;
+      color: #fff; }
+  .banner-section h1, .banner-section h2, .banner-section h3, .banner-section h4, .banner-section h5, .banner-section h6 {
+    font-weight: 300;
+    line-height: 1.2 !important;
+    margin-bottom: 0; }
+    .banner-section h1:before, .banner-section h2:before, .banner-section h3:before, .banner-section h4:before, .banner-section h5:before, .banner-section h6:before {
+      display: none !important; }
+  .banner-section p {
+    color: #8c8c8c !important;
+    font-weight: 300;
+    line-height: 1.35 !important;
+    margin: 1.5em 0 0; }
+    .banner-section p.image-wrapper {
+      margin: 0;
+      top: 15px;
+      right: 15px;
+      position: absolute; }
+  .banner-section .editor-url-input {
+    float: left; }
+
+.slider-image {
+  background: #f3f4f5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 300px; }
 .wp-block-gutenberg-blocks-testimonial.egb-testimonial {
   background: #f2f2f2f2; }
   .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image {

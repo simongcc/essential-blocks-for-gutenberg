@@ -133,7 +133,7 @@ export default registerBlockType(
                                                         <URLInput
                                                             className="cta-url"
                                                             value = { buttonUrl }
-                                                            onChange={ buttonUrl => setAttributes({ buttonUrl                                                    }) } />
+                                                            onChange={ buttonUrl => setAttributes({ buttonUrl }) } />
                                                         <IconButton
                                                             icon="editor-break"
                                                             label={ __('Apply', 'ugb') }

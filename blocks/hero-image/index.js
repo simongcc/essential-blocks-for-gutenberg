@@ -22,8 +22,13 @@ import {
     Fragment,
     Button,
     MediaUpload,
-    withColors,
+    URLInput,
+    IconButton,
 
+    withColors,
+    RangeControl,
+    PanelColorSettings,
+    ToggleControl,
     compose,
     BlockControls,
     AlignmentToolbar,
@@ -75,13 +80,24 @@ export default registerBlockType(
                 type: 'string',
                 source: 'html',
                 selector: '.item-title',
-                default: __('All the tools you’ll need', 'ugb')
+                default: __('Ultimate Landing Page for Anything Cool', 'ugb')
             },            
             content:{
                 type: 'html',
                 selector: 'p',
-                default: __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ugb')
+                default: __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'ugb')
             },
+            buttonText:{
+                type: 'html',
+                selector: 'a',
+                default: __( 'Try out Now','ugb' ),
+            },
+            buttonUrl:{
+                type: 'string',
+                source: 'attribute',
+                attribute: 'href',
+                selector: 'a',
+            },            
             url: {
                 type: 'string',
             },
@@ -141,18 +157,38 @@ export default registerBlockType(
             },
 
         },
-        getEditWrapperProps( { attributes } ){
-            const { blockAlignment } = attributes;
-            if ( -1 !== validAlignments.indexOf( blockAlignment ) ) {
+
+
+        // getEditWrapperProps( { attributes } ){
+        //     const { blockAlignment } = attributes;
+        //     if ( -1 !== validAlignments.indexOf( blockAlignment ) ) {
+        //         return { 'data-align': blockAlignment };
+        //     }
+        // },
+
+        getEditWrapperProps( { blockAlignment } ){
+            if( 'left' === blockAlignment ||
+                'right' === blockAlignment ||
+                'full' === blockAlignment
+            ){
                 return { 'data-align': blockAlignment };
             }
         },
+
+
+
         edit: props =>{
 
             const{
                 attributes: {
                     title,
                     content,
+                    buttonText,
+                    buttonUrl,
+                    backgroundType,
+                    hasParallax,
+                    overlayColor,
+                    dimRatio,
                     imageID,
                     imageAlt,
                     imageUrl,
@@ -160,7 +196,7 @@ export default registerBlockType(
                     blockAlignment,
                     imgAlignmentClass
                 },
-                isSelected, setAttributes, className
+                isSelected, setAttributes, className, setOverlayColor
             } = props;
 
             const imageContentAlignment = [
@@ -191,145 +227,227 @@ export default registerBlockType(
                 'has-image': imageUrl,
             })
 
+            const toggleParallax = () => setAttributes( { hasParallax: ! hasParallax } );
+			const setDimRatio = ( ratio ) => setAttributes( { dimRatio: ratio } );
+            // const style = backgroundImageStyles( imageUrl );
+
+            const style = {
+				...(
+					backgroundType === IMAGE_BACKGROUND_TYPE ?
+						backgroundImageStyles( imageUrl ) :
+						{}
+				),
+                backgroundColor: overlayColor,
+                
+            };
+            
+			const classes = classnames(
+				className,
+				textAlignment !== 'center' && `has-${ textAlignment }-content`,
+				dimRatioToClass( dimRatio ),
+				{
+					'has-background-dim': dimRatio !== 0,
+					'has-parallax': hasParallax,
+				}
+            );
+            
             return (
                 <Fragment>
+
+                    <BlockControls>
+                        <BlockAlignmentToolbar
+                            value={ blockAlignment }
+                            onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
+                        />
+                        <AlignmentToolbar
+                            value={ textAlignment }
+                            onChange={ textAlignment => setAttributes( { textAlignment } ) }
+                        />
+                    </BlockControls>
                     
 
-                        <InspectorControls>
-                            <PanelBody>
-                                <SelectControl
-                                    label={ __( 'Alignment Style' ) }
-                                    value={ imgAlignmentClass }
-                                    options={ imageContentAlignment.map( ({ value, label }) => ( {
-                                        value: value,
-                                        label: label,
-                                    } ) ) }
-                                    onChange={ ( newSize ) => { setAttributes( { imgAlignmentClass: newSize } ) } }
+                    <InspectorControls>
+                        { <PanelBody>
+                            <SelectControl
+                                label={ __( 'Alignment Style' ) }
+                                value={ imgAlignmentClass }
+                                options={ imageContentAlignment.map( ({ value, label }) => ( {
+                                    value: value,
+                                    label: label,
+                                } ) ) }
+                                onChange={ ( newSize ) => { setAttributes( { imgAlignmentClass: newSize } ) } }
+                            />
+                        </PanelBody>}
+
+                        <PanelBody title={ __( 'Cover Settings' ) }>
+                            { IMAGE_BACKGROUND_TYPE === backgroundType && (
+                                <ToggleControl
+                                    label={ __( 'Fixed Background' ) }
+                                    checked={ hasParallax }
+                                    onChange={ toggleParallax }
                                 />
-                            </PanelBody>
-                        </InspectorControls>
+                            ) }
+                            <PanelColorSettings
+                                title={ __( 'Overlay' ) }
+                                initialOpen={ true }
+                                colorSettings={ [ {
+                                    value: overlayColor,
+                                    onChange: setOverlayColor,
+                                    label: __( 'Overlay Color' ),
+                                } ] }
+                            >
+                                <RangeControl
+                                    label={ __( 'Background Opacity' ) }
+                                    value={ dimRatio }
+                                    onChange={ setDimRatio }
+                                    min={ 0 }
+                                    max={ 100 }
+                                    step={ 10 }
+                                />
+                            </PanelColorSettings>
+                        </PanelBody> 
+
+
+                    </InspectorControls>
                         
-                    
-                        
+                                            
                         <section 
                             className={ `banner-section banner-01 background-bg ${mainClasses}` }
                             // data-image-src="images/banner.png" 
-                            style={ `background-image: url( ${imageUrl} )` }
+                            style= { style }
                         >
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="banner-texts text-left">
-                                            <h2 class="banner-title">Ultimate Landing Page for Anything Cool </h2>
-                                            <p class="mt-4">
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                            </p>
 
-                                            <a href="#" class="btn btn-lg mt-5">Try out Now</a>
+                                            <RichText
+                                                tagName="h2"
+                                                placeholder={ title.default }
+                                                value={ title }
+                                                onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
+                                                className={`banner-title`}
+                                                style={{
+                                                    textAlign: textAlignment
+                                                }}
+                                                keepPlaceholderOnFocus
+                                            />                    
+                              
+                                            <RichText
+                                                tagName="p"
+                                                placeholder={ content.default }
+                                                value={ content }
+                                                onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
+                                                style={{
+                                                    textAlign: textAlignment
+                                                }}
+                                                className={`mt-4`}
+                                                keepPlaceholderOnFocus
+                                            />    
+
+
+                                            { isSelected ? (
+                                                <div class="hero-btn-container">
+                                                    <RichText
+                                                        tagName="a"
+                                                        value={ buttonText }
+                                                        onChange={ buttonText => setAttributes({ buttonText }) } 
+                                                        className={`btn btn-lg mt-5`}
+                                                    />
+                                                    <form
+                                                        onSubmit={ event => event.preventDefault() }
+                                                    >
+
+                                                        <URLInput
+                                                            className="hero-btn-url"
+                                                            value = { buttonUrl }
+                                                            onChange={ buttonUrl => setAttributes({ buttonUrl }) } />
+                                                        <IconButton
+                                                            icon="editor-break"
+                                                            label={ __('Apply', 'ugb') }
+                                                            type="submit"
+                                                        />
+                                                    </form>
+                                                </div>
+                                            ) : (
+                                                <p>
+                                                    <a href={ buttonUrl } className="btn">
+                                                        { buttonText || __('Edit URL', 'ugb') }
+                                                    </a>
+                                                </p>
+                                            )}
+
+
                                         </div>
                                     </div>
-                                    <div class="col-lg-6"></div>
+
+
+                                    <div class="col-lg-6">
+
+                                        { ! imageID ? (
+
+                                            <div class="slider-image">
+                                                <MediaUpload
+                                                    onSelect={ onSelectImage }
+                                                    type="image"
+                                                    value={ imageID }
+                                                    render = { ( { open } ) => (
+                                                        <Button
+                                                            className= { "button button-large" }
+                                                            onClick={ open }
+                                                        >
+                                                            { icons.upload }
+                                                            { __('Upload Image', 'ugb')}
+                                                        </Button>
+                                                )}
+                                                >
+                                                </MediaUpload>
+                                            </div>
+
+                                            ) : (
+                                                <p class="image-wrapper">
+                                                    {/* <img
+                                                        src={ imageUrl }
+                                                        alt={ imageAlt }
+                                                    /> */}
+
+                                                    { isSelected ? (
+
+                                                        <Button
+                                                            className="remove-image"
+                                                            onClick={ onRemoveImage }
+                                                        >
+                                                            { icons.remove }
+                                                        </Button>
+
+                                                    ) : null }
+
+                                                </p>
+                                            )
+                                            }
+                                    </div>
                                 </div>
                             </div>
                         </section>
 
  
                         <div className={`item tools-item ${imgAlignmentClass}` }>
+
                         </div>
-                            { ! imageID ? (
-
-                                <div class="item-thumb">
-                                    <MediaUpload
-                                        onSelect={ onSelectImage }
-                                        type="image"
-                                        value={ imageID }
-                                        render = { ( { open } ) => (
-                                            <Button
-                                                className= { "button button-large" }
-                                                onClick={ open }
-                                            >
-                                                { icons.upload }
-                                                { __('Upload Image', 'ugb')}
-                                            </Button>
-                                    )}
-                                    >
-                                    </MediaUpload>
-                                </div>
-
-                                ) : (
-                                    <p class="image-wrapper">
-                                        <img
-                                            src={ imageUrl }
-                                            alt={ imageAlt }
-                                        />
-
-                                        { isSelected ? (
-
-                                            <Button
-                                                className="remove-image"
-                                                onClick={ onRemoveImage }
-                                            >
-                                                { icons.remove }
-                                            </Button>
-
-                                        ) : null }
-
-                                    </p>
-                                )
-                            }
-
-                        
-                        <div className={ 'wp-block-egb-image-content item-details' }>
-
-                            <RichText
-                                tagName="h6"
-                                placeholder={ title.default }
-                                value={ title }
-                                onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                className={`item-title`}
-                                style={{
-                                    textAlign: textAlignment
-                                }}
-                                keepPlaceholderOnFocus
-                            />
-                            
-                            <RichText
-                                tagName="p"
-                                placeholder={ content.default }
-                                value={ content }
-                                onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
-                                style={{
-                                    textAlign: textAlignment
-                                }}
-                                keepPlaceholderOnFocus
-                            />
-                            </div>
                 </Fragment>
             )
 
         },
         save: props => {
-			// const { url, title, hasParallax, dimRatio, align } = attributes;
-			// const style = backgroundImageStyles( url );
-			// const classes = classnames(
-			// 	dimRatioToClass( dimRatio ),
-			// 	{
-			// 		'has-background-dim': dimRatio !== 0,
-			// 		'has-parallax': hasParallax,
-			// 	},
-			// 	align ? `align${ align }` : null,
-			// );
-
-			// return (
-			// 	<section className={ classes } style={ style }>
-			// 		<RichText.Content tagName="h2" value={ title } />
-			// 	</section>
-			// );
             const{
                 title,
                 content,
+                buttonText,
+                buttonUrl,
                 imageUrl,
                 imageAlt,
+                backgroundType,
+                overlayColor,
                 imgAlignmentClass,
                 blockAlignment,
                 textAlignment,
@@ -365,30 +483,55 @@ export default registerBlockType(
             };
 
 
+            const style = {
+				...(
+					backgroundType === IMAGE_BACKGROUND_TYPE ?
+						backgroundImageStyles( imageUrl ) :
+						{}
+				),
+                backgroundColor: overlayColor,
+                
+            };
+
             return(
+                <section 
+                    className={ `banner-section banner-01 background-bg align${blockAlignment}` }
+                    // data-image-src="images/banner.png" 
+                    style= { style }
+                >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="banner-texts text-left">
 
-                <div 
-                    className={`egb-image-content item tools-item ${imgAlignmentClass} align${blockAlignment}` }>
-                    <div className="item-thumb">
-                        { cardImage( imageUrl, imageAlt) }
+                                    <RichText.Content
+                                        tagName="h2"
+                                        value={ title }
+                                        onChange={( title )=> setAttributes({ title })}
+                                        className={`banner-title`}
+                                        style={{
+                                            textAlign: textAlignment
+                                        }}
+                                    />
+
+                                    <RichText.Content
+                                        tagName="p"
+                                        value={ content }
+                                        className={`mt-4`}
+                                        onChange={( content )=> setAttributes({ content })}
+                                    />
+
+
+                                    <a href={ buttonUrl } className="btn btn-lg mt-5">
+                                        { buttonText }
+                                    </a>
+
+                                </div>
+                            </div> 
+                            <div class="col-lg-6"></div>                                       
+                        </div>
                     </div>
-                    <div className="item-details">
-
-                        <RichText.Content
-                            tagName="h6"
-                            value={ title }
-                            onChange={( title )=> setAttributes({ title })}
-                            className={`item-title`}
-                        />
-
-                        <RichText.Content
-                            tagName="p"
-                            value={ content }
-                            onChange={( content )=> setAttributes({ content })}
-                        />
-                                                    
-                    </div>
-                </div>
+                </section>
             )
 
 

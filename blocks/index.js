@@ -11,6 +11,6 @@ import './alert';
 // import './title-subtitle';
 // import './image-content';
 // import './testimonial';
-// import './hero-image';
+import './hero-image';
 import './testimonial-slider';
 // import './pricing-table';

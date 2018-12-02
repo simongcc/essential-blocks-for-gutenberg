@@ -2,54 +2,77 @@
     width: 50%;
 }
 .banner-section {
-    height: 75vh;
-    padding-top: 100px;
     position: relative;
-    
+    background-size: cover;
+    background-position: 50%;
+    max-width: 100%;
+    margin: 0 0 1.5em;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 16% 10%;
+    height: 15.7rem;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+
     .container, .row {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
       height: 100%;
     }
+    .row {
+      display: flex;
+    }
     .btn {
-      font-size: 14px;
-      line-height: 54px;
-      padding: 0 2.245em;
+      background: #8dc63f;
+      border: none;
+      border-radius: 5px;
+      box-shadow: none;
+      color: #fff;
+      display: inline-block;
+      font-family: "Poppins", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      margin: 20px 0;
+      padding: 12px 21.43px;
+      text-transform: uppercase;
+      &:hover {
+        background: #8dc63f;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25) inset !important;
+        color: #fff;
+      }
     }
     h1, h2, h3, h4, h5, h6 {
       font-weight: 300;
-      line-height: 1.35;
+      line-height: 1.2 !important;
       margin-bottom: 0;
+      &:before {
+        display: none !important;
+      }
     }
     p {
+      color: #8c8c8c !important;
       font-weight: 300;
-      line-height: 1.35;
-      margin-bottom: 0;
-      color: #8c8c8c;
-      font-size: 1.124em;
-      line-height: 1.45;
-    }
-    &.banner-02 {
-      border-bottom-left-radius: 90px 60px;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-      &:before {
-        content: '';
-        width: 0;
-        height: 0;
-        border-bottom: 25vh solid #fff;
-        border-left: 100vw solid transparent;
-        position: absolute;
-        bottom: -9px;
-        right: 0;
-        z-index: -1;
-      }
-      .banner-content {
-        background-size: contain;
-        background-position: bottom right;
-        height: 100%;
+      line-height: 1.35 !important;
+      margin: 1.5em 0 0;
+        &.image-wrapper {
+          margin: 0;
+          top: 15px;
+          right: 15px;
+          position: absolute;
       }
     }
+    .editor-url-input {
+      float: left;
+    }
+  }
+
+  .slider-image {
+    background: #f3f4f5;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
   }
