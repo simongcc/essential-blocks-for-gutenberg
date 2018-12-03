@@ -11,6 +11,7 @@ export const { compose } = wp.compose;
 export const {
     RangeControl,
     SelectControl,
+    TextareaControl,
     TextControl,
     ToggleControl,
     Dashicon,

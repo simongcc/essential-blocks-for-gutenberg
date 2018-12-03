@@ -122,6 +122,7 @@ class Ultimate_Gutenberg{
 
 		// Scripts and Styles
 		require_once $this->ugb_plugin_path() . '/lib/enqueue-scripts.php';
+		// require_once $this->ugb_plugin_path() . '/lib/metabox.php';
 
 		if ( is_admin() ) {
 			// Notices Libraries
@@ -153,28 +154,20 @@ class Ultimate_Gutenberg{
 			return;
 		}
 	
-	  // Delete the redirect transient.
-	  delete_transient( '_egb_welcome_redirect' );
+	  	// Delete the redirect transient.
+	  	delete_transient( '_egb_welcome_redirect' );
 	
-	  // Bail if activating from network or bulk sites.
-	  if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
-		return;
-	  }
+	  	// Bail if activating from network or bulk sites.
+	  	if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+			return;
+	  	}
 	
-	  // Redirect to Welcome Page.
-	  wp_redirect( 
+	  	// Redirect to Welcome Page.
+	  	wp_redirect( 
 			  esc_url( admin_url( 'admin.php?page=essential-blocks-for-gutenberg' ) ) 
 		);
-                die();
-	//   wp_safe_redirect( 
-	// 	  add_query_arg( 
-	// 			array( 
-	// 					'page' => 'essential-blocks-for-gutenberg' 
-	// 				), 
-	// 			admin_url( 'ultimate-gutenberg-blocks.php' )
-	// 			// admin_url( 'plugins.php' ) 
-	// 		)
-	// 	);
+	
+		die();
 	
 	}
 

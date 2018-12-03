@@ -43,6 +43,7 @@ export default registerBlockType(
             src: icons.swap
         },
         keywords: [
+            __('EGB', 'ugb'),
             __('Testimonial Slider', 'ugb'),
             __('EGB Testimonial Slider', 'ugb')
         ],
@@ -66,7 +67,7 @@ export default registerBlockType(
             },            
             body_content: {
                 type: 'html',
-                selector: '.details',
+                selector: '.testimonial_content',
                 default: __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium','ugb' ),
             },
             newItem: {
@@ -151,18 +152,25 @@ export default registerBlockType(
                 });
             }
 
-            const handleItemDelete = (id) => {
+            const handleItemDelete = ( id ) => {
                 let itemToKeep = newItem.filter((item) => item.id !== id)
                 setAttributes({
                     newItem: itemToKeep
                 });
             }
 
-            const selectItem = (selectedItem) => {
+            const selectItem = ( selectedItem, element ) => {
                 // setAttributes({selectedItem})
                 const item = newItem[selectedItem]
+                
+                const currentItem = element.currentTarget;
+                const siblingItems = currentItem.parentElement.querySelectorAll('li');
 
-                setAttributes(item)
+                siblingItems.forEach(el => el.classList.remove("active"));
+
+                currentItem.classList.add("active");
+
+                setAttributes( item )
             }
         
             const handleAddNewItem = () => {
@@ -229,21 +237,13 @@ export default registerBlockType(
                         <div className={ mainClasses }>
                             <div 
                                 className={ 'wp-block-gutenberg-blocks-testimonial' }>
-                                    
-                                    <RichText
-                                        tagName="div"
-                                        placeholder={ __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', 'ugb' ) }
-                                        value={ body_content }
-                                        onChange={ ( nextbodyContent ) => setAttributes( { body_content: nextbodyContent } ) }
-                                        keepPlaceholderOnFocus
-                                    /> 
 
                                     <RichText
                                         tagName="h6"
                                         value={ title }
                                         placeholder={ __( 'Jordan Ramos','ugb' ) }
                                         onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                        keepPlaceholderOnFocus
+                                        
                                     />   
                                     
                                     <RichText
@@ -252,8 +252,18 @@ export default registerBlockType(
                                         placeholder={ __( 'King of the North, GoT','ugb' ) }
                                         onChange={ ( nextDesignation ) => setAttributes( { designation: nextDesignation } ) }
                                         className={`designation`}
-                                        keepPlaceholderOnFocus
+                                        
                                     />
+
+                                    <RichText
+                                        tagName="h6"
+                                        multiline= "true"
+                                        value={ body_content }
+                                        placeholder={ __( 'Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium', 'ugb' ) }
+                                        onChange={ ( nextbodyContent ) => setAttributes( { body_content: nextbodyContent } ) }
+                                        className={`testimonial_content`}
+                                        
+                                    />                                     
 
                                     { ! imageID ? (
 
@@ -305,19 +315,19 @@ export default registerBlockType(
                                 {
                                     newItem.map((i, index) => <li
                                         key={i.id} 
-                                        onClick={e => selectItem(index)}
+                                        onClick={e => selectItem( index, e )}
                                         >{index + 1}</li>
-                                        
                                     )
-                                }                                
+                                }
+                                <li 
+                                    id="add-new__btn" 
+                                    className="add-new__btn" 
+                                    onClick={ handleAddNewItem }>
+                                    { icons.plus }
+                                </li>
+                                
                             </ul>
                             
-                            <button 
-                                id="add-new__btn" 
-                                className="add-new__btn" 
-                                onClick={ handleAddNewItem }>
-                                { icons.plus }
-                            </button>
                             
                                 
 
@@ -366,32 +376,52 @@ export default registerBlockType(
                         aria-hidden="true"
                     />
                 );
+
             };
 
+            
 
                 
             return (    
-                <div className="testimonial-slider">
+                <div 
+                    id="testimonial-slider"
+                    className="testimonial-slider text-center carousel slide"  data-ride="carousel"
+                >
 
-                    { newItem.map( item => { 
-                        return( 
-                            <div class="testimonial-item">
-                                { testimonialImage( item.imageUrl, item.imageAlt) }
-                                <RichText.Content
-                                    tagName="h3"
-                                    value={ item.title }
-                                />
+                    <div class="carousel-inner">
+                        
+                        { newItem.map( ( item, index)  => { 
+                            
+                            return( 
+                                
+                                <div 
+                                    className={( ( index == 0 ? 'carousel-item active' : 'carousel-item' ) )}
+                                    onClick={this.handleClick}
+                                >
+                                    <RichText.Content
+                                        tagName="p"
+                                        className="details"
+                                        value={ item.body_content }
+                                    />
 
-                                <RichText.Content
-                                    tagName="p"
-                                    value={ item.body_content }
-                                />
-                                <RichText.Content
-                                    value={ item.designation }
-                                />
-                            </div>
-                         )
-                    })}
+                                    <RichText.Content
+                                        tagName="h3"
+                                        value={ item.title }
+                                    />
+                                    
+                                    <RichText.Content
+                                        tagName="span"
+                                        value={ item.designation }
+                                    />
+
+                                    { testimonialImage( item.imageUrl, item.imageAlt) }
+
+                                </div>
+                            )
+
+                        })}
+
+                    </div> 
 
                 </div>
             );

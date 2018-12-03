@@ -499,10 +499,10 @@ export default registerBlockType(
                     // data-image-src="images/banner.png" 
                     style= { style }
                 >
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="banner-texts text-left">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="banner-texts text-left">
 
                                     <RichText.Content
                                         tagName="h2"
@@ -528,7 +528,7 @@ export default registerBlockType(
 
                                 </div>
                             </div> 
-                            <div class="col-lg-6"></div>                                       
+                            <div className="col-lg-6"></div>                                       
                         </div>
                     </div>
                 </section>

@@ -52,7 +52,8 @@
     padding: 15px;
   }
 .wp-block-gutenberg-blocks-testimonial {
-  padding-top: 60px;
+  border: 1px solid #e2e4e7;
+  padding: 30px 0;
   text-align: center;
   .details {
     box-sizing: initial;
@@ -60,33 +61,59 @@
   }
 }
 #add-new__btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
   svg {
-    width: 40px !important;
+    height: 29px;
+    width: 25px !important;
   }
 }
 .egb_testimonial_pagination {
+  border-bottom: 1px solid #e2e4e7;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 11px;
+  width: 100%;
   li {
+    border: 1px solid #e2e4e7;
+    color: black;
     float: left;
     list-style: none;
-    padding: 9px;
-    margin: 0px 5px !important;
+    margin: 0px 5px -1px !important;
     line-height: 1;
     margin: 0;
     height: 30px;
     width: 40px;
-    background: red;
+    line-height: 30px;
+    background: #f3f4f5;
     display: block;
     cursor: pointer;
+    text-align: center;
+    &.active {
+      border-bottom-color: #fff;
+    }
   }
 }
 .editor-rich-text {
   h6,span {
     text-align: center;
   }
+}
+.image-wrapper {
+  position: relative;
+  img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto;
+  }
+  .remove-image {
+    position: absolute;
+    top: 0;
+    svg {
+      fill: red;
+    }
+  }
+}
+
+.wp-block-gutenberg-blocks-testimonial-slider {
+  padding-top: 40px;
 }

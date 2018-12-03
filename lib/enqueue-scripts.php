@@ -75,3 +75,12 @@
 			filemtime( UGB_PLUGIN_DIR . $block_path )
 		);
 	}
+
+
+
+	/* Include External Libraries */
+	function egb_scripts(){
+		wp_enqueue_style( 'bootstrap', UGB_PLUGIN_URL . '/lib/bootstrap/dist/css/bootstrap.min.css' );
+		wp_enqueue_script( 'bootstrap', UGB_PLUGIN_URL . '/lib/bootstrap/dist/js/bootstrap.min.js', array('jquery'), UGB_VERSION, 'all');
+	}
+	add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\egb_scripts' );
