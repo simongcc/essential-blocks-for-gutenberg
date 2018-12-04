@@ -8,6 +8,8 @@ export const { __ } = wp.i18n
 
 export const { compose } = wp.compose;
 
+export const { withSelect } = wp.data;
+
 export const {
     RangeControl,
     SelectControl,
@@ -25,6 +27,8 @@ export const {
     FormToggle,
 
     withNotices,
+    withAPIData, 
+    withState
 
 
 } = wp.components
@@ -58,6 +62,9 @@ export const {
 export const {
     omit,
     merge,
+    isUndefined,
+    pickBy
+
 } = lodash
 
 export const {

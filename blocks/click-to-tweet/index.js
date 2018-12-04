@@ -17,6 +17,7 @@ import './editor.scss';
 import {
     __,
     Fragment,
+    withSelect,
     InspectorControls,
     registerBlockType,
     BlockControls,
@@ -29,14 +30,16 @@ import {
 	TextControl,
 	Dashicon,
 	Toolbar,
-	Button,
-    Tooltip,
+    Button,
+    Tooltip
 
 } from '../../utils/wp-import'
 
 /*
  * Register Click to Tweet Block
  */
+
+
 
 export default registerBlockType(
     'gutenberg-blocks/click-to-tweet',
@@ -57,24 +60,58 @@ export default registerBlockType(
         attributes:{
             
             tweet: {
-                type: 'string',
+                type: 'html',
             },
             tweetsent: {
                 type: 'string',
             },
             button: {
                 type: 'string',
-                default: __( 'Tweet' ),
+                default: __( 'Click to Tweet', 'ugb' ),
             },
             theme: {
                 type: 'boolean',
                 default: false,
-            }
+            },
+            url: {
+                type: 'attribute',
+            },
+            via: {
+                type: 'string',
+            },
 
         },
 
-
+        componentWillReceiveProps( { postLink } ) {
+            if ( postLink ) {
+                this.props.setAttributes( {
+                    url: postLink
+                } );
+            }
+        },
+        
         edit: props =>{
+            const{
+                attributes: {
+                    tweet,
+                    tweetsent,
+                    button,
+                    theme,
+                    url,
+                    via
+                },
+                isSelected, setAttributes, className, editable, setState,
+            } = props;
+
+
+            const applyWithSelect = withSelect( ( select ) => {
+                const { getPermalink } = select( 'core/editor' );
+            
+                return {
+                    postLink: getPermalink(),
+                };
+            } );
+
             const onChangeTweet = value => {
                 props.setAttributes( { tweet: value } );
             };
@@ -91,7 +128,7 @@ export default registerBlockType(
 
             return [
                 !! props.isSelected && (
-                    <BlockControls key="custom-controls">
+                    <BlockControls key="egb-ctt-controls">
                         <Toolbar
                             className='components-toolbar'
                         >
@@ -107,27 +144,69 @@ export default registerBlockType(
                                     <Dashicon icon="tablet" />
                                 </Button>
                             </Tooltip>
+
+                            <label
+                                aria-label={ __( 'Twitter Username' ) }
+                                className={ `${ className }__via-label` }
+                                htmlFor={ `${ className }__via` }
+                            >
+                                { icons.at }
+                            </label>
+     
+                            <input
+                                aria-label={ __( 'Twitter Username' ) }
+                                className={ `${ className }__via` }
+                                id={ `${ className }__via` }
+                                onChange={ ( event ) => setAttributes( { via: event.target.value } ) }
+                                placeholder={ __( 'Username' ) }
+                                type="text"
+                                value={ via }
+                            />
+                                                        
                         </Toolbar>
                     </BlockControls>
                 ),
                 
+
+
                 <div className={ props.className }>
-                    <div className={ ( props.attributes.theme ? 'click-to-tweet-alt' : 'click-to-tweet' ) }>
-                        <div className="ctt-text">
-                            <RichText
-                                format="string"
-                                formattingControls={ [] }
-                                placeholder={ __( 'Tweet, tweet!', 'egb' ) }
-                                onChange={ onChangeTweet }
-                                value={ props.attributes.tweet }
-                                keepPlaceholderOnFocus
-                            />
+                    <div className={ ( props.attributes.theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
+                        
+                        
+                        <div class="cbp-qtcontent">
+                            { icons.twitter }
+                            <blockquote>
+                                <RichText
+                                    tagName="p"
+                                    format="string"
+                                    key="editable"
+                                    className="ctt-text"
+                                    formattingControls={ [] }
+                                    placeholder={ __( 'My body will not be a tomb for other creatures', 'ugb' ) }
+                                    onChange={ ( nextTweet ) => {
+                                        setAttributes( {
+                                            tweet: nextTweet,
+                                        } );
+                                    } }
+                                    value={ tweet }
+                                    keepPlaceholderOnFocus
+                                />      
+                                <footer>
+                                    <RichText
+                                        tagName="a"
+                                        className="ctt-btn"
+                                        key="editable-via"
+                                        placeholder={ button.default }
+                                        onChange={ button => setAttributes({ button }) }
+                                        value={ props.attributes.button }
+                                        keepPlaceholderOnFocus
+                                    />                             
+                                </footer>
+                            </blockquote>
                         </div>
-                        <p>
-                            <a className="ctt-btn">
-                                { props.attributes.button }
-                            </a>
-                        </p>
+
+
+
                     </div>
                 </div>
             ];
@@ -140,21 +219,31 @@ export default registerBlockType(
                 tweet,
                 tweetsent,
                 button,
-                theme
+                theme,
+                url,
+                via
             } = props.attributes;
 
+            // const viaUrl = window.location.href;
+            const viaUrl = via ? `&via=${via}` : '';
+
+            const tweetUrl = `http://twitter.com/share?&text=${ encodeURIComponent( tweet ) }&url=${url}${viaUrl}`;
+    
             return(
                 <div className={ ( theme ? 'click-to-tweet-alt' : 'click-to-tweet' ) }>
                     <div className="ctt-text">
                         <RichText.Content
-                            value={ tweet }
+                            value={ props.attributes.tweet }
                         // style={{
                         //     textAlign: textAlignment
                         // }}                            
                         />
                     </div>
                     
-                    <a className="ctt-btn">
+                    <a  
+                        className="ctt-btn"
+                        href={ tweetUrl }
+                    >
                         { button }
                     </a>                
                 </div>
