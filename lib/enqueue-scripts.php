@@ -26,6 +26,7 @@
 				'wp-api-fetch',
 				'wp-compose',
 				'wp-data',
+				'lodash',
 				'wp-edit-post',
 				'wp-plugins',
 

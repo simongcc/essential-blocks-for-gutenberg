@@ -33,7 +33,7 @@ const emptyItem = () => ({
 class Item extends Component {
     
     saveItem = attrs => {
-        this.props.saveItem(this.props.item.id, {...this.props.item, ...attrs})
+        this.props.saveItem(this.props.item.id, ( {...this.props.item, ...attrs}))
     }
     
     
@@ -182,9 +182,10 @@ class Item extends Component {
                 
                 save: props=>{
                     return(
-                            <h2> Hellooo </h2>
-                        )                        
-                        }
-                    
+                        <h2> Hellooo </h2>
+                        )
+                        
                     }
+                    
+                }
                 )

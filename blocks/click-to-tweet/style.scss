@@ -141,7 +141,7 @@
 		line-height: 100%;
 		color: #999999;
 		float: left;
-		text-decoration: none;
+		text-decoration: none !important;;
 
 		&:after {
 			content: "\f301";
@@ -210,7 +210,7 @@
 		line-height: 100%;
 		color: #FFF;
 		float: left;
-		text-decoration: none;
+		text-decoration: none !important;
 
 		&:hover {
 			color: #EEEEEE;

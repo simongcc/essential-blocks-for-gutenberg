@@ -254,6 +254,7 @@ export default registerBlockType(
                         <a  
                             className="ctt-btn"
                             href={ tweetUrl }
+                            target="_blank"
                         >
                             { button }
                         </a>                

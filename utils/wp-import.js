@@ -25,7 +25,6 @@ export const {
     RadioControl,
     Toolbar,
     FormToggle,
-
     withNotices,
     withAPIData, 
     withState
