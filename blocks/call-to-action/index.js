@@ -40,6 +40,7 @@ export default registerBlockType(
             src: icons.calltoaction
         },
         keywords: [
+            __('EGB', 'ugb'),
             __('Call To Action', 'ugb'),
             __('EBG Call To Action', 'ugb')
         ],

@@ -3,12 +3,14 @@
 */
 
 import icons from '../../utils/icons';
+import get from 'lodash/get';
 import classnames from 'classnames';
+// import './edit';
 
 import './style.scss';
 import './editor.scss';
 
-// import './sidebar.js';
+
 
 /*
  * Click to Tweet Block Libraries
@@ -31,13 +33,152 @@ import {
 	Dashicon,
 	Toolbar,
     Button,
-    Tooltip
+    Tooltip,
+    compose,
+    Component
 
 } from '../../utils/wp-import'
 
 /*
  * Register Click to Tweet Block
  */
+
+
+const applyWithSelect = withSelect( ( select ) => {
+	const { getPermalink } = select( 'core/editor' );
+
+	return {
+		postLink: getPermalink(),
+	};
+} );
+
+
+class CTTEdit extends Component {
+    componentDidMount( ) {
+        console.log(this.props)
+			this.props.setAttributes( {
+				url: this.props.postLink
+			} );
+	}
+
+    render(){
+        const{
+            attributes: {
+                tweet,
+                tweetsent,
+                button,
+                theme,
+                url,
+                via
+            },
+            isSelected, setAttributes, className, editable, setState,
+        } = this.props;
+
+
+
+        const onChangeTweet = value => {
+            this.props.setAttributes( { tweet: value } );
+        };
+        const onChangeTweetSent = value => {
+            this.props.setAttributes( { tweetsent: value } );
+        };
+        const onChangeButton = value => {
+            this.props.setAttributes( { button: value } );
+        };
+        const toggletheme = value => {
+            this.props.setAttributes( { theme: !this.props.attributes.theme } );
+        };
+        
+
+        return [
+            !! this.props.isSelected && (
+                <BlockControls key="egb-ctt-controls">
+                    <Toolbar
+                        className='components-toolbar'
+                    >
+                        <Tooltip text={ __( 'Alternative Design' )	}>
+                            <Button
+                                className={ classnames(
+                                    'components-icon-button',
+                                    'components-toolbar__control',
+                                    { 'is-active': this.props.attributes.theme },
+                                ) }
+                                onClick={ toggletheme }
+                            >
+                                <Dashicon icon="tablet" />
+                            </Button>
+                        </Tooltip>
+
+                        <label
+                            aria-label={ __( 'Twitter Username' ) }
+                            className={ `${ className }__via-label` }
+                            htmlFor={ `${ className }__via` }
+                        >
+                            { icons.at }
+                        </label>
+ 
+                        <input
+                            aria-label={ __( 'Twitter Username' ) }
+                            className={ `${ className }__via` }
+                            id={ `${ className }__via` }
+                            onChange={ ( event ) => setAttributes( { via: event.target.value } ) }
+                            placeholder={ __( 'Username' ) }
+                            type="text"
+                            value={ via }
+                        />
+                                                    
+                    </Toolbar>
+                </BlockControls>
+            ),
+            
+
+
+            <div className={ this.props.className }>
+                <div className={ ( this.props.attributes.theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
+                    
+                    
+                    <div class="cbp-qtcontent">
+                        { icons.twitter }
+                        <blockquote>
+                            <RichText
+                                tagName="p"
+                                format="string"
+                                key="editable"
+                                className="ctt-text"
+                                formattingControls={ [] }
+                                placeholder={ __( 'My body will not be a tomb for other creatures', 'ugb' ) }
+                                onChange={ ( nextTweet ) => {
+                                    setAttributes( {
+                                        tweet: nextTweet,
+                                    } );
+                                } }
+                                value={ tweet }
+                                keepPlaceholderOnFocus
+                            />      
+                            <footer>
+                                <RichText
+                                    tagName="a"
+                                    className="ctt-btn"
+                                    key="editable-via"
+                                    placeholder={ button.default }
+                                    onChange={ button => setAttributes({ button }) }
+                                    value={ this.props.attributes.button }
+                                    keepPlaceholderOnFocus
+                                />                             
+                            </footer>
+                        </blockquote>
+                    </div>
+
+
+
+                </div>
+            </div>
+        ];
+
+
+    
+}
+}
 
 
 
@@ -81,138 +222,8 @@ export default registerBlockType(
             },
 
         },
-
-        componentWillReceiveProps( { postLink } ) {
-            if ( postLink ) {
-                this.props.setAttributes( {
-                    url: postLink
-                } );
-            }
-        },
         
-        edit: props =>{
-            const{
-                attributes: {
-                    tweet,
-                    tweetsent,
-                    button,
-                    theme,
-                    url,
-                    via
-                },
-                isSelected, setAttributes, className, editable, setState,
-            } = props;
-
-
-            const applyWithSelect = withSelect( ( select ) => {
-                const { getPermalink } = select( 'core/editor' );
-            
-                return {
-                    postLink: getPermalink(),
-                };
-            } );
-
-            const onChangeTweet = value => {
-                props.setAttributes( { tweet: value } );
-            };
-            const onChangeTweetSent = value => {
-                props.setAttributes( { tweetsent: value } );
-            };
-            const onChangeButton = value => {
-                props.setAttributes( { button: value } );
-            };
-            const toggletheme = value => {
-                props.setAttributes( { theme: !props.attributes.theme } );
-            };
-            
-
-            return [
-                !! props.isSelected && (
-                    <BlockControls key="egb-ctt-controls">
-                        <Toolbar
-                            className='components-toolbar'
-                        >
-                            <Tooltip text={ __( 'Alternative Design' )	}>
-                                <Button
-                                    className={ classnames(
-                                        'components-icon-button',
-                                        'components-toolbar__control',
-                                        { 'is-active': props.attributes.theme },
-                                    ) }
-                                    onClick={ toggletheme }
-                                >
-                                    <Dashicon icon="tablet" />
-                                </Button>
-                            </Tooltip>
-
-                            <label
-                                aria-label={ __( 'Twitter Username' ) }
-                                className={ `${ className }__via-label` }
-                                htmlFor={ `${ className }__via` }
-                            >
-                                { icons.at }
-                            </label>
-     
-                            <input
-                                aria-label={ __( 'Twitter Username' ) }
-                                className={ `${ className }__via` }
-                                id={ `${ className }__via` }
-                                onChange={ ( event ) => setAttributes( { via: event.target.value } ) }
-                                placeholder={ __( 'Username' ) }
-                                type="text"
-                                value={ via }
-                            />
-                                                        
-                        </Toolbar>
-                    </BlockControls>
-                ),
-                
-
-
-                <div className={ props.className }>
-                    <div className={ ( props.attributes.theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
-                        
-                        
-                        <div class="cbp-qtcontent">
-                            { icons.twitter }
-                            <blockquote>
-                                <RichText
-                                    tagName="p"
-                                    format="string"
-                                    key="editable"
-                                    className="ctt-text"
-                                    formattingControls={ [] }
-                                    placeholder={ __( 'My body will not be a tomb for other creatures', 'ugb' ) }
-                                    onChange={ ( nextTweet ) => {
-                                        setAttributes( {
-                                            tweet: nextTweet,
-                                        } );
-                                    } }
-                                    value={ tweet }
-                                    keepPlaceholderOnFocus
-                                />      
-                                <footer>
-                                    <RichText
-                                        tagName="a"
-                                        className="ctt-btn"
-                                        key="editable-via"
-                                        placeholder={ button.default }
-                                        onChange={ button => setAttributes({ button }) }
-                                        value={ props.attributes.button }
-                                        keepPlaceholderOnFocus
-                                    />                             
-                                </footer>
-                            </blockquote>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            ];
-
-
-        },
+        edit: compose( [applyWithSelect] )( CTTEdit ),
 
         save: props => {
             const{
@@ -230,22 +241,23 @@ export default registerBlockType(
             const tweetUrl = `http://twitter.com/share?&text=${ encodeURIComponent( tweet ) }&url=${url}${viaUrl}`;
     
             return(
-                <div className={ ( theme ? 'click-to-tweet-alt' : 'click-to-tweet' ) }>
-                    <div className="ctt-text">
-                        <RichText.Content
-                            value={ props.attributes.tweet }
-                        // style={{
-                        //     textAlign: textAlignment
-                        // }}                            
-                        />
+                
+                <div className={ ( theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
+                    <div class="cbp-qtcontent">
+                        { icons.twitter }
+                        <div className="ctt-text">
+                            <RichText.Content
+                                value={ tweet }              
+                            />
+                        </div>
+                        
+                        <a  
+                            className="ctt-btn"
+                            href={ tweetUrl }
+                        >
+                            { button }
+                        </a>                
                     </div>
-                    
-                    <a  
-                        className="ctt-btn"
-                        href={ tweetUrl }
-                    >
-                        { button }
-                    </a>                
                 </div>
             )
             

@@ -42,6 +42,7 @@ export default registerBlockType(
             src: icons.testimonial
         },
         keywords: [
+            __('EGB', 'ugb'),
             __('Testimonial', 'ugb'),
             __('EBG Testimonial', 'ugb')
         ],

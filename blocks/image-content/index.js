@@ -44,6 +44,7 @@ export default registerBlockType(
             src: icons.image_content
         },
         keywords: [
+            __('EGB', 'ugb'),
             __('Image & Content', 'ugb'),
             __('EBG Image & Content', 'ugb')
         ],

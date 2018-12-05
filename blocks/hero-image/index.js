@@ -24,7 +24,7 @@ import {
     MediaUpload,
     URLInput,
     IconButton,
-
+    withNotices,
     withColors,
     RangeControl,
     PanelColorSettings,
@@ -77,8 +77,7 @@ export default registerBlockType(
 
         attributes:{
             title:{
-                type: 'string',
-                source: 'html',
+                type: 'html',
                 selector: '.item-title',
                 default: __('Ultimate Landing Page for Anything Cool', 'ugb')
             },            
@@ -177,27 +176,29 @@ export default registerBlockType(
 
 
 
-        edit: props =>{
+        edit: compose( [
+            withColors( { overlayColor: 'background-color' } ),
+            withNotices,
+        ] )(( {
+            
 
-            const{
-                attributes: {
+            attributes, setAttributes, isSelected, className, noticeOperations, noticeUI, overlayColor, setOverlayColor } ) => {
+                const {
                     title,
                     content,
                     buttonText,
                     buttonUrl,
                     backgroundType,
                     hasParallax,
-                    overlayColor,
                     dimRatio,
                     imageID,
-                    imageAlt,
                     imageUrl,
                     textAlignment,
                     blockAlignment,
                     imgAlignmentClass
-                },
-                isSelected, setAttributes, className, setOverlayColor
-            } = props;
+                } = attributes;
+
+            const updateTextAlignment = ( nextTextAlignment ) => setAttributes( { textAlignment: nextTextAlignment } );
 
             const imageContentAlignment = [
                 { value: 'imgleft', label: "Image Left Content Right" },
@@ -237,7 +238,7 @@ export default registerBlockType(
 						backgroundImageStyles( imageUrl ) :
 						{}
 				),
-                backgroundColor: overlayColor,
+                backgroundColor: overlayColor.color,
                 
             };
             
@@ -252,68 +253,68 @@ export default registerBlockType(
             );
             
             return (
-                <Fragment>
+                    <Fragment>
 
-                    <BlockControls>
-                        <BlockAlignmentToolbar
-                            value={ blockAlignment }
-                            onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
-                        />
-                        <AlignmentToolbar
-                            value={ textAlignment }
-                            onChange={ textAlignment => setAttributes( { textAlignment } ) }
-                        />
-                    </BlockControls>
-                    
-
-                    <InspectorControls>
-                        { <PanelBody>
-                            <SelectControl
-                                label={ __( 'Alignment Style' ) }
-                                value={ imgAlignmentClass }
-                                options={ imageContentAlignment.map( ({ value, label }) => ( {
-                                    value: value,
-                                    label: label,
-                                } ) ) }
-                                onChange={ ( newSize ) => { setAttributes( { imgAlignmentClass: newSize } ) } }
+                        <BlockControls>
+                            <BlockAlignmentToolbar
+                                value={ blockAlignment }
+                                onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
                             />
-                        </PanelBody>}
-
-                        <PanelBody title={ __( 'Cover Settings' ) }>
-                            { IMAGE_BACKGROUND_TYPE === backgroundType && (
-                                <ToggleControl
-                                    label={ __( 'Fixed Background' ) }
-                                    checked={ hasParallax }
-                                    onChange={ toggleParallax }
-                                />
-                            ) }
-                            <PanelColorSettings
-                                title={ __( 'Overlay' ) }
-                                initialOpen={ true }
-                                colorSettings={ [ {
-                                    value: overlayColor,
-                                    onChange: setOverlayColor,
-                                    label: __( 'Overlay Color' ),
-                                } ] }
-                            >
-                                <RangeControl
-                                    label={ __( 'Background Opacity' ) }
-                                    value={ dimRatio }
-                                    onChange={ setDimRatio }
-                                    min={ 0 }
-                                    max={ 100 }
-                                    step={ 10 }
-                                />
-                            </PanelColorSettings>
-                        </PanelBody> 
-
-
-                    </InspectorControls>
+                            <AlignmentToolbar
+                                value={ textAlignment }
+                                onChange={ textAlignment => setAttributes( { textAlignment } ) }
+                            />
+                        </BlockControls>
                         
+
+                        <InspectorControls>
+                            
+                            <PanelBody>
+                                <SelectControl
+                                    label={ __( 'Alignment Style' ) }
+                                    value={ imgAlignmentClass }
+                                    options={ imageContentAlignment.map( ({ value, label }) => ( {
+                                        value: value,
+                                        label: label,
+                                    } ) ) }
+                                    onChange={ ( newSize ) => { setAttributes( { imgAlignmentClass: newSize } ) } }
+                                />
+                            </PanelBody>
+
+                            <PanelBody title={ __( 'Cover Settings' ) }>
+                                { IMAGE_BACKGROUND_TYPE === backgroundType && (
+                                    <ToggleControl
+                                        label={ __( 'Fixed Background' ) }
+                                        checked={ hasParallax }
+                                        onChange={ toggleParallax }
+                                    />
+                                ) }
+                                <PanelColorSettings
+                                    title={ __( 'Overlay' ) }
+                                    initialOpen={ true }
+                                    colorSettings={ [ {
+                                        value: overlayColor,
+                                        onChange: setOverlayColor,
+                                        label: __( 'Overlay Color' ),
+                                    } ] }
+                                >
+                                    <RangeControl
+                                        label={ __( 'Background Opacity' ) }
+                                        value={ dimRatio }
+                                        onChange={ setDimRatio }
+                                        min={ 0 }
+                                        max={ 100 }
+                                        step={ 10 }
+                                    />
+                                </PanelColorSettings>
+                            </PanelBody> 
+
+
+                        </InspectorControls>
+                            
                                             
                         <section 
-                            className={ `banner-section banner-01 background-bg ${mainClasses}` }
-                            // data-image-src="images/banner.png" 
+                            className={ `banner-section banner-01 background-bg ${classes}` }
                             style= { style }
                         >
                             <div class="container">
@@ -429,15 +430,10 @@ export default registerBlockType(
                                 </div>
                             </div>
                         </section>
-
- 
-                        <div className={`item tools-item ${imgAlignmentClass}` }>
-
-                        </div>
                 </Fragment>
-            )
-
-        },
+                );
+            } 
+        ),
         save: props => {
             const{
                 title,
@@ -445,6 +441,9 @@ export default registerBlockType(
                 buttonText,
                 buttonUrl,
                 imageUrl,
+                dimRatio,
+                overlayColorClass,
+                hasParallax,
                 imageAlt,
                 backgroundType,
                 overlayColor,
@@ -493,9 +492,24 @@ export default registerBlockType(
                 
             };
 
+
+
+			const classes = classnames(
+				'wp-block-egb-hero-image',
+				dimRatioToClass( dimRatio ),
+				overlayColorClass,
+				{
+					'has-background-dim': dimRatio !== 0,
+					'has-parallax': hasParallax,
+					[ `has-${ textAlignment }-content` ]: textAlignment !== 'center',
+				},
+				blockAlignment ? `align${ blockAlignment }` : null,
+            );
+            
+
             return(
                 <section 
-                    className={ `banner-section banner-01 background-bg align${blockAlignment}` }
+                    className={ `banner-section banner-01 background-bg ${classes}` }
                     // data-image-src="images/banner.png" 
                     style= { style }
                 >
@@ -507,7 +521,6 @@ export default registerBlockType(
                                     <RichText.Content
                                         tagName="h2"
                                         value={ title }
-                                        onChange={( title )=> setAttributes({ title })}
                                         className={`banner-title`}
                                         style={{
                                             textAlign: textAlignment
@@ -515,10 +528,8 @@ export default registerBlockType(
                                     />
 
                                     <RichText.Content
-                                        tagName="p"
                                         value={ content }
                                         className={`mt-4`}
-                                        onChange={( content )=> setAttributes({ content })}
                                     />
 
 

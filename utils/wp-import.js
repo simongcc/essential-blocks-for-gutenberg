@@ -52,6 +52,7 @@ export const {
 export const {
     PanelColorSettings,
     BlockAlignmentToolbar,
+    withFontSizes
 } = wp.editor
 
 export const {

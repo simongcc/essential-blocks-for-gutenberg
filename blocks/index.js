@@ -7,11 +7,15 @@ import './i18n.js';
 import './alert';
 // import './blockquote';
 // import './card';
-import './call-to-action';
+// import './call-to-action';
 // import './title-subtitle';
 // import './image-content';
 // import './testimonial';
-import './hero-image';
+// import './hero-image';
 import './testimonial-slider';
-import './click-to-tweet';
+// import './click-to-tweet';
 // import './pricing-table';
+// import './author-box';
+// import './block-author-profile';
+
+// import './test';
