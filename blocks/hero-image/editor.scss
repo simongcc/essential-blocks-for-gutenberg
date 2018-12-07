@@ -2,19 +2,73 @@
     width: 50%;
 }
 .banner-section {
+
     position: relative;
     background-size: cover;
-    background-position: 50%;
-    max-width: 100%;
-    margin: 0 0 1.5em;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 16% 10%;
-    height: 15.7rem;
+    background-position: center center;
+    min-height: 430px;
     width: 100%;
+    margin: 0 0 1.5em 0;
+    display: flex;
+    padding: 16% 10%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     -o-object-fit: cover;
     object-fit: cover;
 
+
+
+    &.has-parallax {
+      background-attachment: fixed;
+  
+      // Mobile Safari does not support fixed background attachment properly.
+      // See also https://stackoverflow.com/questions/24154666/background-size-cover-not-working-on-ios
+      // Chrome on Android does not appear to support the attachment at all: https://issuetracker.google.com/issues/36908439
+      @supports (-webkit-overflow-scrolling: touch) {
+        background-attachment: scroll;
+      }
+    }
+
+    &.has-background-dim::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: inherit;
+      opacity: 0.5;
+      //z-index: z-index(".wp-block-essential-gutenberg-blocks-hero-image.has-background-dim::before");
+    }
+    
+    @for $i from 1 through 10 {
+      &.has-background-dim.has-background-dim-#{ $i * 10 }::before {
+        opacity: $i * 0.1;
+      }
+    }
+
+    // Apply max-width to floated items that have no intrinsic width
+    &.alignleft,
+    &.alignright {
+      max-width: 100% / 2;
+      width: 100%;
+    }
+
+      // Using flexbox without an assigned height property breaks vertical center alignment in IE11.
+    // Appending an empty ::after element tricks IE11 into giving the cover image an implicit height, which sidesteps this issue.
+    &::after {
+      display: block;
+      content: "";
+      font-size: 0;
+      min-height: inherit;
+
+      // IE doesn't support flex so omit that.
+      @supports (position: sticky) {
+        content: none;
+      }
+    }
+  
     .container, .row {
       -webkit-box-align: center;
       -ms-flex-align: center;
@@ -61,11 +115,20 @@
           top: 15px;
           right: 15px;
           position: absolute;
+          
+          
+          .remove-image{
+            right: 0;
+            left: inherit;
+          }
+
+
       }
     }
     .editor-url-input {
       float: left;
     }
+
   }
 
   .slider-image {
@@ -75,4 +138,6 @@
     align-items: center;
     justify-content: center;
     height: 300px;
+    position: relative;
+    z-index: 11;
   }

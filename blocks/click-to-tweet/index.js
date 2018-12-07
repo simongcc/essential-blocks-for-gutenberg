@@ -5,7 +5,6 @@
 import icons from '../../utils/icons';
 import get from 'lodash/get';
 import classnames from 'classnames';
-// import './edit';
 
 import './style.scss';
 import './editor.scss';
@@ -55,7 +54,6 @@ const applyWithSelect = withSelect( ( select ) => {
 
 class CTTEdit extends Component {
     componentDidMount( ) {
-        console.log(this.props)
 			this.props.setAttributes( {
 				url: this.props.postLink
 			} );
@@ -137,7 +135,7 @@ class CTTEdit extends Component {
                 <div className={ ( this.props.attributes.theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
                     
                     
-                    <div class="cbp-qtcontent">
+                    <div className="cbp-qtcontent">
                         { icons.twitter }
                         <blockquote>
                             <RichText

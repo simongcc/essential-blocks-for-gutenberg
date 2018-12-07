@@ -40,11 +40,11 @@ export const {
     RichText,
     URLInput,
     MediaUpload,
-    
     MediaPlaceholder,
     withColors,
     getColorClassName,
     MediaUploadCheck,
+    URLInputButton
 
 } = wp.editor.InspectorControls ? wp.editor : wp.blocks
 

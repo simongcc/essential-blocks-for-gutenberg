@@ -10,9 +10,10 @@ import './title-subtitle';
 import './image-content';
 import './testimonial';
 import './hero-image';
-import './testimonial-slider';
+// import './testimonial-slider';
 import './click-to-tweet';
-import './pricing-table';
-import './author-box';
+// import './pricing-table';
+// import './author-box';
+import './feature-box';
 
-// import './test';
+import './test';

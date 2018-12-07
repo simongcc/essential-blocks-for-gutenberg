@@ -304,15 +304,62 @@
 .banner-section {
   position: relative;
   background-size: cover;
-  background-position: 50%;
-  max-width: 100%;
-  margin: 0 0 1.5em;
-  align-items: center;
-  padding: 16% 10%;
-  height: 15.7rem;
+  background-position: center center;
+  min-height: 430px;
   width: 100%;
+  margin: 0 0 1.5em 0;
+  display: flex;
+  padding: 16% 10%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   -o-object-fit: cover;
   object-fit: cover; }
+  .banner-section.has-parallax {
+    background-attachment: fixed; }
+    @supports (-webkit-overflow-scrolling: touch) {
+      .banner-section.has-parallax {
+        background-attachment: scroll; } }
+  .banner-section.has-background-dim::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: inherit;
+    opacity: 0.5; }
+  .banner-section.has-background-dim.has-background-dim-10::before {
+    opacity: 0.1; }
+  .banner-section.has-background-dim.has-background-dim-20::before {
+    opacity: 0.2; }
+  .banner-section.has-background-dim.has-background-dim-30::before {
+    opacity: 0.3; }
+  .banner-section.has-background-dim.has-background-dim-40::before {
+    opacity: 0.4; }
+  .banner-section.has-background-dim.has-background-dim-50::before {
+    opacity: 0.5; }
+  .banner-section.has-background-dim.has-background-dim-60::before {
+    opacity: 0.6; }
+  .banner-section.has-background-dim.has-background-dim-70::before {
+    opacity: 0.7; }
+  .banner-section.has-background-dim.has-background-dim-80::before {
+    opacity: 0.8; }
+  .banner-section.has-background-dim.has-background-dim-90::before {
+    opacity: 0.9; }
+  .banner-section.has-background-dim.has-background-dim-100::before {
+    opacity: 1; }
+  .banner-section.alignleft, .banner-section.alignright {
+    max-width: 100% / 2;
+    width: 100%; }
+  .banner-section::after {
+    display: block;
+    content: "";
+    font-size: 0;
+    min-height: inherit; }
+    @supports ((position: -webkit-sticky) or (position: sticky)) {
+      .banner-section::after {
+        content: none; } }
   .banner-section .container, .banner-section .row {
     align-items: center;
     height: 100%; }
@@ -351,6 +398,9 @@
       top: 15px;
       right: 15px;
       position: absolute; }
+      .banner-section p.image-wrapper .remove-image {
+        right: 0;
+        left: inherit; }
   .banner-section .editor-url-input {
     float: left; }
 
@@ -360,106 +410,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 300px; }
-.wp-block-gutenberg-blocks-testimonial.egb-testimonial {
-  background: #f2f2f2f2; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image {
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 15.7rem;
-    width: 100%;
-    border-radius: 10px; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image p {
-      max-height: 100%;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      border-radius: 10px; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image img {
-      max-height: 100%;
-      border-radius: 10px;
-      height: 15.7rem;
-      width: 100%;
-      -o-object-fit: cover;
-      object-fit: cover; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .testimonial_image {
-    height: 200px; }
-  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image {
-    color: red;
-    float: left;
-    height: initial !important;
-    position: absolute;
-    width: initial !important; }
-    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image svg {
-      fill: red; }
-
-button#add-new__btn {
-  height: 60px !important;
-  width: 60px !important; }
-
-.ugb-testimonial .testimonial_list {
-  flex: 0 0 100%;
-  margin: 0 !important;
-  padding: 15px; }
-
-.wp-block-gutenberg-blocks-testimonial {
-  border: 1px solid #e2e4e7;
-  padding: 30px 0;
-  text-align: center; }
-  .wp-block-gutenberg-blocks-testimonial .details {
-    box-sizing: initial;
-    text-align: left; }
-
-#add-new__btn svg {
-  height: 29px;
-  width: 25px !important; }
-
-.egb_testimonial_pagination {
-  border-bottom: 1px solid #e2e4e7;
-  position: absolute;
-  left: 0;
-  top: 11px;
-  width: 100%; }
-  .egb_testimonial_pagination li {
-    border: 1px solid #e2e4e7;
-    color: black;
-    float: left;
-    list-style: none;
-    margin: 0px 5px -1px !important;
-    line-height: 1;
-    margin: 0;
-    height: 30px;
-    width: 40px;
-    line-height: 30px;
-    background: #f3f4f5;
-    display: block;
-    cursor: pointer;
-    text-align: center; }
-    .egb_testimonial_pagination li.active {
-      border-bottom-color: #fff; }
-
-.editor-rich-text h6, .editor-rich-text span {
-  text-align: center; }
-
-.image-wrapper {
-  position: relative; }
-  .image-wrapper img {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    margin: 0 auto; }
-  .image-wrapper .remove-image {
-    position: absolute;
-    top: 0; }
-    .image-wrapper .remove-image svg {
-      fill: red; }
-
-.wp-block-gutenberg-blocks-testimonial-slider {
-  padding-top: 40px; }
+  height: 300px;
+  position: relative;
+  z-index: 11; }
 @charset "UTF-8";
 .cbp-qtrotator {
   position: relative;
@@ -630,3 +583,107 @@ button#add-new__btn {
       color: #FFF;
       font-family: Dashicons;
       margin: 0 5px; }
+.wp-block-gutenberg-blocks-testimonial.egb-testimonial {
+  background: #f2f2f2f2; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 15.7rem;
+    width: 100%;
+    border-radius: 10px; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image p {
+      max-height: 100%;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      border-radius: 10px; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .wp-block-egb-testimonial-image img {
+      max-height: 100%;
+      border-radius: 10px;
+      height: 15.7rem;
+      width: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .testimonial_image {
+    height: 200px; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image {
+    color: red;
+    float: left;
+    height: initial !important;
+    position: absolute;
+    width: initial !important; }
+    .wp-block-gutenberg-blocks-testimonial.egb-testimonial .remove-image svg {
+      fill: red; }
+  .wp-block-gutenberg-blocks-testimonial.egb-testimonial .egb_testiomonial_delete {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    cursor: pointer; }
+
+button#add-new__btn {
+  height: 60px !important;
+  width: 60px !important; }
+
+.ugb-testimonial .testimonial_list {
+  flex: 0 0 100%;
+  margin: 0 !important;
+  padding: 15px; }
+
+.wp-block-gutenberg-blocks-testimonial {
+  border: 1px solid #e2e4e7;
+  padding: 30px 0;
+  text-align: center; }
+  .wp-block-gutenberg-blocks-testimonial .details {
+    box-sizing: initial;
+    text-align: left; }
+
+#add-new__btn svg {
+  height: 29px;
+  width: 25px !important; }
+
+.egb_testimonial_pagination {
+  border-bottom: 1px solid #e2e4e7;
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 100%; }
+  .egb_testimonial_pagination li {
+    border: 1px solid #e2e4e7;
+    color: black;
+    float: left;
+    list-style: none;
+    margin: 0px 5px -1px !important;
+    line-height: 1;
+    margin: 0;
+    height: 30px;
+    width: 40px;
+    line-height: 30px;
+    background: #f3f4f5;
+    display: block;
+    cursor: pointer;
+    text-align: center; }
+    .egb_testimonial_pagination li.active {
+      border-bottom-color: #fff; }
+
+.editor-rich-text h6, .editor-rich-text span {
+  text-align: center; }
+
+.image-wrapper {
+  position: relative; }
+  .image-wrapper img {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto; }
+  .image-wrapper .remove-image {
+    position: absolute;
+    top: 0; }
+    .image-wrapper .remove-image svg {
+      fill: red; }
+
+.wp-block-gutenberg-blocks-testimonial-slider {
+  padding-top: 40px; }

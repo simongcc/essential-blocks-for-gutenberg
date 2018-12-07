@@ -18,6 +18,7 @@ import {
     SelectControl,
     InspectorControls,
     RichText,
+    URLInputButton,
     PanelBody,
     Fragment,
     Button,
@@ -32,7 +33,8 @@ import {
     compose,
     BlockControls,
     AlignmentToolbar,
-    BlockAlignmentToolbar
+    BlockAlignmentToolbar,
+    getColorClassName
 
 } from '../../utils/wp-import'
 
@@ -78,18 +80,19 @@ export default registerBlockType(
         attributes:{
             title:{
                 type: 'html',
-                selector: '.item-title',
+                selector: '.banner-title',
                 default: __('Ultimate Landing Page for Anything Cool', 'ugb')
             },            
             content:{
                 type: 'html',
                 selector: 'p',
-                default: __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'ugb')
+                default: __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ugb')
             },
             buttonText:{
-                type: 'html',
-                selector: 'a',
-                default: __( 'Try out Now','ugb' ),
+                type: 'string',
+                source: 'text'
+                // selector: 'a',
+                // default: __( 'Try out Now','ugb' ),
             },
             buttonUrl:{
                 type: 'string',
@@ -179,31 +182,28 @@ export default registerBlockType(
         edit: compose( [
             withColors( { overlayColor: 'background-color' } ),
             withNotices,
-        ] )(( {
-            
+        ] )(( props ) => {
 
-            attributes, setAttributes, isSelected, className, noticeOperations, noticeUI, overlayColor, setOverlayColor } ) => {
-                const {
-                    title,
-                    content,
-                    buttonText,
-                    buttonUrl,
-                    backgroundType,
-                    hasParallax,
-                    dimRatio,
-                    imageID,
-                    imageUrl,
-                    textAlignment,
-                    blockAlignment,
-                    imgAlignmentClass
-                } = attributes;
+            const {
+                attributes: {
+                        title,
+                        content,
+                        buttonText,
+                        buttonUrl,
+                        backgroundType,
+                        hasParallax,
+                        dimRatio,
+                        imageID,
+                        imageUrl,
+                        textAlignment,
+                        blockAlignment,
+                        imgAlignmentClass
+                    },
+                    editable, isSelected, setState, setAttributes, overlayColor,setOverlayColor, className
+                } = props;
 
             const updateTextAlignment = ( nextTextAlignment ) => setAttributes( { textAlignment: nextTextAlignment } );
 
-            const imageContentAlignment = [
-                { value: 'imgleft', label: "Image Left Content Right" },
-                { value: 'imgright', label: "Image Right Content Left" }
-            ];
 
             const onSelectImage = img =>{
                 setAttributes({
@@ -230,7 +230,6 @@ export default registerBlockType(
 
             const toggleParallax = () => setAttributes( { hasParallax: ! hasParallax } );
 			const setDimRatio = ( ratio ) => setAttributes( { dimRatio: ratio } );
-            // const style = backgroundImageStyles( imageUrl );
 
             const style = {
 				...(
@@ -269,22 +268,10 @@ export default registerBlockType(
 
                         <InspectorControls>
                             
-                            <PanelBody>
-                                <SelectControl
-                                    label={ __( 'Alignment Style' ) }
-                                    value={ imgAlignmentClass }
-                                    options={ imageContentAlignment.map( ({ value, label }) => ( {
-                                        value: value,
-                                        label: label,
-                                    } ) ) }
-                                    onChange={ ( newSize ) => { setAttributes( { imgAlignmentClass: newSize } ) } }
-                                />
-                            </PanelBody>
-
                             <PanelBody title={ __( 'Cover Settings' ) }>
                                 { IMAGE_BACKGROUND_TYPE === backgroundType && (
                                     <ToggleControl
-                                        label={ __( 'Fixed Background' ) }
+                                        label={ __( 'Parallax Background ?' ) }
                                         checked={ hasParallax }
                                         onChange={ toggleParallax }
                                     />
@@ -312,30 +299,31 @@ export default registerBlockType(
 
                         </InspectorControls>
                             
-                                            
-                        <section 
+
+                        <section
                             className={ `banner-section banner-01 background-bg ${classes}` }
                             style= { style }
                         >
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="banner-texts text-left">
+
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <div className="banner-texts text-left">
 
                                             <RichText
                                                 tagName="h2"
                                                 placeholder={ title.default }
                                                 value={ title }
                                                 onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
-                                                className={`banner-title`}
+                                                className="banner-title"
                                                 style={{
                                                     textAlign: textAlignment
                                                 }}
                                                 keepPlaceholderOnFocus
-                                            />                    
-                              
+                                            />
+
                                             <RichText
-                                                tagName="p"
+                                                // tagName="p"
                                                 placeholder={ content.default }
                                                 value={ content }
                                                 onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
@@ -344,17 +332,25 @@ export default registerBlockType(
                                                 }}
                                                 className={`mt-4`}
                                                 keepPlaceholderOnFocus
-                                            />    
+                                            />
 
 
                                             { isSelected ? (
-                                                <div class="hero-btn-container">
-                                                    <RichText
-                                                        tagName="a"
-                                                        value={ buttonText }
-                                                        onChange={ buttonText => setAttributes({ buttonText }) } 
+                                                <div className="hero-btn-container">
+
+                                                    {/*<RichText*/}
+                                                        {/*tagName="a"*/}
+                                                        {/*value={ buttonText }*/}
+                                                        {/*onChange={ nextButtonText => setAttributes({ nextButtonText }) }*/}
+
+                                                    {/*/>*/}
+
+                                                    <URLInputButton
+                                                        url={ buttonUrl }
+                                                        onChange={ nextButtonText => setAttributes({ nextButtonText }) }
                                                         className={`btn btn-lg mt-5`}
                                                     />
+
                                                     <form
                                                         onSubmit={ event => event.preventDefault() }
                                                     >
@@ -383,11 +379,11 @@ export default registerBlockType(
                                     </div>
 
 
-                                    <div class="col-lg-6">
+                                    <div className="col-lg-6">
 
                                         { ! imageID ? (
 
-                                            <div class="slider-image">
+                                            <div className="slider-image">
                                                 <MediaUpload
                                                     onSelect={ onSelectImage }
                                                     type="image"
@@ -406,11 +402,7 @@ export default registerBlockType(
                                             </div>
 
                                             ) : (
-                                                <p class="image-wrapper">
-                                                    {/* <img
-                                                        src={ imageUrl }
-                                                        alt={ imageAlt }
-                                                    /> */}
+                                                <p className="image-wrapper">
 
                                                     { isSelected ? (
 
@@ -442,107 +434,108 @@ export default registerBlockType(
                 buttonUrl,
                 imageUrl,
                 dimRatio,
-                overlayColorClass,
                 hasParallax,
+                imageID,
                 imageAlt,
                 backgroundType,
                 overlayColor,
+                customOverlayColor,
                 imgAlignmentClass,
                 blockAlignment,
                 textAlignment,
         } = props.attributes;
 
+        const overlayColorClass = getColorClassName( 'background-color', overlayColor );
+    
+        console.log( imageID )
+        const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
+            backgroundImageStyles( imageUrl ) :
+            {};
+        if ( ! overlayColorClass ) {
+            style.backgroundColor = customOverlayColor;
+        }
+    
+        const contentStyle = {
+            textAlign: imgAlignmentClass
+        }
 
-            const contentStyle = {
-                textAlign: imgAlignmentClass
-            }
+        // const cardImage = (imageUrl, imageAlt) => {
+        //     if(!imageUrl) return null;
 
-            const cardImage = (imageUrl, imageAlt) => {
-                if(!imageUrl) return null;
+        //     if(imageAlt) {
+        //         return (
+        //             <img
+        //                 className="hero_image"
+        //                 src={ imageUrl }
+        //                 alt={ imageAlt }
+        //             />
+        //         );
+        //     }
 
-                if(imageAlt) {
-                    return (
-                        <img
-                            className="card_image"
-                            src={ imageUrl }
-                            alt={ imageAlt }
-                        />
-                    );
-                }
+        //     // No alt set, so let's hide it from screen readers
+        //     return (
+        //         <img
+        //             className="hero_image"
+        //             src={ imageUrl }
+        //             alt=""
+        //             aria-hidden="true"
+        //         />
+        //     );
+        // };
 
-                // No alt set, so let's hide it from screen readers
-                return (
-                    <img
-                        className="card_image"
-                        src={ imageUrl }
-                        alt=""
-                        aria-hidden="true"
-                    />
-                );
-            };
+        // const style = backgroundImageStyles( imageUrl );
 
 
-            const style = {
-				...(
-					backgroundType === IMAGE_BACKGROUND_TYPE ?
-						backgroundImageStyles( imageUrl ) :
-						{}
-				),
-                backgroundColor: overlayColor,
-                
-            };
-
-
-
-			const classes = classnames(
-				'wp-block-egb-hero-image',
-				dimRatioToClass( dimRatio ),
-				overlayColorClass,
-				{
-					'has-background-dim': dimRatio !== 0,
-					'has-parallax': hasParallax,
-					[ `has-${ textAlignment }-content` ]: textAlignment !== 'center',
-				},
-				blockAlignment ? `align${ blockAlignment }` : null,
-            );
+        // const style = {
+        //     ...(
+        //         backgroundType === IMAGE_BACKGROUND_TYPE ?
+        //             backgroundImageStyles( imageUrl ) :
+        //             {}
+        //     ),
+        //     backgroundColor: overlayColor,
             
+        // };
+
+        // const classes = classnames(
+        //     dimRatioToClass( dimRatio ),
+        //     {
+        //         'has-background-dim': dimRatio !== 0,
+        //         'has-parallax': hasParallax,
+        //     },
+        //     blockAlignment ? `align${ blockAlignment }` : null,
+        // );
+        
+        const classes = classnames(
+			dimRatioToClass( dimRatio ),
+			overlayColorClass,
+			{
+				'has-background-dim': dimRatio !== 0,
+				'has-parallax': hasParallax,
+				[ `has-${ textAlignment }-content` ]: textAlignment !== 'center',
+			},
+			blockAlignment ? `align${ blockAlignment }` : null,
+		);
 
             return(
-                <section 
-                    className={ `banner-section banner-01 background-bg ${classes}` }
-                    // data-image-src="images/banner.png" 
-                    style= { style }
-                >
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-6">
-                                <div className="banner-texts text-left">
+              <Fragment>
+                <RichText.Content
+                    value={ title }
+                    className="banner-title"
+                    style={{
+                        textAlign: textAlignment
+                    }}
+                />
 
-                                    <RichText.Content
-                                        tagName="h2"
-                                        value={ title }
-                                        className={`banner-title`}
-                                        style={{
-                                            textAlign: textAlignment
-                                        }}
-                                    />
+                <RichText.Content
+                    value={ content }
+                    className="mt-4"
+                />
 
-                                    <RichText.Content
-                                        value={ content }
-                                        className={`mt-4`}
-                                    />
+                <a href={ buttonUrl } className="btn btn-lg mt-5">
+                    { buttonText }
+                </a>
+              </Fragment>
 
-
-                                    <a href={ buttonUrl } className="btn btn-lg mt-5">
-                                        { buttonText }
-                                    </a>
-
-                                </div>
-                            </div> 
-                            <div className="col-lg-6"></div>                                       
-                        </div>
-                    </div>
-                </section>
             )
 
 
