@@ -88,21 +88,34 @@ export default registerBlockType(
                 selector: 'p',
                 default: __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ugb')
             },
-            buttonText:{
+
+
+            content: {
                 type: 'string',
-                source: 'text'
-                // selector: 'a',
-                // default: __( 'Try out Now','ugb' ),
+                source: 'html',
+                selector: 'p',
+                default: [],
+            },
+
+
+            buttonText:{
+                type: 'html',
+                selector: 'a',
+                default: __( 'Try out Now','ugb' ),
             },
             buttonUrl:{
                 type: 'string',
                 source: 'attribute',
                 attribute: 'href',
                 selector: 'a',
-            },            
+            },
+
             url: {
                 type: 'string',
             },
+
+
+
             imageID: {
                 type: 'number',
             },
@@ -118,6 +131,24 @@ export default registerBlockType(
                 attribute: 'src',
                 selector: 'img',
             },
+
+
+            // imageUrl: {
+            //     type: 'string',
+            //     source: 'attribute',
+            //     attribute: 'src',
+            //     selector: 'img',
+            // },
+            // imageID: {
+            //     type: 'number',
+            // },
+            // imageAlt: {
+            //     type: 'string',
+            //     source: 'attribute',
+            //     attribute: 'alt',
+            //     selector: 'img',
+            // },
+
             textColor: {
                 type: 'string',
                 default: '#155724'
@@ -209,7 +240,7 @@ export default registerBlockType(
                 setAttributes({
                     imageID: img.id,
                     imageUrl: img.url,
-                    imageAlt: img.alt,
+                    // imageAlt: img.alt,
                 })
             }
 
@@ -217,16 +248,16 @@ export default registerBlockType(
                 setAttributes({
                     imageID: null,
                     imageUrl: null,
-                    imageAlt: null
+                    // imageAlt: null
                 })
             }
 
-            const mainClasses = classnames( [
-                className,
-                'egb-image',
-            ], {
-                'has-image': imageUrl,
-            })
+            // const mainClasses = classnames( [
+            //     className,
+            //     'egb-image',
+            // ], {
+            //     'has-image': imageUrl,
+            // })
 
             const toggleParallax = () => setAttributes( { hasParallax: ! hasParallax } );
 			const setDimRatio = ( ratio ) => setAttributes( { dimRatio: ratio } );
@@ -240,6 +271,19 @@ export default registerBlockType(
                 backgroundColor: overlayColor.color,
                 
             };
+
+
+
+
+
+            // const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
+            //     backgroundImageStyles( imageUrl ) :
+            //     {};
+            // if ( ! overlayColorClass ) {
+            //     style.backgroundColor = customOverlayColor;
+            // }
+
+
             
 			const classes = classnames(
 				className,
@@ -250,7 +294,20 @@ export default registerBlockType(
 					'has-parallax': hasParallax,
 				}
             );
-            
+
+
+            // getEditWrapperProps( { blockAlignment } ){
+            //     if( 'left' === blockAlignment ||
+            //         'right' === blockAlignment ||
+            //         'full' === blockAlignment
+            //     ){
+            //         return { 'data-align': blockAlignment };
+            //     }
+            // },
+
+            console.log( imageID );
+            console.log( imageUrl );
+
             return (
                     <Fragment>
 
@@ -264,10 +321,10 @@ export default registerBlockType(
                                 onChange={ textAlignment => setAttributes( { textAlignment } ) }
                             />
                         </BlockControls>
-                        
+
 
                         <InspectorControls>
-                            
+
                             <PanelBody title={ __( 'Cover Settings' ) }>
                                 { IMAGE_BACKGROUND_TYPE === backgroundType && (
                                     <ToggleControl
@@ -294,21 +351,25 @@ export default registerBlockType(
                                         step={ 10 }
                                     />
                                 </PanelColorSettings>
-                            </PanelBody> 
+                            </PanelBody>
 
 
                         </InspectorControls>
-                            
 
-                        <section
+
+                        <div
                             className={ `banner-section banner-01 background-bg ${classes}` }
-                            style= { style }
+                            style={ style }
                         >
+
+
 
                             <div className="container">
                                 <div className="row">
                                     <div className="col-lg-6">
                                         <div className="banner-texts text-left">
+
+
 
                                             <RichText
                                                 tagName="h2"
@@ -335,19 +396,15 @@ export default registerBlockType(
                                             />
 
 
+
+
                                             { isSelected ? (
                                                 <div className="hero-btn-container">
 
-                                                    {/*<RichText*/}
-                                                        {/*tagName="a"*/}
-                                                        {/*value={ buttonText }*/}
-                                                        {/*onChange={ nextButtonText => setAttributes({ nextButtonText }) }*/}
-
-                                                    {/*/>*/}
-
-                                                    <URLInputButton
-                                                        url={ buttonUrl }
-                                                        onChange={ nextButtonText => setAttributes({ nextButtonText }) }
+                                                    <RichText
+                                                        tagName="a"
+                                                        value={ buttonText }
+                                                        onChange={ buttonText => setAttributes({ buttonText }) }
                                                         className={`btn btn-lg mt-5`}
                                                     />
 
@@ -375,8 +432,11 @@ export default registerBlockType(
                                             )}
 
 
+
                                         </div>
                                     </div>
+
+
 
 
                                     <div className="col-lg-6">
@@ -396,35 +456,39 @@ export default registerBlockType(
                                                             { icons.upload }
                                                             { __('Upload Image', 'ugb')}
                                                         </Button>
-                                                )}
+                                                    )}
                                                 >
                                                 </MediaUpload>
                                             </div>
 
-                                            ) : (
-                                                <p className="image-wrapper">
+                                        ) : (
+                                            <p className="image-wrapper">
 
-                                                    { isSelected ? (
+                                                { isSelected ? (
 
-                                                        <Button
-                                                            className="remove-image"
-                                                            onClick={ onRemoveImage }
-                                                        >
-                                                            { icons.remove }
-                                                        </Button>
+                                                    <Button
+                                                        className="remove-image"
+                                                        onClick={ onRemoveImage }
+                                                    >
+                                                        { icons.remove }
+                                                    </Button>
 
-                                                    ) : null }
+                                                ) : null }
 
-                                                </p>
-                                            )
-                                            }
+                                            </p>
+                                        )
+                                        }
                                     </div>
+
+
+
                                 </div>
                             </div>
-                        </section>
+                        </div>
+
                 </Fragment>
                 );
-            } 
+            }
         ),
         save: props => {
             const{
@@ -432,10 +496,10 @@ export default registerBlockType(
                 content,
                 buttonText,
                 buttonUrl,
-                imageUrl,
                 dimRatio,
                 hasParallax,
                 imageID,
+                imageUrl,
                 imageAlt,
                 backgroundType,
                 overlayColor,
@@ -447,14 +511,15 @@ export default registerBlockType(
 
         const overlayColorClass = getColorClassName( 'background-color', overlayColor );
     
-        console.log( imageID )
+        console.log( imageID );
+
         const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
             backgroundImageStyles( imageUrl ) :
             {};
         if ( ! overlayColorClass ) {
             style.backgroundColor = customOverlayColor;
         }
-    
+
         const contentStyle = {
             textAlign: imgAlignmentClass
         }
@@ -493,7 +558,7 @@ export default registerBlockType(
         //             {}
         //     ),
         //     backgroundColor: overlayColor,
-            
+        //
         // };
 
         // const classes = classnames(
@@ -517,24 +582,44 @@ export default registerBlockType(
 		);
 
             return(
-              <Fragment>
-                <RichText.Content
-                    value={ title }
-                    className="banner-title"
-                    style={{
-                        textAlign: textAlignment
-                    }}
-                />
 
-                <RichText.Content
-                    value={ content }
-                    className="mt-4"
-                />
 
-                <a href={ buttonUrl } className="btn btn-lg mt-5">
-                    { buttonText }
-                </a>
-              </Fragment>
+                  <div
+                      className={ `banner-section banner-01 background-bg ${classes}` }
+                      style={ backgroundImageStyles( imageUrl ) }
+                  >
+
+
+
+                      <div className="container">
+                          <div className="row">
+                              <div className="col-lg-6">
+                                  <div className="banner-texts text-left">
+
+
+
+                                  <RichText.Content
+                                        value={ title }
+                                        className="banner-title"
+                                        style={{
+                                            textAlign: textAlignment
+                                        }}
+                                    />
+
+                                    <RichText.Content
+                                        value={ content }
+                                        className="mt-4"
+                                    />
+
+                                    <a
+                                        href={ buttonUrl }
+                                        target="_blank"
+                                    >{ buttonText }</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              </div>
 
             )
 

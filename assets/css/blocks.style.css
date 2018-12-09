@@ -217,6 +217,12 @@
     padding-left: 0;
     -webkit-transform: translate(-100%, 0%);
     transform: translate(-100%, 0%); }
+.wp-block-essential-gutenberg-blocks-image-content .item-thumb .card_image {
+  max-height: 395px; }
+
+.wp-block-essential-gutenberg-blocks-image-content .item-details p {
+  font-size: 1em !important;
+  line-height: 1.35 !important; }
 .egb-testimonial {
   background: #fff;
   text-align: center; }
@@ -318,11 +324,53 @@
       top: 15px;
       right: 15px;
       position: absolute; }
+.testimonial-slider {
+  background: #fff;
+  text-align: center; }
+  .testimonial-slider p {
+    color: #808080;
+    font-style: italic;
+    max-height: 100%;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-radius: 10px; }
+    .testimonial-slider p:before {
+      content: '"'; }
+    .testimonial-slider p:after {
+      content: '"'; }
+  .testimonial-slider img {
+    max-height: 100%;
+    border-radius: 10px;
+    height: 15.7rem;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover; }
+  .testimonial-slider .h2, .testimonial-slider h3, .testimonial-slider h4, .testimonial-slider h5, .testimonial-slider h6 {
+    color: #343434;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 1.5rem 0 0; }
+  .testimonial-slider span {
+    color: #999;
+    display: block;
+    font-size: 14px; }
+  .testimonial-slider .testimonial_image {
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 1em auto 0;
+    position: relative; }
+    .testimonial-slider .testimonial_image img {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%; }
 @charset "UTF-8";
 .cbp-qtrotator {
   position: relative;
-  width: 100%;
-  min-height: 200px; }
+  width: 100%; }
 
 .no-js .cbp-qtrotator .cbp-qtcontent {
   border-bottom: none; }
@@ -368,7 +416,8 @@
 
 .cbp-qtrotator .cbp-qtcontent svg {
   float: right;
-  margin-left: 3em; }
+  margin-left: 3em;
+  max-width: 120px; }
 
 /* Example for media query */
 @media screen and (max-width: 30.6em) {
@@ -385,16 +434,18 @@
   border-radius: 4px;
   padding: 15px 30px;
   margin: 15px 0px; }
+  .click-to-tweet .cbp-qtcontent {
+    position: relative; }
   .click-to-tweet .ctt-text {
     margin: 0 0 10px 0;
     padding: 0;
     position: relative;
     word-wrap: break-word;
     color: #999999;
-    font-size: 24px;
-    line-height: 140%;
+    font-size: 20px;
+    line-height: 1.35;
     box-shadow: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 1px;
     font-weight: 100;
     text-decoration: none;
     text-transform: none; }
@@ -414,22 +465,25 @@
     margin: 0;
     padding: 0;
     padding-left: 0;
-    position: relative;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     display: block;
     text-transform: uppercase;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     box-shadow: none;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: bold;
     line-height: 100%;
-    color: #999999;
+    color: #666666;
     float: left;
     text-decoration: none !important; }
     .click-to-tweet a.ctt-btn:after {
       content: "\f301";
       color: #A0CCED;
       font-family: Dashicons;
-      margin: 0 5px; }
+      float: right;
+      margin: 0 8px; }
 
 .click-to-tweet-alt {
   display: block;
@@ -488,46 +542,3 @@
       color: #FFF;
       font-family: Dashicons;
       margin: 0 5px; }
-.testimonial-slider {
-  background: #fff;
-  text-align: center; }
-  .testimonial-slider p {
-    color: #808080;
-    font-style: italic;
-    max-height: 100%;
-    line-height: 1.35;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    border-radius: 10px; }
-    .testimonial-slider p:before {
-      content: '"'; }
-    .testimonial-slider p:after {
-      content: '"'; }
-  .testimonial-slider img {
-    max-height: 100%;
-    border-radius: 10px;
-    height: 15.7rem;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover; }
-  .testimonial-slider .h2, .testimonial-slider h3, .testimonial-slider h4, .testimonial-slider h5, .testimonial-slider h6 {
-    color: #343434;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    margin: 1.5rem 0 0; }
-  .testimonial-slider span {
-    color: #999;
-    display: block;
-    font-size: 14px; }
-  .testimonial-slider .card_image {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    margin: 1em auto 0;
-    position: relative; }
-    .testimonial-slider .card_image img {
-      border-radius: 50%;
-      height: 100%;
-      width: 100%; }

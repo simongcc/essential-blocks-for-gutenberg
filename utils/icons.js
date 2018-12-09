@@ -265,4 +265,131 @@ width="35" height="35" viewBox="0 0 35 35">
 </svg>;
 
 
+icons.trash = <svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59 59">
+    <path d="M48.063,16.104l-37.63-5.289l0.479-3.41c0.197-1.398,1.489-2.373,2.888-2.176l32.566,4.577	c1.398,0.197,2.373,1.489,2.176,2.888L48.063,16.104z"
+          fill="#556080" />
+    <path d="M24.141,6.683l0.557-3.961	c0.153-1.089,1.17-1.855,2.259-1.702l7.922,1.113c1.089,0.153,1.855,1.17,1.702,2.259l-0.557,3.961L24.141,6.683z"
+          fill="#fff" stroke="#7383bf" strokeWidth="2" strokeLinecap="round" strokeMiterlimit="10"
+    />
+    <path d="M12.597,20h10.627l0.343-0.343L17.91,14l-5.401,5.401c-0.141,0.141-0.141,0.37,0,0.511L12.597,20z"
+          fill="#ebba16" />
+    <rect x="24.567" y="17" width="8" height="3" fill="#dd352e" />
+    <rect x="35.567" y="17" width="5" height="3" fill="#694f87" />
+    <path d="M42.838,59H14.297c-1.507,0-2.729-1.222-2.729-2.729V20h34v36.271C45.567,57.778,44.345,59,42.838,59	z"
+          fill="#556080" />
+    <g fill="#7383bf">
+        <circle cx="16.567" cy="28" r="1" />
+        <circle cx="16.567" cy="34" r="1" />
+        <circle cx="19.567" cy="25" r="1" />
+        <circle cx="25.567" cy="25" r="1" />
+        <circle cx="19.567" cy="31" r="1" />
+        <circle cx="25.567" cy="31" r="1" />
+        <circle cx="22.567" cy="28" r="1" />
+        <circle cx="28.567" cy="28" r="1" />
+        <circle cx="22.567" cy="34" r="1" />
+        <circle cx="28.567" cy="34" r="1" />
+        <circle cx="31.567" cy="25" r="1" />
+        <circle cx="37.567" cy="25" r="1" />
+        <circle cx="31.567" cy="31" r="1" />
+        <circle cx="37.567" cy="31" r="1" />
+        <circle cx="34.567" cy="28" r="1" />
+        <circle cx="40.567" cy="28" r="1" />
+        <circle cx="34.567" cy="34" r="1" />
+        <circle cx="40.567" cy="34" r="1" />
+        <circle cx="16.567" cy="40" r="1" />
+        <circle cx="16.567" cy="46" r="1" />
+        <circle cx="19.567" cy="37" r="1" />
+        <circle cx="25.567" cy="37" r="1" />
+        <circle cx="19.567" cy="43" r="1" />
+        <circle cx="25.567" cy="43" r="1" />
+        <circle cx="22.567" cy="40" r="1" />
+        <circle cx="28.567" cy="40" r="1" />
+        <circle cx="22.567" cy="46" r="1" />
+        <circle cx="28.567" cy="46" r="1" />
+        <circle cx="31.567" cy="37" r="1" />
+        <circle cx="37.567" cy="37" r="1" />
+        <circle cx="31.567" cy="43" r="1" />
+        <circle cx="37.567" cy="43" r="1" />
+        <circle cx="34.567" cy="40" r="1" />
+        <circle cx="40.567" cy="40" r="1" />
+        <circle cx="34.567" cy="46" r="1" />
+        <circle cx="40.567" cy="46" r="1" />
+        <circle cx="16.567" cy="52" r="1" />
+        <circle cx="19.567" cy="49" r="1" />
+        <circle cx="25.567" cy="49" r="1" />
+        <circle cx="19.567" cy="55" r="1" />
+        <circle cx="25.567" cy="55" r="1" />
+        <circle cx="22.567" cy="52" r="1" />
+        <circle cx="28.567" cy="52" r="1" />
+        <circle cx="31.567" cy="49" r="1" />
+        <circle cx="37.567" cy="49" r="1" />
+        <circle cx="31.567" cy="55" r="1" />
+        <circle cx="37.567" cy="55" r="1" />
+        <circle cx="34.567" cy="52" r="1" />
+        <circle cx="40.567" cy="52" r="1" />
+    </g>
+    <path d="M48.063,16.104l-37.63-5.289l0.479-3.41c0.197-1.398,1.489-2.373,2.888-2.176l32.566,4.577	c1.398,0.197,2.373,1.489,2.176,2.888L48.063,16.104z"
+          fill="#556080" />
+    <path d="M24.141,6.683l0.557-3.961	c0.153-1.089,1.17-1.855,2.259-1.702l7.922,1.113c1.089,0.153,1.855,1.17,1.702,2.259l-0.557,3.961L24.141,6.683z"
+          fill="#fff" stroke="#7383bf" strokeWidth="2" strokeLinecap="round" strokeMiterlimit="10"
+    />
+    <path d="M12.597,20h10.627l0.343-0.343L17.91,14l-5.401,5.401c-0.141,0.141-0.141,0.37,0,0.511L12.597,20z"
+          fill="#ebba16" />
+    <rect x="24.567" y="17" width="8" height="3" fill="#dd352e" />
+    <rect x="35.567" y="17" width="5" height="3" fill="#694f87" />
+    <path d="M42.838,59H14.297c-1.507,0-2.729-1.222-2.729-2.729V20h34v36.271C45.567,57.778,44.345,59,42.838,59	z"
+          fill="#556080" />
+    <g fill="#7383bf">
+        <circle cx="16.567" cy="28" r="1" />
+        <circle cx="16.567" cy="34" r="1" />
+        <circle cx="19.567" cy="25" r="1" />
+        <circle cx="25.567" cy="25" r="1" />
+        <circle cx="19.567" cy="31" r="1" />
+        <circle cx="25.567" cy="31" r="1" />
+        <circle cx="22.567" cy="28" r="1" />
+        <circle cx="28.567" cy="28" r="1" />
+        <circle cx="22.567" cy="34" r="1" />
+        <circle cx="28.567" cy="34" r="1" />
+        <circle cx="31.567" cy="25" r="1" />
+        <circle cx="37.567" cy="25" r="1" />
+        <circle cx="31.567" cy="31" r="1" />
+        <circle cx="37.567" cy="31" r="1" />
+        <circle cx="34.567" cy="28" r="1" />
+        <circle cx="40.567" cy="28" r="1" />
+        <circle cx="34.567" cy="34" r="1" />
+        <circle cx="40.567" cy="34" r="1" />
+        <circle cx="16.567" cy="40" r="1" />
+        <circle cx="16.567" cy="46" r="1" />
+        <circle cx="19.567" cy="37" r="1" />
+        <circle cx="25.567" cy="37" r="1" />
+        <circle cx="19.567" cy="43" r="1" />
+        <circle cx="25.567" cy="43" r="1" />
+        <circle cx="22.567" cy="40" r="1" />
+        <circle cx="28.567" cy="40" r="1" />
+        <circle cx="22.567" cy="46" r="1" />
+        <circle cx="28.567" cy="46" r="1" />
+        <circle cx="31.567" cy="37" r="1" />
+        <circle cx="37.567" cy="37" r="1" />
+        <circle cx="31.567" cy="43" r="1" />
+        <circle cx="37.567" cy="43" r="1" />
+        <circle cx="34.567" cy="40" r="1" />
+        <circle cx="40.567" cy="40" r="1" />
+        <circle cx="34.567" cy="46" r="1" />
+        <circle cx="40.567" cy="46" r="1" />
+        <circle cx="16.567" cy="52" r="1" />
+        <circle cx="19.567" cy="49" r="1" />
+        <circle cx="25.567" cy="49" r="1" />
+        <circle cx="19.567" cy="55" r="1" />
+        <circle cx="25.567" cy="55" r="1" />
+        <circle cx="22.567" cy="52" r="1" />
+        <circle cx="28.567" cy="52" r="1" />
+        <circle cx="31.567" cy="49" r="1" />
+        <circle cx="37.567" cy="49" r="1" />
+        <circle cx="31.567" cy="55" r="1" />
+        <circle cx="37.567" cy="55" r="1" />
+        <circle cx="34.567" cy="52" r="1" />
+        <circle cx="40.567" cy="52" r="1" />
+    </g>
+</svg>;
+
 export default icons;

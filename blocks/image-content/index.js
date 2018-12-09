@@ -216,7 +216,7 @@ export default registerBlockType(
                         <div className={ 'wp-block-egb-image-content item-details' }>
 
                             <RichText
-                                tagName="h6"
+                                tagName="h2"
                                 placeholder={ title.default }
                                 value={ title }
                                 onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
@@ -297,7 +297,7 @@ export default registerBlockType(
                     <div className="item-details">
 
                         <RichText.Content
-                            tagName="h6"
+                            tagName="h2"
                             value={ title }
                             onChange={( title )=> setAttributes({ title })}
                             className={`item-title`}

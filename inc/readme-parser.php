@@ -122,6 +122,7 @@ Class WordPress_Readme_Parser {
 
 		$sections = array();
 		for ( $i=1; $i <= count($_sections); $i +=2 ) {
+			if($i==1){continue;}
 			$_sections[$i] = preg_replace('/^[\s]*=[\s]+(.+?)[\s]+=/m', '<h4>$1</h4>', $_sections[$i]);
 			$_sections[$i] = $this->filter_text( $_sections[$i], true );
 			$title = $this->sanitize_text( $_sections[$i-1] );

@@ -26,9 +26,25 @@ body.toplevel_page_essential-blocks-for-gutenberg #wpcontent{
 .egb .wp-tab-bar {
     padding: 20px;
 }
-
+.wp-tab-bar.egb_navbar {
+    margin-top: 40px;
+}
 .egb .about-wrap .wp-badge{
     right: 10%;
+}
+
+.about-wrap .four-col, .about-wrap .three-col {
+    max-width: 100%;
+}
+.feature_content img {
+    max-width: 120px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.alice-green-bg {
+    background-color: #e4f1f9;
 }
 
 /* Plugin Name */

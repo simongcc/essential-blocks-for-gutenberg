@@ -108,15 +108,15 @@ class CTTEdit extends Component {
                         </Tooltip>
 
                         <label
-                            aria-label={ __( 'Twitter Username' ) }
-                            className={ `${ className }__via-label` }
+                            aria-label={ __( 'Twitter Username', 'ugb' ) }
+                            className="egb-ctt-via-label"
                             htmlFor={ `${ className }__via` }
                         >
                             { icons.at }
                         </label>
  
                         <input
-                            aria-label={ __( 'Twitter Username' ) }
+                            aria-label={ __( 'Twitter Username', 'ugb' ) }
                             className={ `${ className }__via` }
                             id={ `${ className }__via` }
                             onChange={ ( event ) => setAttributes( { via: event.target.value } ) }

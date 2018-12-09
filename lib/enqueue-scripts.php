@@ -14,7 +14,7 @@
 
 		// Enqueue the bundled block JS file
 		wp_enqueue_script(
-			'gutenberg-blocks-js',
+			'egb-blocks-js',
 			UGB_PLUGIN_URL . $block_path,
 			[ 
 				'wp-i18n', 
@@ -36,31 +36,21 @@
 
 		// Enqueue optional editor only styles
 		wp_enqueue_style(
-			'gutenberg-blocks-editor-css',
+			'egb-blocks-editor',
 			UGB_PLUGIN_URL . $style_path,
-			[ 'wp-blocks' ],
+			[ 'wp-edit-blocks' ],
 			filemtime( UGB_PLUGIN_DIR . $style_path )
 		);
+
 	}
 
-	add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_assets' );
+
 	/**
 	 * Enqueue front end and editor JavaScript and CSS assets.
 	 */
-	function enqueue_assets() {
-		$style_path = '/assets/css/blocks.style.css';
-		wp_enqueue_style(
-			'gutenberg-blocks',
-			UGB_PLUGIN_URL . $style_path,
-			[ 'wp-blocks' ],
-			filemtime( UGB_PLUGIN_DIR . $style_path )
-		);
-	}
 
 	add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_frontend_assets' );
-	/**
-	 * Enqueue frontend JavaScript and CSS assets.
-	 */
+
 	function enqueue_frontend_assets() {
 
 		// If in the backend, bail out.
@@ -68,9 +58,18 @@
 			return;
 		}
 
+		$style_path = '/assets/css/blocks.style.css';
+		wp_enqueue_style(
+			'egb-blocks',
+			UGB_PLUGIN_URL . $style_path,
+			[],
+			filemtime( UGB_PLUGIN_DIR . $style_path )
+		);
+
+
 		$block_path = '/assets/js/frontend.blocks.js';
 		wp_enqueue_script(
-			'gutenberg-blocks-frontend',
+			'egb-blocks-frontend',
 			UGB_PLUGIN_URL . $block_path,
 			[],
 			filemtime( UGB_PLUGIN_DIR . $block_path )

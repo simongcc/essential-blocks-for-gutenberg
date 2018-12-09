@@ -1,109 +1,129 @@
-import uuid from 'uuid/v4'
-import AddItem from './AddItem'
-import ListItem from './List';
-import icons from '../../utils/icons';
-// import classnames from 'classnames';
-
-
-/*
- * Testimonial Block Libraries
- */
-
+import classnames from "classnames";
+import icons from "../../utils/icons";
 import {
     __,
     Fragment,
-    Component,
+    Editable,
     Toolbar,
     BlockControls,
     AlignmentToolbar,
     BlockAlignmentToolbar,
+    Dashicon,
+    registerBlockType,
     MediaUpload,
     RichText,
-    Button
+    Button,
+    Component
 
 } from '../../utils/wp-import'
 
+import uuid from 'uuid/v4'
 
-export default class Edit extends Component {
+import Item from './item';
 
-    constructor(props) {
-        super(...arguments);
-        this.state = {
-            item: {
-                title:'',
-                image: '',
-                content: ''
-            },
-            newItem: []
-        }
-        this.handleInputNewItem = this.handleInputNewItem.bind(this);
-        this.handleAddNewItem = this.handleAddNewItem.bind(this);
-        this.handleItemDelete = this.handleItemDelete.bind(this);
-    }
+const emptyItem = () => ({
+    id: uuid(),
+    title: '',
+    imageID:'',
+    imageUrl:'',
+    designation: '',
+    body_content: ''
+})
 
-    handleInputNewItem(e) {
-        let itemEl = e.currentTarget,
-            name = itemEl.getAttribute('name'),
-            value = itemEl.value;
-        this.setState(
-            {
-                item: {
-                    ...this.state.item,
-                    [name]: value
-                }
-            }
-        );
-    }
+class Edit extends Component {
 
-    handleItemDelete(id){
-        let itemToKeep = this.state.newItem.filter((item) => item.id !== id)
-        this.setState({
-            newItem: itemToKeep
+    handleItemDelete( id ){
+        let itemToKeep = this.getItems()
+        delete itemToKeep[id]
+        this.props.setAttributes({
+            items: itemToKeep
         });
     }
 
-    handleAddNewItem() {
-        let itemArray = this.state.newItem.slice(),
-            item = this.state.item;
-        item.id = uuid();
-        itemArray.push(this.state.item);
+    getItems() {
 
-        this.setState({
-            item: {
-                title:'',
-                image: '',
-                content: ''
-            },
-            newItem: itemArray
-        });
+        return {...this.props.attributes.items};
     }
+
+    selectItem( selectedItem ) {
+        this.props.setAttributes({selectedItem})
+    }
+
+    handleAddNewItem () {
+        const items = this.getItems(),
+            newItem = emptyItem()
+        items[newItem.id] = newItem
+        this.props.setAttributes({items, selectedItem: newItem.id});
+    }
+
+    saveItem (id, item) {
+        const items = this.getItems()
+        items[id] = item
+        this.props.setAttributes({items});
+    }
+
+    componentDidMount() {
+        if(Object.values(this.getItems()).length === 0)
+            this.handleAddNewItem()
+    }
+
 
     render() {
-        const items = this.state.newItem.slice();
+        const {
+            attributes: { items, selectedItem }, setAttributes, className
+        } = this.props;
+
+        const mainClasses = classnames( [
+            className,
+            'egb-testimonial',
+        ], {
+            // 'has-image': imageUrl,
+        })
+
+        const itemLiClass = (id) => selectedItem === id ? 'active' : ''
 
 
-        return (
+
+        return(
             <Fragment>
-                <BlockControls>
-                    <BlockAlignmentToolbar
-                        value={ blockAlignment }
-                        onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
-                    />
-                    <AlignmentToolbar
-                        value={ textAlignment }
-                        onChange={ textAlignment => setAttributes( { textAlignment } ) }
-                    />
-            
-                    <AddItem handleAddNewItem={this.handleAddNewItem} handleInputNewItem={this.handleInputNewItem} item={this.state.item} >
-                    {
-                        items.map((item) =>{
-                            return <ListItem key={item.id} item={item} handleItemDelete={this.handleItemDelete} />
-                        })
-                    }
-                    </AddItem>
-                </BlockControls>
+                <div className={ mainClasses }>
+                    <div
+                        className={ 'wp-block-gutenberg-blocks-testimonial' }
+                    >
+
+                        <Item
+                            item={items[selectedItem] || {}}
+                            saveItem={this.saveItem.bind(this)}
+                            deleteItem={this.handleItemDelete.bind(this)}
+                        />
+
+                        <ul className="egb_testimonial_pagination">
+                            {
+                                Object.keys(items).map((id, index) => <li
+                                        key={id}
+                                        onClick={e => this.selectItem( id )}
+                                        className={itemLiClass(id)}
+                                    >{index + 1}</li>
+
+                                )
+                            }
+                            <li
+                                id="add-new__btn"
+                                className="add-new__btn"
+                                onClick={ this.handleAddNewItem.bind(this) }>
+                                { icons.plus }
+                            </li>
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+
             </Fragment>
         )
     }
-
 }
+
+export default Edit;
