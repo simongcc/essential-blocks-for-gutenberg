@@ -365,6 +365,14 @@
   overflow: hidden;
   -o-object-fit: cover;
   object-fit: cover; }
+  .banner-section .editor-rich-text__tinymce[data-is-empty="true"]::before {
+    position: inherit; }
+  .banner-section .editor-rich-text__tinymce:focus a[data-mce-selected] {
+    padding: 0 2px;
+    margin: 0 -2px;
+    border-radius: 2px;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.3); }
   .banner-section.has-parallax {
     background-attachment: fixed; }
     @supports (-webkit-overflow-scrolling: touch) {

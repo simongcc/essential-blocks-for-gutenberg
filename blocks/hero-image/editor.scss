@@ -3,6 +3,7 @@
 }
 .banner-section {
 
+
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -17,7 +18,17 @@
     -o-object-fit: cover;
     object-fit: cover;
 
+  .editor-rich-text__tinymce[data-is-empty="true"]::before {
+    position: inherit;
+  }
 
+  .editor-rich-text__tinymce:focus a[data-mce-selected] {
+    padding: 0 2px;
+    margin: 0 -2px;
+    border-radius: 2px;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.3);
+  }
 
     &.has-parallax {
       background-attachment: fixed;

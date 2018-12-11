@@ -2,9 +2,9 @@
 Contributors: litonice13, jwthemeltd, gutenberg18
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
 Tags: gutenberg, essential blocks for gutenberg, gutenberg blocks, card image text, translation block, blocks, gutenberg block, gutenberg blocks, guten blocks, essential blocks, gutenberg blocks, gutenberg widget, gutenberg addon, gutenberg addons, page builder, builder, gutenberg page builder, visual editor, gutenberg visual editor, wordpress page builder, esential guten blocks, essential guten blocks, ultimate guten blocks
-Requires at least: 4.0
+Requires at least: 5.0
 Tested up to: 5.0
-Stable tag: 1.2.2
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 5.3
@@ -161,6 +161,17 @@ We don't provide Customization Support for Free Products. But, If you need to Cr
 
 
 == Changelog ==
+= 1.2.5 =
+* Update: WordPress 5.0 Style and Hooks Compatible
+* Added: Three new Blocks added - Hero Image, Testimonial Slider, Click etc
+* Fixed: Title and Sub Title Section Style Fixed
+* Fixed: Broken Styles on WordPress 5.0 fixed
+* Fixed: Call to Action Style Fixed
+* Upgrade: Version Bump
+
+= 1.2.4 =
+* Minor Change in CSS Styles
+
 = 1.2.3 =
 * Fixed: Fixed "InspectorControls", "BlockControls" with "wp.editor" bug
 * Added: Working on Testimonial Sliders
@@ -168,8 +179,13 @@ We don't provide Customization Support for Free Products. But, If you need to Cr
 
 
 = 1.2.2 =
+* Version Bump
+
 = 1.2.1 =
+* Version Bump
+
 = 1.2.0 =
+* Major Release on Structure Updates
 
 = 1.0.3 =
 * Date: [20.Nov.2018]https://wordpress.org/plugins/ultimate-blocks-for-gutenberg/)

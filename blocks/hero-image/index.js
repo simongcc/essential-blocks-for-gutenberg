@@ -41,16 +41,18 @@ import {
 const validAlignments = [ 'left', 'center', 'right', 'wide', 'full' ];
 
 function dimRatioToClass( ratio ) {
-	return ( ratio === 0 || ratio === 50 ) ?
-		null :
-		'has-background-dim-' + ( 10 * Math.round( ratio / 10 ) );
+    return ( ratio === 0 || ratio === 50 ) ?
+        null :
+        'has-background-dim-' + ( 10 * Math.round( ratio / 10 ) );
 }
 
 function backgroundImageStyles( url ) {
-	return url ?
-		{ backgroundImage: `url(${ url })` } :
-		{};
+    return url ?
+        { backgroundImage: `url('${ url }')` } :
+        {};
 }
+
+
 
 
 const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
@@ -82,20 +84,20 @@ export default registerBlockType(
                 type: 'html',
                 selector: '.banner-title',
                 default: __('Ultimate Landing Page for Anything Cool', 'ugb')
-            },            
+            },
             content:{
                 type: 'html',
-                selector: 'p',
+                selector: '.mt-4',
                 default: __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'ugb')
             },
 
 
-            content: {
-                type: 'string',
-                source: 'html',
-                selector: 'p',
-                default: [],
-            },
+            // content: {
+            //     type: 'string',
+            //     source: 'html',
+            //     selector: 'p',
+            //     default: [],
+            // },
 
 
             buttonText:{
@@ -127,9 +129,9 @@ export default registerBlockType(
             },
             imageUrl: {
                 type: 'string',
-                source: 'attribute',
-                attribute: 'src',
-                selector: 'img',
+                // source: 'attribute',
+                // attribute: 'src',
+                // selector: 'img',
             },
 
 
@@ -215,8 +217,8 @@ export default registerBlockType(
             withNotices,
         ] )(( props ) => {
 
-            const {
-                attributes: {
+                const {
+                    attributes: {
                         title,
                         content,
                         buttonText,
@@ -233,82 +235,73 @@ export default registerBlockType(
                     editable, isSelected, setState, setAttributes, overlayColor,setOverlayColor, className
                 } = props;
 
-            const updateTextAlignment = ( nextTextAlignment ) => setAttributes( { textAlignment: nextTextAlignment } );
+                const updateTextAlignment = ( nextTextAlignment ) => setAttributes( { textAlignment: nextTextAlignment } );
 
 
-            const onSelectImage = img =>{
-                setAttributes({
-                    imageID: img.id,
-                    imageUrl: img.url,
-                    // imageAlt: img.alt,
-                })
-            }
+                const onSelectImage = img =>{
+                    setAttributes({
+                        imageID: img.id,
+                        imageUrl: img.url,
+                        // imageAlt: img.alt,
+                    })
+                }
 
-            const onRemoveImage = () =>{
-                setAttributes({
-                    imageID: null,
-                    imageUrl: null,
-                    // imageAlt: null
-                })
-            }
+                const onRemoveImage = () =>{
+                    setAttributes({
+                        imageID: null,
+                        imageUrl: null,
+                        // imageAlt: null
+                    })
+                }
 
-            // const mainClasses = classnames( [
-            //     className,
-            //     'egb-image',
-            // ], {
-            //     'has-image': imageUrl,
-            // })
+                // const mainClasses = classnames( [
+                //     className,
+                //     'egb-image',
+                // ], {
+                //     'has-image': imageUrl,
+                // })
 
-            const toggleParallax = () => setAttributes( { hasParallax: ! hasParallax } );
-			const setDimRatio = ( ratio ) => setAttributes( { dimRatio: ratio } );
+                const toggleParallax = () => setAttributes( { hasParallax: ! hasParallax } );
+                const setDimRatio = ( ratio ) => setAttributes( { dimRatio: ratio } );
 
-            const style = {
-				...(
-					backgroundType === IMAGE_BACKGROUND_TYPE ?
-						backgroundImageStyles( imageUrl ) :
-						{}
-				),
-                backgroundColor: overlayColor.color,
-                
-            };
+                const bgImages = backgroundType === IMAGE_BACKGROUND_TYPE ? backgroundImageStyles( imageUrl ) : {};
+
+                const style = {
+                    ...bgImages,
+                    backgroundColor: overlayColor.color
+                };
 
 
+                // const imgExists = imageID ? backgroundImageStyles( imageUrl ) : {};
+                // console.log(imgExists);
+                //
+                // const newStyle = {
+                //     ...imgExists
+                // };
 
 
 
-            // const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
-            //     backgroundImageStyles( imageUrl ) :
-            //     {};
-            // if ( ! overlayColorClass ) {
-            //     style.backgroundColor = customOverlayColor;
-            // }
+                // const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
+                //     backgroundImageStyles( imageUrl ) :
+                //     {};
+                // if ( ! overlayColorClass ) {
+                //     style.backgroundColor = customOverlayColor;
+                // }
 
 
-            
-			const classes = classnames(
-				className,
-				textAlignment !== 'center' && `has-${ textAlignment }-content`,
-				dimRatioToClass( dimRatio ),
-				{
-					'has-background-dim': dimRatio !== 0,
-					'has-parallax': hasParallax,
-				}
-            );
+
+                const classes = classnames(
+                    className,
+                    textAlignment !== 'center' && `has-${ textAlignment }-content`,
+                    dimRatioToClass( dimRatio ),
+                    {
+                        'has-background-dim': dimRatio !== 0,
+                        'has-parallax': hasParallax,
+                    }
+                );
 
 
-            // getEditWrapperProps( { blockAlignment } ){
-            //     if( 'left' === blockAlignment ||
-            //         'right' === blockAlignment ||
-            //         'full' === blockAlignment
-            //     ){
-            //         return { 'data-align': blockAlignment };
-            //     }
-            // },
-
-            console.log( imageID );
-            console.log( imageUrl );
-
-            return (
+                return (
                     <Fragment>
 
                         <BlockControls>
@@ -384,7 +377,7 @@ export default registerBlockType(
                                             />
 
                                             <RichText
-                                                // tagName="p"
+                                                tagName="p"
                                                 placeholder={ content.default }
                                                 value={ content }
                                                 onChange={ ( nextContent ) => setAttributes( { content: nextContent } ) }
@@ -486,7 +479,7 @@ export default registerBlockType(
                             </div>
                         </div>
 
-                </Fragment>
+                    </Fragment>
                 );
             }
         ),
@@ -500,105 +493,58 @@ export default registerBlockType(
                 hasParallax,
                 imageID,
                 imageUrl,
-                imageAlt,
                 backgroundType,
                 overlayColor,
                 customOverlayColor,
                 imgAlignmentClass,
                 blockAlignment,
                 textAlignment,
-        } = props.attributes;
+            } = props.attributes;
 
-        const overlayColorClass = getColorClassName( 'background-color', overlayColor );
-    
-        console.log( imageID );
+            const overlayColorClass = getColorClassName( 'background-color', overlayColor );
 
-        const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
-            backgroundImageStyles( imageUrl ) :
-            {};
-        if ( ! overlayColorClass ) {
-            style.backgroundColor = customOverlayColor;
-        }
+            const style = backgroundType === IMAGE_BACKGROUND_TYPE ?
+                backgroundImageStyles( imageUrl ) :
+                {};
+            if ( ! overlayColorClass ) {
+                style.backgroundColor = customOverlayColor;
+            }
 
-        const contentStyle = {
-            textAlign: imgAlignmentClass
-        }
-
-        // const cardImage = (imageUrl, imageAlt) => {
-        //     if(!imageUrl) return null;
-
-        //     if(imageAlt) {
-        //         return (
-        //             <img
-        //                 className="hero_image"
-        //                 src={ imageUrl }
-        //                 alt={ imageAlt }
-        //             />
-        //         );
-        //     }
-
-        //     // No alt set, so let's hide it from screen readers
-        //     return (
-        //         <img
-        //             className="hero_image"
-        //             src={ imageUrl }
-        //             alt=""
-        //             aria-hidden="true"
-        //         />
-        //     );
-        // };
-
-        // const style = backgroundImageStyles( imageUrl );
+            const contentStyle = {
+                textAlign: imgAlignmentClass
+            };
 
 
-        // const style = {
-        //     ...(
-        //         backgroundType === IMAGE_BACKGROUND_TYPE ?
-        //             backgroundImageStyles( imageUrl ) :
-        //             {}
-        //     ),
-        //     backgroundColor: overlayColor,
-        //
-        // };
+            const classes = classnames(
+                dimRatioToClass( dimRatio ),
+                overlayColorClass,
+                {
+                    'has-background-dim': dimRatio !== 0,
+                    'has-parallax': hasParallax,
+                    [ `has-${ textAlignment }-content` ]: textAlignment !== 'center',
+                },
+                blockAlignment ? `align${ blockAlignment }` : null,
+            );
 
-        // const classes = classnames(
-        //     dimRatioToClass( dimRatio ),
-        //     {
-        //         'has-background-dim': dimRatio !== 0,
-        //         'has-parallax': hasParallax,
-        //     },
-        //     blockAlignment ? `align${ blockAlignment }` : null,
-        // );
-        
-        const classes = classnames(
-			dimRatioToClass( dimRatio ),
-			overlayColorClass,
-			{
-				'has-background-dim': dimRatio !== 0,
-				'has-parallax': hasParallax,
-				[ `has-${ textAlignment }-content` ]: textAlignment !== 'center',
-			},
-			blockAlignment ? `align${ blockAlignment }` : null,
-		);
+
 
             return(
 
 
-                  <div
-                      className={ `banner-section banner-01 background-bg ${classes}` }
-                      style={ backgroundImageStyles( imageUrl ) }
-                  >
+                <div
+                    className={ `banner-section banner-01 background-bg ${classes}` }
+                    style={ style }
+                >
 
 
+                    {/*<img src={imageUrl} alt=""/>*/}
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-6">
+                                <div className="banner-texts text-left">
 
-                      <div className="container">
-                          <div className="row">
-                              <div className="col-lg-6">
-                                  <div className="banner-texts text-left">
-
-
-
-                                  <RichText.Content
+                                    <RichText.Content
+                                        tagName="h2"
                                         value={ title }
                                         className="banner-title"
                                         style={{
@@ -607,6 +553,7 @@ export default registerBlockType(
                                     />
 
                                     <RichText.Content
+                                        tagName="p"
                                         value={ content }
                                         className="mt-4"
                                     />
@@ -614,12 +561,13 @@ export default registerBlockType(
                                     <a
                                         href={ buttonUrl }
                                         target="_blank"
+                                        className={`btn btn-lg mt-5`}
                                     >{ buttonText }</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-              </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             )
 

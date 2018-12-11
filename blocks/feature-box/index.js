@@ -48,31 +48,37 @@ export const FeatureAttributes = {
 		default: 100,
     },
     title1: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(1) h5',
 		default: __( 'Feature 1' ),
     },
 	title2: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(2) h5',
 		default: __( 'Feature 2' ),
 	},
 	title3: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(3) h5',
 		default: __( 'Feature 3' ),
 	},
 	description1: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(1) .ugb-fg-description',
 		default: __( 'Some feature description for an awesome feature' ),
 	},
 	description2: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(2) .ugb-fg-description',
 		default: __( 'Some feature description for an awesome feature' ),
 	},
 	description3: {
+        type: 'string',
 		source: 'html',
 		selector: '.ugb-feature-grid > *:nth-child(3) .ugb-fg-description',
 		default: __( 'Some feature description for an awesome feature' ),
@@ -181,11 +187,11 @@ export const EditFeature = ( props ) => {
                                     keepPlaceholderOnFocus
                                 />
                                 <RichText
-                                    tagName='p'
                                     value={ description }
-                                    onChange={ description => setAttributes( { [ `description${i}` ]: description } ) }
-                                    placeholder={ attributes[ `description${i}` ].default }
-                                    keepPlaceholderOnFocus
+                                    // onChange={ description => setAttributes( { [ `description${i}` ]: description } ) }
+                                    onChange={ ( description ) => setAttributes( { description: [ `description${i}` ] }) }
+                                    // placeholder={ attributes[ `description${i}` ].default }
+                                    // keepPlaceholderOnFocus
                                 />
 	                            
                                 <RichText

@@ -295,7 +295,7 @@
     border: none;
     border-radius: 5px;
     box-shadow: none;
-    color: #fff;
+    color: #fff !important;
     display: inline-block;
     font-family: "Poppins", sans-serif;
     font-size: 13px;
