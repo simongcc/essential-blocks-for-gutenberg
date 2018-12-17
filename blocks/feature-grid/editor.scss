@@ -1,119 +1,38 @@
-.wp-block-gutenberg-blocks-testimonial.egb-testimonial{
-    background: #f2f2f2f2;
-  
-    .wp-block-egb-testimonial-image {
-      background-color: #fff;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      height: 15.7rem;
-      width: 100%;
-      border-radius: 10px;
-  
-      p {
-        max-height: 100%;
-        line-height: 1;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        border-radius: 10px;
-      }
-      img{
-        max-height: 100%;
-        border-radius: 10px;
-        height: 15.7rem;
-        width: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-      }
-    }
-    .testimonial_image{
-      height: 200px;
-    }
-    .remove-image{
-      color: red;
-      float: left;
-      height: initial !important;
-      position: absolute;
-      width: initial !important;
-      svg {
-        fill: red;
-      }
-    }
-  }
-  button#add-new__btn {
-    height: 60px !important;
-    width: 60px !important;
-  }
-  .ugb-testimonial .testimonial_list {
-    flex: 0 0 100%;
-    margin: 0 !important;
-    padding: 15px;
-  }
-.wp-block-gutenberg-blocks-testimonial {
-  border: 1px solid #e2e4e7;
-  padding: 30px 0;
-  text-align: center;
-  .details {
-    box-sizing: initial;
-    text-align: left;
-  }
-}
-#add-new__btn {
-  svg {
-    height: 29px;
-    width: 25px !important;
-  }
-}
-.egb_testimonial_pagination {
-  border-bottom: 1px solid #e2e4e7;
-  position: absolute;
-  left: 0;
-  top: 11px;
-  width: 100%;
-  li {
-    border: 1px solid #e2e4e7;
-    color: black;
-    float: left;
-    list-style: none;
-    margin: 0px 5px -1px !important;
-    line-height: 1;
-    margin: 0;
-    height: 30px;
-    width: 40px;
-    line-height: 30px;
-    background: #f3f4f5;
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    &.active {
-      border-bottom-color: #fff;
-    }
-  }
-}
-.editor-rich-text {
-  h6,span {
-    text-align: center;
-  }
-}
-.image-wrapper {
-  position: relative;
-  img {
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    margin: 0 auto;
-  }
-  .remove-image {
-    position: absolute;
-    top: 0;
-    svg {
-      fill: red;
-    }
+/**
+ * #.# Editor Styles for Feature Grid Block
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+// Fade out placeholder text.
+.egb-feature-grid {
+  [data-is-placeholder-visible="true"] + .editor-rich-text__tinymce {
+    opacity: 0.5;
   }
 }
 
-.wp-block-gutenberg-blocks-testimonial-slider {
-  padding-top: 40px;
+// Only show placeholder text while selected or typing.
+[data-type="easy-blocks/feature-box"]:not(.is-selected):not(.is-typing) {
+  [data-is-placeholder-visible="true"] + .editor-rich-text__tinymce {
+    display: none;
+  }
+}
+
+.egb-feature-grid.columns-1 {
+  > *:nth-child(2), > *:nth-child(3) {
+    display: none;
+  }
+}
+.egb-feature-grid.columns-2 {
+  > *:nth-child(3) {
+    display: none;
+  }
+}
+
+.egb-feature-grid .ugb-image-upload-placeholder.ugb-image-upload-has-placeholder {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 100%;
 }

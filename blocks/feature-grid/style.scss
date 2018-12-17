@@ -1,52 +1,62 @@
-.testimonial-slider {
-    background: #fff;
-    text-align: center;
-      p {
-        color: #808080;
-        font-style: italic;
-        max-height: 100%;
-        line-height: 1.35;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        border-radius: 10px;
-        &:before {
-            content: '"';
-        }
-        &:after {
-            content: '"';
-        }
-      }
-      img{
-        max-height: 100%;
-        border-radius: 10px;
-        height: 15.7rem;
-        width: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-      }
-    .h2,h3,h4,h5,h6 {
-        color: #343434;
-        font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      margin: 1.5rem 0 0;
-    }
-    span {
-        color: #999;
-        display: block;
-        font-size: 14px;
-    }
-    .card_image {
-      border-radius: 50%;
-      height: 120px;
-      width: 120px;
-      margin: 1em auto 0;
-      position: relative;
-      img {
-        border-radius: 50%;
-        height: 100%;
-        width: 100%;
-      }
+@import "../../assets/scss/common";
+
+/**
+ * #.# Styles for Team Member Block.
+ *
+ * CSS for both Frontend+Backend.
+ */
+.egb-feature-grid {
+  @include baseBlock();
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 (-$box-hori-padding / 2);
+  > div {
+    flex: 1;
+    &, &:first-child, &:last-child {
+      margin: ($box-hori-padding / 2) !important;
     }
   }
+  .egb-feature-grid-item {
+    text-align: center;
+    @include baseBlock();
+    @include box();
+  }
+}
+.egb-design-plain {
+  .egb-feature-grid-item {
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+
+    @media screen and (max-width: $break-medium) {
+      padding: 0;
+    }
+    @media screen and (max-width: $break-small) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: #{($box-hori-padding / 2)};
+      padding-bottom: #{($box-hori-padding / 2)};
+    }
+  }
+}
+
+// For 3 columns, make sure the images are still seen if columns are narrow.
+@media screen and (max-width: $break-large) {
+  .egb-feature-grid.columns-3 {
+    .egb-feature-grid-item > img {
+      width: 100% !important;
+    }
+  }
+}
+
+// For small screens, collapse & make sure our images aren't too large.
+@media screen and (max-width: $break-small) {
+  .egb-feature-grid-item > img {
+    max-width: 30vw;
+  }
+  .egb-feature-grid {
+    flex-direction: column;
+  }
+}
+
+

@@ -166,14 +166,7 @@ render(){
                         marginRight: `-${ gridGap }px`
                     }}
                 >
-
-                    {/*{Object.values(thumbs).map( ( photo, index) => (*/}
-
-                        {/*// console.log(photo, index);*/}
-
-                    {/*))}*/}
-
-
+                    
                 { thumbs && thumbs.map( photo => {
                     return (
                         <div

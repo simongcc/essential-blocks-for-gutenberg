@@ -8,14 +8,14 @@
  * Plugin Name: Easy Blocks - Gutenberg Blocks Collection
  * Plugin URI:  https://jeweltheme.com/shop/easy-gutenberg-blocks/
  * Description: Easy Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
- * Version:     1.2.5
+ * Version:     1.2.6
  * Author:      Liton Arefin
  * Author URI:  https://jeweltheme.com/shop/easy-gutenberg-blocks/
  * Text Domain: ugb
  * Domain Path: /languages
  * License:     GPL-3.0
  * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
- * Tested up to: 4.9.8
+ * Tested up to: 5.0.1
  */
 
 
@@ -44,7 +44,7 @@ define( 'UGB_DIR', dirname( __FILE__ ) );
 class Ultimate_Gutenberg{
 
 	/* Variables */
-	public  $version = "1.2.5";
+	public  $version = "1.2.6";
 	private $plugin_path;
 	private $plugin_url;
 	private $plugin_slug;
@@ -125,7 +125,7 @@ class Ultimate_Gutenberg{
 		// require_once $this->ugb_plugin_path() . '/lib/metabox.php';
 
 		/* Server Rendering Blocks */
-		require_once $this->ugb_plugin_path() . '/blocks/instagram/render.php';
+		require_once $this->ugb_plugin_path() . '/inc/blocks/render.php';
 
 		if ( is_admin() ) {
 			// Notices Libraries

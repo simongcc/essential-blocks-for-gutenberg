@@ -1,109 +1,134 @@
-import uuid from 'uuid/v4'
-import AddItem from './AddItem'
-import ListItem from './List';
-import icons from '../../utils/icons';
-// import classnames from 'classnames';
-
-
-/*
- * Testimonial Block Libraries
- */
+import classnames from 'classnames';
+import uuid from 'uuid/v4';
 
 import {
     __,
     Fragment,
     Component,
     Toolbar,
+    InspectorControls,
+    registerBlockType,
     BlockControls,
     AlignmentToolbar,
     BlockAlignmentToolbar,
     MediaUpload,
+    RangeControl,
     RichText,
-    Button
-
+    Button,
+    PanelBody
 } from '../../utils/wp-import'
 
 
-export default class Edit extends Component {
 
-    constructor(props) {
-        super(...arguments);
-        this.state = {
-            item: {
-                title:'',
-                image: '',
-                content: ''
-            },
-            newItem: []
-        }
-        this.handleInputNewItem = this.handleInputNewItem.bind(this);
-        this.handleAddNewItem = this.handleAddNewItem.bind(this);
-        this.handleItemDelete = this.handleItemDelete.bind(this);
+class EditPricing extends Component {
+
+    constructor() {
+		super( ...arguments );
     }
+    
 
-    handleInputNewItem(e) {
-        let itemEl = e.currentTarget,
-            name = itemEl.getAttribute('name'),
-            value = itemEl.value;
-        this.setState(
-            {
-                item: {
-                    ...this.state.item,
-                    [name]: value
-                }
-            }
-        );
-    }
+    render(){
 
-    handleItemDelete(id){
-        let itemToKeep = this.state.newItem.filter((item) => item.id !== id)
-        this.setState({
-            newItem: itemToKeep
-        });
-    }
+        const {
+			attributes,
+			buttonColor,
+			className,
+			isSelected,
+			setAttributes,
+			setButtonColor,
+			setTextColor,
+			fallbackButtonColor,
+			fallbackTextColor,
+			fallbackFontSize,
+			fontSize,
+		} = this.props;
 
-    handleAddNewItem() {
-        let itemArray = this.state.newItem.slice(),
-            item = this.state.item;
-        item.id = uuid();
-        itemArray.push(this.state.item);
+		// const {
+        //     title,
+        //     icon,
+        //     description,
+        //     textColor,
+        //     bgColor,
+        //     alertClass,
+        //     dismissible,
+        //     textAlignment,
+        //     blockAlignment,
+		// } = attributes;
 
-        this.setState({
-            item: {
-                title:'',
-                image: '',
-                content: ''
-            },
-            newItem: itemArray
-        });
-    }
+        // const { attributes } = this.props
+        
+        const {
+            columns,
+            iconSize,
+        } = attributes;
 
-    render() {
-        const items = this.state.newItem.slice();
+        const mainClasses = classnames( [
+            className,
+            'egb-feature-grid',
+            `columns-${columns}`,
+        ] );
+    
 
-
-        return (
+        return(
             <Fragment>
-                <BlockControls>
-                    <BlockAlignmentToolbar
-                        value={ blockAlignment }
-                        onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
-                    />
-                    <AlignmentToolbar
-                        value={ textAlignment }
-                        onChange={ textAlignment => setAttributes( { textAlignment } ) }
-                    />
-            
-                    <AddItem handleAddNewItem={this.handleAddNewItem} handleInputNewItem={this.handleInputNewItem} item={this.state.item} >
-                    {
-                        items.map((item) =>{
-                            return <ListItem key={item.id} item={item} handleItemDelete={this.handleItemDelete} />
-                        })
-                    }
-                    </AddItem>
-                </BlockControls>
+                <InspectorControls>
+                    <PanelBody>
+                        <RangeControl
+                            label={ __( 'Columns' ) }
+                            value={ columns }
+                            onChange={ columns => setAttributes( { columns } ) }
+                            min={ 1 }
+                            max={ 3 }
+                        />
+                        <RangeControl
+                            label={ __( 'Icon Font Size(px)' ) }
+                            value={ iconSize }
+                            onChange={ iconSize => setAttributes( { iconSize } ) }
+                            min={ 0 }
+                            max={ 100 }
+                        />
+                    </PanelBody>
+                </InspectorControls>
+                
+                <div className={ mainClasses }>
+                { [1, 2, 3].map( i => {
+                        // const icon = attributes[ `icon${i}` ]
+                        // const imageID = attributes[ `imageID${i}` ]
+                        const title = attributes[ `title${i}` ]
+                        const description = attributes[ `description${i}` ]
+                        // const linkUrl = attributes[ `linkUrl${i}` ]
+                        // const linkText = attributes[ `linkText${i}` ]
+
+                        return(
+                            <div key={ i }>
+                                <div className={ `egb-feature-grid-item` }>
+                                    <RichText
+                                        tagName='h5'
+                                        value={ title }
+                                        onChange={ title => setAttributes( { [ `title${i}` ]: title } ) }
+                                        placeholder={ this.attributes[ `title${i}` ].default }
+                                        keepPlaceholderOnFocus
+                                    />
+                                    <RichText
+                                        tagName='p'
+                                        value={ description }
+                                        onChange={ description => setAttributes( { [ `description${i}` ]: description } ) }
+                                        placeholder={ this.attributes[ `description${i}` ].default }
+                                        keepPlaceholderOnFocus
+                                    />
+                                </div>
+                            </div>
+                        )
+
+                    })
+                }
+                </div>
+
             </Fragment>
         )
     }
 
+
 }
+
+export default EditPricing;
