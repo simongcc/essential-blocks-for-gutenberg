@@ -12,8 +12,9 @@ import './testimonial';
 import './hero-image';
 import './testimonial-slider';
 import './click-to-tweet';
+
 import './pricing-table';
 import './author-box';
+import './feature-box';
 import './feature-grid';
-// import './feature-grid';
 import './instagram';

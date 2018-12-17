@@ -18,8 +18,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blocks/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="308">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -28,38 +28,24 @@
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blocks/pricing-table/index.js">
+        <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="368" column="18" selection-start-line="368" selection-start-column="18" selection-end-line="368" selection-end-column="18" />
+            <state relative-caret-position="270">
+              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#42#80#0" expanded="true" />
-                <element signature="e#236#258#0" expanded="true" />
-                <element signature="e#305#528#0" expanded="true" />
-                <element signature="e#766#3060#0" />
+                <element signature="e#40#78#0" expanded="true" />
+                <element signature="e#229#566#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="attributes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/pricing-table/attributes.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="15" column="6" selection-end-line="81" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="save.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/pricing-table/save.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#0#223#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -67,8 +53,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blocks/feature-grid/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="523">
+              <caret line="386" column="12" selection-start-line="386" selection-start-column="12" selection-end-line="386" selection-end-column="70" />
               <folding>
                 <element signature="e#40#78#0" expanded="true" />
                 <element signature="e#165#187#0" expanded="true" />
@@ -81,10 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>constru</find>
-      <find>onChangeImag</find>
-      <find>fetchphoto</find>
-      <find>easy-instagram-gri</find>
       <find>$break-mobile</find>
       <find>$xs</find>
       <find>wp-block-easy-blocks-instagram</find>
@@ -111,6 +93,10 @@
       <find>BlockAlignmentToolbar</find>
       <find>FeatureAttributes</find>
       <find>image</find>
+      <find>featureAttributes</find>
+      <find>blockAlignment</find>
+      <find>getEdit</find>
+      <find>full</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -146,14 +132,12 @@
         <option value="$PROJECT_DIR$/blocks/hero-image/style.scss" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/assets/scss/common.scss" />
-        <option value="$PROJECT_DIR$/blocks/feature-box/style.scss" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/item.js" />
         <option value="$PROJECT_DIR$/blocks/feature-box/edit.js" />
         <option value="$PROJECT_DIR$/utils/wp-import.js" />
         <option value="$PROJECT_DIR$/blocks/alert/index.js" />
         <option value="$PROJECT_DIR$/blocks/author-box/index.js" />
         <option value="$PROJECT_DIR$/blocks/card/index.js" />
-        <option value="$PROJECT_DIR$/blocks/feature-box/index.js" />
         <option value="$PROJECT_DIR$/utils/icons.js" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/edit.js" />
         <option value="$PROJECT_DIR$/blocks/feature-box/editor.scss" />
@@ -164,11 +148,13 @@
         <option value="$PROJECT_DIR$/blocks/instagram/index.js" />
         <option value="$PROJECT_DIR$/ultimate-gutenberg-blocks.php" />
         <option value="$PROJECT_DIR$/blocks/instagram/edit.js" />
-        <option value="$PROJECT_DIR$/blocks/index.js" />
         <option value="$PROJECT_DIR$/blocks/pricing-table/save.js" />
         <option value="$PROJECT_DIR$/blocks/feature-grid/index.js" />
         <option value="$PROJECT_DIR$/blocks/pricing-table/attributes.js" />
         <option value="$PROJECT_DIR$/blocks/pricing-table/index.js" />
+        <option value="$PROJECT_DIR$/blocks/feature-box/style.scss" />
+        <option value="$PROJECT_DIR$/blocks/index.js" />
+        <option value="$PROJECT_DIR$/blocks/feature-box/index.js" />
       </list>
     </option>
   </component>
@@ -234,7 +220,19 @@
               <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
               <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pricing-table" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="alert" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="call-to-action" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="feature-box" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -281,12 +279,12 @@
       <workItem from="1544205684376" duration="221000" />
       <workItem from="1544206891484" duration="154000" />
       <workItem from="1544245692312" duration="26939000" />
-      <workItem from="1544943457282" duration="32709000" />
+      <workItem from="1544943457282" duration="34007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79719000" />
+    <option name="totallyTimeSpent" value="81017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-222" width="1920" height="1008" extended-state="0" />
@@ -302,7 +300,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21906693" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.21906693" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -329,7 +327,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blocks/test/index.js" />
     <entry file="file://$PROJECT_DIR$/blocks/another/Edit.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -452,23 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/alert/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="188" column="106" selection-start-line="188" selection-start-column="82" selection-end-line="188" selection-end-column="106" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1959">
-          <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/card/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -563,20 +543,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blocks/feature-grid/editor.scss">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/feature-box/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/feature-box/editor.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blocks/testimonial-slider/editor.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -680,38 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-995">
-          <caret line="373" column="22" selection-start-line="373" selection-start-column="8" selection-end-line="373" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#40#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/feature-grid/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#40#78#0" expanded="true" />
-            <element signature="e#165#187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/pricing-table/save.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -722,6 +656,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/pricing-table/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/feature-box/style.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/pricing-table/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="367" column="1" lean-forward="true" selection-start-line="367" selection-start-column="1" selection-end-line="367" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#42#80#0" expanded="true" />
+            <element signature="e#305#528#0" expanded="true" />
+            <element signature="e#766#3060#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/feature-box/editor.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/pricing-table/attributes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -729,16 +695,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/pricing-table/index.js">
+    <entry file="file://$PROJECT_DIR$/blocks/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="368" column="18" selection-start-line="368" selection-start-column="18" selection-end-line="368" selection-end-column="18" />
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#42#80#0" expanded="true" />
-            <element signature="e#236#258#0" expanded="true" />
-            <element signature="e#305#528#0" expanded="true" />
-            <element signature="e#766#3060#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/alert/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="154" column="28" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="101" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/feature-grid/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="386" column="12" selection-start-line="386" selection-start-column="12" selection-end-line="386" selection-end-column="70" />
+          <folding>
+            <element signature="e#40#78#0" expanded="true" />
+            <element signature="e#165#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#40#78#0" expanded="true" />
+            <element signature="e#229#566#0" expanded="true" />
           </folding>
         </state>
       </provider>

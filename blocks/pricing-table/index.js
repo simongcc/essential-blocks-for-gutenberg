@@ -4,10 +4,6 @@
 
 import icons from '../../utils/icons';
 import classnames from 'classnames';
-// import EditPricing from './edit';
-// import SavePricing from './save';
-
-
 import './style.scss';
 import './editor.scss';
 
