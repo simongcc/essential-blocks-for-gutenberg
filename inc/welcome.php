@@ -74,7 +74,7 @@
 
 				<div class="wp-tab-panel" id="how-to">
 					<h1 class="black textcenter main_heading">
-						<?php _e( 'Welcome to Essential Blocks for Guteneberg.', UGB_TD ); ?>
+						<?php _e( 'Welcome to Easy Blocks for Guteneberg.', UGB_TD ); ?>
 					</h1>				
 					
 					<h3 class="black textcenter sub-heading">
@@ -89,16 +89,16 @@
 								<?php _e( 'Gutenberg provides some basic block like Paragraph, Heading, Image, Gallery, List, Cover, File. These all are the default block. 
 											But building more blocks give you full control to design your web pages. 
 											Visually you can see everything, what you are doing now. 
-											Within this Essential Gutenberg plugin, we have packed most necessary blocks. 
+											Within this Easy Gutenberg plugin, we have packed most necessary blocks. 
 											We are working on its Development every day and trying to cover all blocks so that you don\'t need to worry on webpage designing.', UGB_TD ); ?>
 
 								</p>
 								<br>
-								<h3><?php _e( 'Essential Block Demos:', UGB_TD ); ?></h3>
+								<h3><?php _e( 'Easy Block Demos:', UGB_TD ); ?></h3>
 								<ul class="egb_demos">
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/alert-notification/"
+											href="https://plugins.jeweltheme.com/easy-blocks/alert-notification/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Alert/Notification', UGB_TD ); ?>
@@ -107,7 +107,7 @@
 									</li>
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/blockquote/"
+											href="https://plugins.jeweltheme.com/easy-blocks/blockquote/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Blockquotes', UGB_TD ); ?>
@@ -119,7 +119,7 @@
 									</li>
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/call-to-action/"
+											href="https://plugins.jeweltheme.com/easy-blocks/call-to-action/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Call to Action', UGB_TD ); ?>
@@ -128,7 +128,7 @@
 									</li>
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/cards/"
+											href="https://plugins.jeweltheme.com/easy-blocks/cards/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Cards', UGB_TD ); ?>
@@ -137,7 +137,7 @@
 									</li>
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/image-content/"
+											href="https://plugins.jeweltheme.com/easy-blocks/image-content/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Image & Content', UGB_TD ); ?>
@@ -149,7 +149,7 @@
 									</li>
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/testimonial/"
+											href="https://plugins.jeweltheme.com/easy-blocks/testimonial/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Testimonials', UGB_TD ); ?>
@@ -157,12 +157,39 @@
 										</a>
 										<span class="ribbon trending">Trending</span>
 									</li>
+
 									<li>
 										<a 
-											href="https://plugins.jeweltheme.com/essential-gutenberg/title-subtitle/"
+											href="https://plugins.jeweltheme.com/easy-blocks/title-subtitle/"
 											target="_blank">
 											<strong>
 												<?php _e( 'Heading & Sub Heading', UGB_TD ); ?>
+											</strong>
+										</a>
+										<span class="ribbon new">
+											<?php _e( 'New', UGB_TD ); ?>
+										</span>
+									</li>
+
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/easy-blocks/testimonial-slider/"
+											target="_blank">
+											<strong>
+												<?php _e( 'Testimonial Slider', UGB_TD ); ?>
+											</strong>
+										</a>
+										<span class="ribbon new">
+											<?php _e( 'New', UGB_TD ); ?>
+										</span>
+									</li>
+
+									<li>
+										<a 
+											href="https://plugins.jeweltheme.com/easy-blocks/click-to-tweet/"
+											target="_blank">									
+											<strong>
+												<?php _e( 'Click to Tweet', UGB_TD ); ?>
 											</strong>
 										</a>
 										<span class="ribbon new">
@@ -188,14 +215,6 @@
 										</span>
 									</li>
 
-									<li>
-										<strong>
-											<?php _e( 'Testimonial Slider', UGB_TD ); ?>
-										</strong>
-										<span class="ribbon coming">
-											<?php _e( 'Upcoming', UGB_TD ); ?>
-										</span>
-									</li>
 
 									<li>
 										<strong>
@@ -295,14 +314,6 @@
 									</li>
 									<li>
 										<strong>
-											<?php _e( 'Click to Tweet', UGB_TD ); ?>
-										</strong>
-										<span class="ribbon coming">
-											<?php _e( 'Upcoming', UGB_TD ); ?>
-										</span>
-									</li>
-									<li>
-										<strong>
 											<?php _e( 'Google Maps(GMap)', UGB_TD ); ?>
 										</strong>
 										<span class="ribbon coming">
@@ -332,7 +343,7 @@
 						</div>
 
 						<div class="right_column">
-							<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/banner-image.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
+							<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/banner-image.png';?>" alt="Easy Blocks for Gutenberg Block Banner Image">
 						</div>
 					</div>
 
@@ -340,10 +351,10 @@
 
 					<div class="egb_features">
 						<h2>
-							<?php _e( 'Essential Blocks for Gutenberg', UGB_TD ); ?>
+							<?php _e( 'Easy Blocks for Gutenberg', UGB_TD ); ?>
 						</h3>
 						<p class="textcenter">
-							<?php _e( 'Listed Blocks are available not on Essential Blocks for Gutenberg Plugin. Blocks are being added daily ...', UGB_TD ); ?>
+							<?php _e( 'Listed Blocks are available not on Easy Blocks for Gutenberg Plugin. Blocks are being added daily ...', UGB_TD ); ?>
 						</p>
 						<div class="egb_feature three-col">
 							<div class="col">
@@ -410,7 +421,7 @@
 								<?php echo esc_html__('Documentation', UGB_TD);?>
 							</h2>
 							<p>
-								<?php echo esc_html__('This is Documentation Section for Essential Blocks for Gutenberg.', UGB_TD);?>
+								<?php echo esc_html__('This is Documentation Section for Easy Blocks for Gutenberg.', UGB_TD);?>
 							</p>
 
 							<div class="parent">
@@ -418,7 +429,7 @@
 								<div class="left_column">
 									<div class="left_block">
 										<p>
-										<?php _e( 'Essential Blocks plugin Developed and Maintained by Jewel Theme. 
+										<?php _e( 'Easy Blocks plugin Developed and Maintained by Jewel Theme. 
 												We Create different type of WordPress Theme in various niches. 
 												We have Developed this plugin for those users who wants to Design their web pages perfectly. 
 												Gutenberg a new editor which comes with some built-in blocks. 
@@ -445,11 +456,11 @@
 										<div id="accordion">
 
 											<h3>
-												<?php echo esc_html__('Can I use "Essential Blocks for Gutenberg" Plugin without Gutenberg Plugin ?', UGB_TD);?>
+												<?php echo esc_html__('Can I use "Easy Blocks for Gutenberg" Plugin without Gutenberg Plugin ?', UGB_TD);?>
 											</h3>
 											<div>
 												<p>
-													<?php echo esc_html__('No, you cannot use Essential Gutenberg Plugin without "Gutenberg" Plugin. Because "Essential Blocks for Gutenberg" Plugin has Dependency with Gutenberg Plugin.', UGB_TD);?>
+													<?php echo esc_html__('No, you cannot use Easy Gutenberg Plugin without "Gutenberg" Plugin. Because "Easy Blocks for Gutenberg" Plugin has Dependency with Gutenberg Plugin.', UGB_TD);?>
 												</p>
 											</div>
 
@@ -480,26 +491,26 @@
 											</h3>
 											<div>
 												<p>
-													<?php echo esc_html__('Basically, there\'s no Configuration required for using "Essential Blocks for Gutenberg" Plugin.', UGB_TD);?>
+													<?php echo esc_html__('Basically, there\'s no Configuration required for using "Easy Blocks for Gutenberg" Plugin.', UGB_TD);?>
 												</p>
 											</div>
 
 											<h3>
-												<?php echo esc_html__('How to add Essential Blocks?', UGB_TD);?>
+												<?php echo esc_html__('How to add Easy Blocks?', UGB_TD);?>
 											</h3>
 											<div>
 												<p>
-													<?php echo esc_html__('Navigate to any post or page which you want to edit. Then click on the plus button. Scroll down or search for "Essential Block". Click on that option and you will see some blocks. Just add what block you like and edit the content.', UGB_TD);?>	
+													<?php echo esc_html__('Navigate to any post or page which you want to edit. Then click on the plus button. Scroll down or search for "Easy Block". Click on that option and you will see some blocks. Just add what block you like and edit the content.', UGB_TD);?>	
 												</p>
 											</div>
 											
 
 											<h3>
-												<?php echo esc_html__('"Essential Gutenberg Plugin" Installed but Not Working !', UGB_TD);?>
+												<?php echo esc_html__('"Easy Gutenberg Plugin" Installed but Not Working !', UGB_TD);?>
 											</h3>
 											<div>
 												<p>
-													<?php echo esc_html__('First, deactive Other "Gutenberg Blocks" plugin and try again. In most cases, it\'ll be conflicting issue. Try Activate/Deactivate "Essential Blocks for Gutenberg" Plugin. If nothing works then post on our Support Form(Link Mentioned above).', UGB_TD);?>
+													<?php echo esc_html__('First, deactive Other "Gutenberg Blocks" plugin and try again. In most cases, it\'ll be conflicting issue. Try Activate/Deactivate "Easy Blocks for Gutenberg" Plugin. If nothing works then post on our Support Form(Link Mentioned above).', UGB_TD);?>
 												</p>
 											</div>
 											
@@ -508,7 +519,7 @@
 											</h3>
 											<div>
 												<p>
-													We've two ways to give Supports for "Essential Blocks for Gutenberg" Plugin - <a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">Plugin Support Forum</a> or <a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">Our Website Support</a>. Since, this is a Free Plugin, Support reply may delay for answer but we're Dedicated on our Website <a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">Support Forum</a>.
+													We've two ways to give Supports for "Easy Blocks for Gutenberg" Plugin - <a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">Plugin Support Forum</a> or <a href="https://jeweltheme.com/support/forum/wordpress-plugins/easy-gutenberg-blocks" target="_blank">Our Website Support</a>. Since, this is a Free Plugin, Support reply may delay for answer but we're Dedicated on our Website <a href="https://jeweltheme.com/support/forum/wordpress-plugins/easy-gutenberg-blocks/" target="_blank">Support Forum</a>.
 												</p>
 											</div>
 											
@@ -528,7 +539,7 @@
 								</div>
 
 								<div class="right_column">
-									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/docs.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
+									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/docs.png';?>" alt="Easy Blocks for Gutenberg Block Banner Image">
 								</div>
 							</div>
 						</div>
@@ -549,7 +560,7 @@
 									<div class="left_block">
 										<p>
 											<?php _e( 'Do you Stuck on something? Get help from the community on WordPress Support Forum or Facebook Community. In case of emergency, initiate a live chat at "Jewel Theme".', UGB_TD ); ?>
-											We've Dedicated Support Forum for <strong>Essential Blocks for Gutenberg</strong>. We're contributing for giving back to WordPress Community.
+											We've Dedicated Support Forum for <strong>Easy Blocks for Gutenberg</strong>. We're contributing for giving back to WordPress Community.
 											As this is a Free WordPress Plugin, support maybe delayed because <strong>Jewel Theme</strong> provides Priority Support for Premium Customers.
 										</p>
 
@@ -573,7 +584,7 @@
 											</li>
 											<li>
 												<h4>
-													<a href="https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/" target="_blank">
+													<a href="https://jeweltheme.com/support/forum/wordpress-plugins/easy-gutenberg-blocks" target="_blank">
 														<?php echo esc_html__('Jewel Theme Support Forum', UGB_TD);?>
 													</a>
 												</h4>
@@ -581,7 +592,7 @@
 											<li>
 												<h4>
 													<a href="https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg" target="_blank">
-														<?php echo esc_html__('WordPress Support Forum ( Essential Blocks )', UGB_TD);?>
+														<?php echo esc_html__('WordPress Support Forum ( Easy Blocks )', UGB_TD);?>
 													</a>
 												</h4>
 											</li>
@@ -597,7 +608,7 @@
 								</div>
 
 								<div class="right_column">
-									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/support.png';?>" alt="Essential Blocks for Gutenberg Block Banner Image">
+									<img class="tab-banner" src="<?php echo UGB_PLUGIN_URL .'/assets/images/support.png';?>" alt="Easy Blocks for Gutenberg Block Banner Image">
 								</div>
 							</div>
 								

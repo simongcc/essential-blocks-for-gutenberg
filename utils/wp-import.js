@@ -6,7 +6,7 @@ export const { registerBlockType } = wp.blocks
 
 export const { __ } = wp.i18n
 
-export const { compose } = wp.compose;
+export const { compose, withState } = wp.compose;
 
 export const { withSelect } = wp.data;
 
@@ -26,8 +26,9 @@ export const {
     Toolbar,
     FormToggle,
     withNotices,
-    withAPIData, 
-    withState
+    withAPIData,
+    Spinner,
+    Placeholder
 
 
 } = wp.components
@@ -44,7 +45,8 @@ export const {
     withColors,
     getColorClassName,
     MediaUploadCheck,
-    URLInputButton
+    URLInputButton,
+    ContrastChecker
 
 } = wp.editor.InspectorControls ? wp.editor : wp.blocks
 

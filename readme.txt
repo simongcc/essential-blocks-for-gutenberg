@@ -1,4 +1,4 @@
-=== WordPress Gutenberg Blocks - Essential Blocks ===
+=== Easy Blocks - Gutenberg Blocks Collection ===
 Contributors: litonice13, jwthemeltd, gutenberg18
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=jwthemeltd@gmail.com&lc=US&item_name=Donate&currency_code=USD&bn=PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest
 Tags: gutenberg, essential blocks for gutenberg, gutenberg blocks, card image text, translation block, blocks, gutenberg block, gutenberg blocks, guten blocks, essential blocks, gutenberg blocks, gutenberg widget, gutenberg addon, gutenberg addons, page builder, builder, gutenberg page builder, visual editor, gutenberg visual editor, wordpress page builder, esential guten blocks, essential guten blocks, ultimate guten blocks
@@ -17,33 +17,31 @@ Unlike the single MCE editor of the past, each bit of content in Gutenberg is a 
 A paragraph, image gallery, blockquote, testimonial – they are all blocks. Blocks gives you more control and our plugin is developed to offer you more choices. 
 Our plugin is made with that in mind- making it easy to add blocks for gutenberg empowered blogs.
 
-[Essential Gutenberg Demos](https://jeweltheme.com/shop/essential-blocks-for-gutenberg//)
+[Easy Gutenberg Demos](https://jeweltheme.com/shop/easy-gutenberg-blocks/)
 
-Essential Blocks for Gutenberg is Editor Blocks based on Gutenberg Editor Plugin.
+Easy Blocks for Gutenberg is Editor Blocks based on Gutenberg Editor Plugin.
 
 = Installation Video Tutorial: =
 [youtube https://www.youtube.com/watch?v=mu-heAQgUOk]
 
-The introduction of blocks has necessitated the development of block plugins for WordPress.  Our Essential Gutentberg Plugin  (name) is also an humble attempt in that aspect. We have compiled few interesting blocks that should put at ease while using Gutenberg plugin. 
+The introduction of blocks has necessitated the development of block plugins for WordPress.  Our Easy Gutentberg Plugin  (name) is also an humble attempt in that aspect. We have compiled few interesting blocks that should put at ease while using Gutenberg plugin.
 Our plugin is basically, plug and play. If you’ve installed Gutenberg plugin, then all you need to do is install our plugin and you’re good to begin creating your blocks. 
 Currently, we have 7 different blocks. We have carefully curated the blocks that has been missing from other  Gutenberg block plugins. 
 
-### [Gutenberg](https://wordpress.org/plugins/gutenberg/) Plugin is required to work with this Plugin. WordPress 5.0 will come with Gutenberg Editor in Core.
 
+### 7+ Easy Blocks and Counting
+Easy Blocks comes with 7 Blocks (Currently) to enhance your Gutenberg Editor Experience.
 
-### 7+ ESSENTIAL BLOCKS and Counting
-Essential Gutenberg Blocks comes with 7 Blocks (Currently) to enhance your Gutenberg Editor Experience.
-
-1. [Testimonial Block](https://plugins.jeweltheme.com/essential-gutenberg/testimonial/)
-2. [Alert Notification](https://plugins.jeweltheme.com/essential-gutenberg/alert-notification/)
-3. [Call To Action](https://plugins.jeweltheme.com/essential-gutenberg/call-to-action/)
-4. [Card Image and Text](https://plugins.jeweltheme.com/essential-gutenberg/cards)
-5. [Image Content](https://plugins.jeweltheme.com/essential-gutenberg/image-content/)
-6. [Heading & Sub Heading](https://plugins.jeweltheme.com/essential-gutenberg/title-subtitle/)
-7. [Blockquotes](https://plugins.jeweltheme.com/essential-gutenberg/blockquote/)
-8. Hero Image Block(Upcoming)
-9. Blog Grid Block (Upcoming)
-10. Testimonial Slider Block(Upcoming)
+1. [Testimonial Block](https://plugins.jeweltheme.com/easy-blocks/testimonial/)
+2. [Alert Notification](https://plugins.jeweltheme.com/easy-blocks/alert-notification/)
+3. [Call To Action](https://plugins.jeweltheme.com/easy-blocks/call-to-action/)
+4. [Card Image and Text](https://plugins.jeweltheme.com/easy-blocks/cards)
+5. [Image Content](https://plugins.jeweltheme.com/easy-blocks/image-content/)
+6. [Heading & Sub Heading](https://plugins.jeweltheme.com/easy-blocks/title-subtitle/)
+7. [Blockquotes](https://plugins.jeweltheme.com/easy-blocks/blockquote/)
+8. [Testimonial Slider Block](https://plugins.jeweltheme.com/easy-blocks/testimonial-slider/)
+9. [Click to Tweet Block](https://plugins.jeweltheme.com/easy-blocks/click-to-tweet/)
+10. Hero Image Block(Upcoming)
 11. Logo Slider Block (Upcoming)
 12. Author Box Block (Upcoming)
 13. Accordion Block (Upcoming)
@@ -56,7 +54,7 @@ Essential Gutenberg Blocks comes with 7 Blocks (Currently) to enhance your Guten
 20. Facebook Like Block (Upcoming)
 21. Instagram Block (Upcoming)
 22. Social Share Block (Upcoming)
-23. Click to Tweet Block (Upcoming)
+23. Blog Grid Block (Upcoming)
 24. Google Maps(GMap) Block (Upcoming)
 25. Maps Location (Upcoming)
 26. Banner Ads ( Upcoming )
@@ -64,7 +62,7 @@ Many more are coming soon(by Weekly Update)
 
 
 ### Are you Looking for Gutenberg Supported Theme?
-Check out [Polmo Lite](https://wordpress.org/themes/polmo-lite/), best Compatible Theme with Gutenberg and "Essential Blocks for Gutenberg" Plugin. Some Core Features of Polmo Lite:
+Check out [Polmo Lite](https://wordpress.org/themes/polmo-lite/), best Compatible Theme with Gutenberg and "Easy Blocks for Gutenberg" Plugin. Some Core Features of Polmo Lite:
 - Modern and Clean Design
 - Anchor functionality for One Page sites
 - Parallax images in sections
@@ -91,7 +89,7 @@ Check out [Polmo Lite](https://wordpress.org/themes/polmo-lite/), best Compatibl
 - Post Type Supports- Standard, Image, Chat, Video, Gallery, Link, Status etc.
 
 
-= Some Features Of Our Essential Block Plugins - =
+= Some Features Of Our Easy Block Plugins - =
 
 
 ### COMPLETELY CUSTOMIZABLE
@@ -104,7 +102,7 @@ The plugin does not allow messy code or extra asset which slow down your interne
 We have an excellent and friendly support team for your assistance. Put your question in the support forum or you can contact us directly via live chat and contact form.
 
 
-### Liked Essential Blocks Plugins?
+### Liked Easy Blocks Plugins?
 Join our [Facebook Group](https://www.facebook.com/groups/jeweltheme/).
 Learn from our Tutorials on [Youtube Channel](https://www.youtube.com/channel/UCAPfTXvzbNebKsB322Iz6HQ).
 Or rate us on [WordPress Forum 🙂](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg/reviews/#new-post) 
@@ -133,7 +131,7 @@ Get Faster Support from [Dedicated Support Forum](https://jeweltheme.com/support
 If you have any questions, please ask it on the [support forum](https://wordpress.org/support/plugin/gutenberg-blocks).
 
 = Can I use this Plugin without Gutenberg Plugin?
-No, you cannot use Essential Gutenberg Plugin without "Gutenberg" Plugin. Because "Essential Blocks for Gutenberg" Plugin has Dependency with Gutenberg Plugin.
+No, you cannot use Easy Gutenberg Plugin without "Gutenberg" Plugin. Because "Easy Blocks for Gutenberg" Plugin has Dependency with Gutenberg Plugin.
 
 = I'm Using WordPress v5.0. Do I need to Install "Gutenberg" Plugin?
 No, since Gutnberg is on core with WordPress v5.0. You don't need to Install "Gutenberg" Plugin.
@@ -142,16 +140,16 @@ No, since Gutnberg is on core with WordPress v5.0. You don't need to Install "Gu
 Installation Process has been discussed on "Installation" Section. Video Tutorial will help you about Installation Process.
 
 = How to Configure this Plugin ?
-Basically, there's no Configuration required for using "Essential Blocks for Gutenberg" Plugin.
+Basically, there's no Configuration required for using "Easy Blocks for Gutenberg" Plugin.
 
-= How to add Essential Blocks? 
-Navigate to any post or page which you want to edit. Then click on the plus button. Scroll down or search for "Essential Block". Click on that option and you will see some blocks. Just add what block you like and edit the content. 
+= How to add Easy Blocks?
+Navigate to any post or page which you want to edit. Then click on the plus button. Scroll down or search for "Easy Block". Click on that option and you will see some blocks. Just add what block you like and edit the content.
 
-= "Essential Gutenberg Plugin" Installed but Not Working !!!
-First, deactive Other "Gutenberg Blocks" plugin and try again. In most cases, it'll be conflicting issue. Try Activate/Deactivate "Essential Blocks for Gutenberg" Plugin. If nothing works then post on our Support Form(Link Mentioned above).
+= "Easy Gutenberg Plugin" Installed but Not Working !!!
+First, deactive Other "Gutenberg Blocks" plugin and try again. In most cases, it'll be conflicting issue. Try Activate/Deactivate "Easy Blocks for Gutenberg" Plugin. If nothing works then post on our Support Form(Link Mentioned above).
 
 = How can I get faster Support?
-We've two ways to give Supports for "Essential Blocks for Gutenberg" Plugin - [Plugin Support Forum](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg) or [Our Website Support](https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/). Since, this is a Free Plugin, Support reply may delay for answer but we're Dedicated on our Website Support Forum.
+We've two ways to give Supports for "Easy Blocks for Gutenberg" Plugin - [Plugin Support Forum](https://wordpress.org/support/plugin/ultimate-blocks-for-gutenberg) or [Our Website Support](https://jeweltheme.com/support/forum/wordpress-plugins/essential-blocks-for-gutenberg/). Since, this is a Free Plugin, Support reply may delay for answer but we're Dedicated on our Website Support Forum.
 
 = I need Custom Blocks, can you Customize or Create for me?
 We don't provide Customization Support for Free Products. But, If you need to Create one we do Offer Customization Service. 

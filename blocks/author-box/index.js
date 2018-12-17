@@ -208,7 +208,7 @@ class EGBAuthorBlock extends Component{
                                 )}
                             ></MediaUpload>
                         ) : (
-                            <p class="image-wrapper">
+                            <p className="image-wrapper">
                                 <img
                                     src={ authorImgURL }
                                 />

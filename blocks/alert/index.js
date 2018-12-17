@@ -109,6 +109,7 @@ export default registerBlockType(
 
             return (
                 <Fragment>
+
                     <BlockControls>
                         <BlockAlignmentToolbar
                             value={ blockAlignment }

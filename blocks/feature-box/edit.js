@@ -66,7 +66,7 @@ class EditPricing extends Component {
             className,
             'egb-feature-grid',
             `columns-${columns}`,
-        ] )
+        ] );
     
 
         return(

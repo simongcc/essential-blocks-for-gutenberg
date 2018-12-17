@@ -542,3 +542,180 @@
       color: #FFF;
       font-family: Dashicons;
       margin: 0 5px; }
+/* WordPress Base Colors
+ Source: https://make.wordpress.org/design/handbook/design-guide/foundations/colors/
+*/
+/**
+ * For blocks with a box outline, we can use the custom properties:
+ * --box-padding-vert
+ * --box-padding-hori
+ * to get the current padding values
+ */
+/**
+ * #.# Styles for Team Member Block.
+ *
+ * CSS for both Frontend+Backend.
+ */
+.egb-feature-grid {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 -17.5px; }
+  .egb-feature-grid > * {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important; }
+    .egb-feature-grid > *:first-child {
+      margin-top: 0 !important; }
+    .egb-feature-grid > *:last-child {
+      margin-bottom: 0 !important; }
+  .egb-feature-grid > div {
+    flex: 1; }
+    .egb-feature-grid > div, .egb-feature-grid > div:first-child, .egb-feature-grid > div:last-child {
+      margin: 17.5px !important; }
+  .egb-feature-grid .egb-feature-grid-item {
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    box-shadow: 0 5px 5px 0 rgba(18, 63, 82, 0.035), 0 0 0 1px rgba(176, 181, 193, 0.2);
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 60px 35px;
+    --box-padding-vert: 60px;
+    --box-padding-hori: 35px; }
+    .egb-feature-grid .egb-feature-grid-item > * {
+      margin-top: 0 !important;
+      margin-bottom: 1rem !important; }
+      .egb-feature-grid .egb-feature-grid-item > *:first-child {
+        margin-top: 0 !important; }
+      .egb-feature-grid .egb-feature-grid-item > *:last-child {
+        margin-bottom: 0 !important; }
+    @media screen and (max-width: 782px) {
+      .egb-feature-grid .egb-feature-grid-item {
+        padding: 40px 23.33333px;
+        --box-padding-vert: 40px;
+        --box-padding-hori: 23.33333px; } }
+    @media screen and (max-width: 600px) {
+      .egb-feature-grid .egb-feature-grid-item {
+        padding: 35px 17.5px;
+        --box-padding-vert: 35px;
+        --box-padding-hori: 17.5px; } }
+
+.egb-design-plain .egb-feature-grid-item {
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0; }
+  @media screen and (max-width: 782px) {
+    .egb-design-plain .egb-feature-grid-item {
+      padding: 0; } }
+  @media screen and (max-width: 600px) {
+    .egb-design-plain .egb-feature-grid-item {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 17.5px;
+      padding-bottom: 17.5px; } }
+
+@media screen and (max-width: 960px) {
+  .egb-feature-grid.columns-3 .egb-feature-grid-item > img {
+    width: 100% !important; } }
+
+@media screen and (max-width: 600px) {
+  .egb-feature-grid-item > img {
+    max-width: 30vw; }
+  .egb-feature-grid {
+    flex-direction: column; } }
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+/* WordPress Base Colors
+ Source: https://make.wordpress.org/design/handbook/design-guide/foundations/colors/
+*/
+/**
+ * For blocks with a box outline, we can use the custom properties:
+ * --box-padding-vert
+ * --box-padding-hori
+ * to get the current padding values
+ */
+.wp-block-easy-blocks-instagram {
+  margin: 0 auto; }
+  @media all and (max-width: 480px) {
+    .wp-block-easy-blocks-instagram .kona-grid {
+      grid-template-columns: repeat(1, 1fr) !important; } }
+  @media all and (min-width: 480px) and (max-width: 600px) {
+    .wp-block-easy-blocks-instagram .kona-grid {
+      grid-template-columns: repeat(2, 1fr) !important; } }
+  @media all and (min-width: 600px) and (max-width: 782px) {
+    .wp-block-easy-blocks-instagram .kona-grid {
+      grid-template-columns: repeat(4, 1fr) !important; } }
+  .wp-block-easy-blocks-instagram .kona-grid.use-thumbnail {
+    grid-auto-rows: -webkit-min-content;
+    grid-auto-rows: min-content; }
+
+.display-grid {
+  display: grid; }
+
+/* flexbox fallback if the browser does not support display:grid */
+@supports not (display: grid) {
+  .display-grid {
+    display: flex;
+    flex-wrap: row wrap; }
+    .display-grid > * {
+      flex: 0 1 1; } }
+
+/**
+Image Styling
+**/
+.easy_instagram_wrapper {
+  position: relative; }
+  .easy_instagram_wrapper:hover .easy_image_overlay {
+    opacity: 1; }
+  .easy_instagram_wrapper:hover img {
+    opacity: 0.6; }
+
+.easy_image {
+  display: block;
+  margin: 0 auto; }
+
+.easy_image_overlay {
+  transition: all 0.25s ease-in;
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; }
+  .easy_image_overlay:before {
+    content: ' ';
+    opacity: 1;
+    background: url(../assets/instagram-icon-white.svg) no-repeat center center;
+    background-size: 30px 30px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+
+/**
+Profile pictures
+**/
+.easy-instagram-container {
+  display: block;
+  margin-bottom: 1rem; }
+  @media all and (min-width: 541px) {
+    .easy-instagram-container {
+      display: grid;
+      grid-template-columns: 60px auto;
+      grid-column-gap: 1rem; } }
+
+.instagram_profile_picture {
+  border-radius: 100%; }
+
+.easy-instagram-bio-container h3,
+.easy-instagram-bio-container p {
+  margin-top: 0;
+  margin-bottom: 0; }

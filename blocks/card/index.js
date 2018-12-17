@@ -130,6 +130,7 @@ export default registerBlockType(
                         <div className={ mainClasses }>
 
                             <div className={ 'wp-block-ugb-card-image' }>
+
                                 { ! imageID ? (
 
                                     <div className="button-container">

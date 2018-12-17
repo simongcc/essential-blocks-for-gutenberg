@@ -5,12 +5,12 @@
  * @author      Liton Arefin (@Litonice11)
  * @license     GPL-3.0
  *
- * Plugin Name: Essential Blocks for Gutenberg
- * Plugin URI:  https://jeweltheme.com/shop/essential-blocks-for-gutenberg/
- * Description: Essential Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
+ * Plugin Name: Easy Blocks - Gutenberg Blocks Collection
+ * Plugin URI:  https://jeweltheme.com/shop/easy-gutenberg-blocks/
+ * Description: Easy Blocks for Gutenberg helps to make your Website more Comfortable with Gutenberg Editor
  * Version:     1.2.5
  * Author:      Liton Arefin
- * Author URI:  https://jeweltheme.com/shop/essential-blocks-for-gutenberg/
+ * Author URI:  https://jeweltheme.com/shop/easy-gutenberg-blocks/
  * Text Domain: ugb
  * Domain Path: /languages
  * License:     GPL-3.0
@@ -24,7 +24,7 @@ defined('ABSPATH') || exit;
 
 
 /*
- * Essential Blocks Constants
+ * Easy Blocks Constants
  */
 
 $ugb = new Ultimate_Gutenberg();
@@ -49,7 +49,7 @@ class Ultimate_Gutenberg{
 	private $plugin_url;
 	private $plugin_slug;
 	public  $plugin_dir_url;
-	public  $plugin_name = 'Essential Blocks for Gutenberg';
+	public  $plugin_name = 'Easy Blocks for Gutenberg';
 
 	private static $instance;
 
@@ -111,7 +111,7 @@ class Ultimate_Gutenberg{
 			array(
 				array(
 					'slug' => 'gutenberg-blocks',
-					'title' => __( 'Essential Blocks', 'ugb' ),
+					'title' => __( 'Easy Blocks', 'ugb' ),
 				),
 			)
 		);
@@ -123,6 +123,9 @@ class Ultimate_Gutenberg{
 		// Scripts and Styles
 		require_once $this->ugb_plugin_path() . '/lib/enqueue-scripts.php';
 		// require_once $this->ugb_plugin_path() . '/lib/metabox.php';
+
+		/* Server Rendering Blocks */
+		require_once $this->ugb_plugin_path() . '/blocks/instagram/render.php';
 
 		if ( is_admin() ) {
 			// Notices Libraries
@@ -164,7 +167,7 @@ class Ultimate_Gutenberg{
 	
 	  	// Redirect to Welcome Page.
 	  	wp_redirect( 
-			  esc_url( admin_url( 'admin.php?page=essential-blocks-for-gutenberg' ) ) 
+			  esc_url( admin_url( 'admin.php?page=easy-blocks' ) ) 
 		);
 	
 		die();
@@ -311,10 +314,10 @@ class Ultimate_Gutenberg{
 
 		// Add Menu Item.
 		add_menu_page(
-			esc_html__( 'Essential Blocks for Gutenberg', UGB_TD ), // Page Title
-			esc_html__( 'Essential Blocks', UGB_TD ),	// Menu Title
+			esc_html__( 'Easy Blocks for Gutenberg', UGB_TD ), // Page Title
+			esc_html__( 'Easy Blocks', UGB_TD ),	// Menu Title
 			'edit_posts',	// Capability
-			'essential-blocks-for-gutenberg', // Menu Slug
+			'easy-blocks', // Menu Slug
 			array( $this, 'egb_welcome_page_content'),	// Callback Function
 			// $icon_svg,	// Icon	
 			UGB_PLUGIN_URL . '/assets/images/egb-icon.png',
@@ -323,11 +326,11 @@ class Ultimate_Gutenberg{
 
 		// Add Settings Page.
 		// add_submenu_page(
-		// 	'essential-blocks-for-gutenberg',
+		// 	'easy-blocks',
 		// 	'EGB Settings',
 		// 	esc_html__( 'Settings', UGB_TD ),
 		// 	'manage_options',
-		// 	'essential-blocks-for-gutenberg-settings',
+		// 	'easy-blocks-settings',
 		// 	array($this, 'ugb_setting_screen_content')
 		// );
 
@@ -373,7 +376,7 @@ class Ultimate_Gutenberg{
 		set_transient( '_egb_welcome_redirect', true, 60 );
 
 		global $wp_version;
-		$wp  = '4.9.8';
+		$wp  = '5.0';
 		$php = '5.3.29';
 
 		// Compare PHP and WP versions and make sure the plugin can run.
