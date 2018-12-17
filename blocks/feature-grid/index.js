@@ -4,7 +4,7 @@
 
 import icons from '../../utils/icons';
 import classnames from 'classnames';
-import Autosuggest from 'react-autosuggest';
+// import Autosuggest from 'react-autosuggest';
 
 import './style.scss';
 import './editor.scss';

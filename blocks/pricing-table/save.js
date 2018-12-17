@@ -20,9 +20,9 @@ export class SavePricing extends Component{
     //     super( ...arguments );
     // }
     render(){
-        return(
+
             <h2>Liton Arefin</h2>
-        )
+
     }
     
 }
