@@ -18,3 +18,4 @@ import './author-box';
 import './feature-box';
 import './feature-grid';
 import './instagram';
+import './advertisement';

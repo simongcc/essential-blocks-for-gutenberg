@@ -892,3 +892,15 @@ Profile pictures
 .easy-instagram-bio-container p {
   margin-top: 0;
   margin-bottom: 0; }
+.wp-block-ugb-ads-image {
+  padding: 0;
+  float: right;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  text-align: center;
+  line-height: 248px;
+  width: 250px;
+  color: #999; }
+
+.ads_content {
+  float: left; }

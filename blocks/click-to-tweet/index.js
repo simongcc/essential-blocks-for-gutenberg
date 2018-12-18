@@ -241,7 +241,7 @@ export default registerBlockType(
             return(
                 
                 <div className={ ( theme ? 'cbp-qtrotator click-to-tweet-alt' : 'cbp-qtrotator click-to-tweet' ) }>
-                    <div class="cbp-qtcontent">
+                    <div className="cbp-qtcontent">
                         { icons.twitter }
                         <div className="ctt-text">
                             <RichText.Content

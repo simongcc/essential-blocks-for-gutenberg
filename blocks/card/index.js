@@ -189,7 +189,6 @@ export default registerBlockType(
                             <RichText
                                 placeholder={ body.default }
                                 value={ body }
-                                placeholder={ body.default }
                                 onChange={(body)=> setAttributes({body})}
                                 className={`card_body`}
                                 keepPlaceholderOnFocus

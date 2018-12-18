@@ -18,8 +18,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blocks/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="440">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="23" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -28,36 +28,61 @@
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
+        <entry file="file://$PROJECT_DIR$/blocks/advertisement/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="239">
+              <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#40#78#0" expanded="true" />
-                <element signature="e#229#566#0" expanded="true" />
+                <element signature="e#33#71#0" expanded="true" />
+                <element signature="e#189#419#0" expanded="true" />
+                <element signature="e#2258#2439#0" />
+                <element signature="e#2480#2652#0" />
+                <element signature="e#5319#5872#0" />
+                <element signature="e#5981#7328#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
+        <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
+            <state relative-caret-position="237">
+              <caret line="152" column="38" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="38" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#40#78#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/feature-grid/index.js">
+        <entry file="file://$PROJECT_DIR$/blocks/image-content/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="386" column="12" selection-start-line="386" selection-start-column="12" selection-end-line="386" selection-end-column="70" />
+            <state relative-caret-position="237">
+              <caret line="158" column="61" selection-start-line="158" selection-start-column="56" selection-end-line="158" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/advertisement/editor.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/instagram/edit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="150" column="42" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
               <folding>
-                <element signature="e#40#78#0" expanded="true" />
-                <element signature="e#165#187#0" expanded="true" />
+                <element signature="e#36#242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,9 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$break-mobile</find>
-      <find>$xs</find>
-      <find>wp-block-easy-blocks-instagram</find>
       <find>display-grid</find>
       <find>wrappe</find>
       <find>profile</find>
@@ -94,9 +116,12 @@
       <find>FeatureAttributes</find>
       <find>image</find>
       <find>featureAttributes</find>
-      <find>blockAlignment</find>
       <find>getEdit</find>
       <find>full</find>
+      <find>imgAlignmentClass</find>
+      <find>blockAlignment</find>
+      <find>class</find>
+      <find>class=</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -105,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blocks/test/item.jsx" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/blocks/test/style.scss" />
@@ -116,7 +140,6 @@
         <option value="$PROJECT_DIR$/blocks/test/index.js" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/style.scss" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/index.js" />
-        <option value="$PROJECT_DIR$/blocks/click-to-tweet/index.js" />
         <option value="$PROJECT_DIR$/blocks/click-to-tweet/style.scss" />
         <option value="$PROJECT_DIR$/blocks/click-to-tweet/editor.scss" />
         <option value="$PROJECT_DIR$/assets/css/welcome.css" />
@@ -124,7 +147,6 @@
         <option value="$PROJECT_DIR$/inc/readme-parser.php" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/editor.scss" />
         <option value="$PROJECT_DIR$/blocks/image-content/editor.scss" />
-        <option value="$PROJECT_DIR$/blocks/image-content/index.js" />
         <option value="$PROJECT_DIR$/blocks/image-content/style.scss" />
         <option value="$PROJECT_DIR$/blocks/hero-image/editor.scss" />
         <option value="$PROJECT_DIR$/blocks/hero-image/test.js" />
@@ -137,7 +159,6 @@
         <option value="$PROJECT_DIR$/utils/wp-import.js" />
         <option value="$PROJECT_DIR$/blocks/alert/index.js" />
         <option value="$PROJECT_DIR$/blocks/author-box/index.js" />
-        <option value="$PROJECT_DIR$/blocks/card/index.js" />
         <option value="$PROJECT_DIR$/utils/icons.js" />
         <option value="$PROJECT_DIR$/blocks/testimonial-slider/edit.js" />
         <option value="$PROJECT_DIR$/blocks/feature-box/editor.scss" />
@@ -153,8 +174,13 @@
         <option value="$PROJECT_DIR$/blocks/pricing-table/attributes.js" />
         <option value="$PROJECT_DIR$/blocks/pricing-table/index.js" />
         <option value="$PROJECT_DIR$/blocks/feature-box/style.scss" />
-        <option value="$PROJECT_DIR$/blocks/index.js" />
         <option value="$PROJECT_DIR$/blocks/feature-box/index.js" />
+        <option value="$PROJECT_DIR$/blocks/index.js" />
+        <option value="$PROJECT_DIR$/blocks/card/index.js" />
+        <option value="$PROJECT_DIR$/blocks/advertisement/editor.scss" />
+        <option value="$PROJECT_DIR$/blocks/image-content/index.js" />
+        <option value="$PROJECT_DIR$/blocks/click-to-tweet/index.js" />
+        <option value="$PROJECT_DIR$/blocks/advertisement/index.js" />
       </list>
     </option>
   </component>
@@ -220,18 +246,6 @@
               <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
               <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="alert" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="call-to-action" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ultimate-blocks-for-gutenberg-lite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ultimate-blocks-for-gutenberg-lite" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="blocks" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="feature-box" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -279,12 +293,12 @@
       <workItem from="1544205684376" duration="221000" />
       <workItem from="1544206891484" duration="154000" />
       <workItem from="1544245692312" duration="26939000" />
-      <workItem from="1544943457282" duration="34007000" />
+      <workItem from="1544943457282" duration="40509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81017000" />
+    <option name="totallyTimeSpent" value="87519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-222" width="1920" height="1008" extended-state="0" />
@@ -327,40 +341,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blocks/another/Edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/another/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="393" column="24" selection-start-line="393" selection-start-column="24" selection-end-line="393" selection-end-column="46" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/testimonial-slider/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/click-to-tweet/editor.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/title-subtitle/editor.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -379,13 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/image-content/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="299" column="39" selection-start-line="299" selection-start-column="39" selection-end-line="299" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -438,33 +411,6 @@
           <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/title-subtitle/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="179" column="41" selection-start-line="179" selection-start-column="41" selection-end-line="179" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/card/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="155" selection-start-line="155" selection-end-line="172" selection-end-column="40" />
-          <folding>
-            <element signature="e#189#419#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/author-box/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="191" column="41" selection-start-line="191" selection-start-column="41" selection-end-line="196" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -618,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/click-to-tweet/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1730">
-          <caret line="54" selection-start-line="54" selection-end-line="54" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/instagram/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -632,16 +571,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#117#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/instagram/edit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="168" column="20" selection-start-line="168" selection-start-column="20" selection-end-line="168" selection-end-column="20" />
-          <folding>
-            <element signature="e#36#242#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -695,23 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/index.js">
+    <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/alert/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="154" column="28" selection-start-line="154" selection-start-column="28" selection-end-line="154" selection-end-column="101" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -726,21 +642,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/call-to-action/index.js">
+    <entry file="file://$PROJECT_DIR$/blocks/advertisement/style.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/author-box/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="73" selection-start-line="73" selection-end-line="80" selection-end-column="10" />
+        <state relative-caret-position="795">
+          <caret line="191" column="41" selection-start-line="191" selection-start-column="41" selection-end-line="196" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/card/editor.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/advertisement/editor.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/alert/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="188" column="105" lean-forward="true" selection-start-line="188" selection-start-column="83" selection-end-line="188" selection-end-column="105" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/card/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="96" column="34" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="34" />
+          <folding>
+            <element signature="e#189#419#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/title-subtitle/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-698">
+          <caret line="99" column="50" selection-start-line="99" selection-start-column="36" selection-end-line="99" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blocks/feature-box/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="237">
+          <caret line="152" column="38" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#40#78#0" expanded="true" />
-            <element signature="e#229#566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/click-to-tweet/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="232" column="19" lean-forward="true" selection-start-line="232" selection-start-column="19" selection-end-line="232" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/image-content/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="158" column="61" selection-start-line="158" selection-start-column="56" selection-end-line="158" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/instagram/edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="150" column="42" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
+          <folding>
+            <element signature="e#36#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/advertisement/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#33#71#0" expanded="true" />
+            <element signature="e#189#419#0" expanded="true" />
+            <element signature="e#2258#2439#0" />
+            <element signature="e#2480#2652#0" />
+            <element signature="e#5319#5872#0" />
+            <element signature="e#5981#7328#0" />
           </folding>
         </state>
       </provider>

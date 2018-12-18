@@ -172,7 +172,7 @@ export default registerBlockType(
                             
                             { ! imageID ? (
 
-                                <div class="item-thumb">
+                                <div className="item-thumb">
                                     <MediaUpload
                                         onSelect={ onSelectImage }
                                         type="image"
@@ -191,7 +191,7 @@ export default registerBlockType(
                                 </div>
 
                                 ) : (
-                                    <p class="image-wrapper">
+                                    <p className="image-wrapper">
                                         <img
                                             src={ imageUrl }
                                             alt={ imageAlt }
